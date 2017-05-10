@@ -4,5 +4,8 @@
     "development": {
       "presets": ["react-hmre"]
     }
-  }
+  },
+  "plugins": [
+    ["import", { libraryName: "antd", style: true }] // `style: true` for less
+  ]
 }

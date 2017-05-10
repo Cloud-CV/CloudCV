@@ -33,6 +33,7 @@ export default {
       },
       { test: /jquery\.js$/, loader: "expose?jQuery!expose?$" },
       { test: /(\.scss)$/, use: ["style-loader", "css-loader", "sass-loader"] },
+      { test: /(\.less)$/, use: ["style-loader", "css-loader", "less-loader"] },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: ["file-loader"] },
       { test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000" },
       {
