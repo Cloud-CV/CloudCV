@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
-import { Link, Route, Switch, Miss } from 'react-router-dom';
-import { connect } from 'react-redux';
-import io from 'socket.io-client';
+import React, { Component } from "react";
+import { PropTypes } from "prop-types";
+import { Link, Route, Switch, Miss } from "react-router-dom";
+import { connect } from "react-redux";
+import io from "socket.io-client";
 
-import HomePageComponent from './home/HomePage';
-import PageNotFoundHandler from './PageNotFoundHandler';
-
+import HomePageComponent from "./home/HomePage";
+import PageNotFoundHandler from "./PageNotFoundHandler";
 
 class App extends Component {
   constructor(props, context) {
     super(props, context);
     this.socket = io();
-    this.socket.on('connect', () => {
-      this.socket.emit('hello');
+    this.socket.on("connect", () => {
+      this.socket.emit("hello");
     });
   }
 
@@ -24,17 +23,15 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.socket.on('world', (data) => {
-    });
+    this.socket.on("world", data => {});
   }
-
 
   render() {
     return (
       <main>
         <Switch>
-          <Route exact path = "/" component={HomePageComponent}/>
-          <Route component={PageNotFoundHandler}/>
+          <Route exact path="/" component={HomePageComponent} />
+          <Route component={PageNotFoundHandler} />
         </Switch>
       </main>
     );
@@ -46,8 +43,7 @@ App.childContextTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  return {
-  };
+  return {};
 }
 
 export default connect(mapStateToProps)(App);
