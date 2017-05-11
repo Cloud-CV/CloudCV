@@ -18,7 +18,6 @@ export default {
     contentBase: "./src"
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin(GLOBALS),
     new ExtractTextPlugin("style.css"),
     new webpack.optimize.DedupePlugin(),
@@ -35,8 +34,36 @@ export default {
         use: ["babel-loader"]
       },
       { test: /jquery\.js$/, loader: "expose?jQuery!expose?$" },
-      { test: /(\.scss)$/, use: ["style-loader", "css-loader", "sass-loader"] },
-      { test: /(\.less)$/, use: ["style-loader", "css-loader", "less-loader"] },
+      {
+        test: /(\.scss)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                minimize: true
+              }
+            },
+            "sass-loader"
+          ]
+        })
+      },
+      {
+        test: /(\.less)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                minimize: true
+              }
+            },
+            "less-loader"
+          ]
+        })
+      },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: ["file-loader"] },
       { test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000" },
       {

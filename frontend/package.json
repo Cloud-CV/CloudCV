@@ -8,7 +8,7 @@
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "build:html": "babel-node server/buildHTML.js",
     "build": "npm-run-all clean-dist test lint:build build:html && babel-node server/build.js",
-    "build:alias": "node server/build.js",
+    "build:alias": "babel-node server/build.js",
     "start": "npm-run-all build && node server/start.js",
     "open:src": "babel-node server/srcServer.js",
     "lint": "esw webpack.config.* src server",
