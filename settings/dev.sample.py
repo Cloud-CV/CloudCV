@@ -1,4 +1,4 @@
-from .common import *
+from .common import *  # noqa: ignore=F405
 
 DEBUG = True
 

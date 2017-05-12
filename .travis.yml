@@ -29,7 +29,7 @@ install:
   - cd ../
 
 script:
-  - flake8 cloudcv/
+  - flake8 ./
   - cd frontend && npm run lint:build
   - npm run test
   - npm run build:alias
