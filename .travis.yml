@@ -1,0 +1,40 @@
+sudo: required
+language: python
+
+python:
+  - "2.7"
+
+node_js:
+  - "5"
+  - "6"
+
+addons:
+  postgresql: "9.4"
+
+before_cache: 
+  - rm -f $HOME/.cache/pip/log/debug.log
+
+before_script:
+  - psql -c "CREATE DATABASE cloudcv" -U postgres 
+ 
+before_install:
+  - pip install -U pip
+  - nvm install 6.0.0
+  - nvm use 6.0.0
+  - npm install -g yarn@0.23.4
+
+install:
+  - pip install -r requirements/dev.txt
+  - cd frontend && yarn install
+  - cd ../
+
+script:
+  - flake8 ./
+  - cd frontend && npm run lint:build
+  - npm run test
+  - npm run build:alias
+
+cache:
+  directories: 
+    - frontend/node_modules
+    - $HOME/.cache/pip
