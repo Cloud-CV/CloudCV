@@ -5,13 +5,13 @@
 ## How to Setup
 
 1. Install [git](https://git-scm.com/downloads), [postgresql](https://www.postgresql.org/download/) version >= 9.4, [virtualenv](https://virtualenv.pypa.io/) and [Node.js](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps) version >= 6 in your computer, if you don't have it already.
-*Please check that the python version you are using for the project is 2.7.x*
+*Please check that the python version you are using for the project is 2.7.x*.
 *If you are having trouble with postgresql on Windows check this link [postgresqlhelp](http://bobbyong.com/blog/installing-postgresql-on-windoes/).*
 2. Get the source code on your machine via git
     ```
     git clone git@github.com:Cloud-CV/CloudCV.git cloudcv
     ```
-3. Create a python virtual environemnt and install python dependencies.
+3. Create a python virtual environment and install python dependencies.
     ```
     cd cloudcv
     virtualenv venv
