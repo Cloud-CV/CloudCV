@@ -1,0 +1,59 @@
+/**********NAVBAR*********/
+
+.cv-navbar-container {
+  font-family: $heading-font-family;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  .cv-navbar-list-container {
+  }
+
+    .cv-navbar-list {
+      list-style-type: none;
+      display: flex;
+    }
+
+      .cv-navbar-list-item {
+        margin: 0 3*$gutter-width;
+        position: relative;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+
+      .cv-navbar-list-item.active {
+        color: $secondary-color;
+        padding-bottom: 0.5 * $gutter-width;
+
+        &:after {
+          content: "";
+          top: 100%;
+          left: 47%;
+          position: absolute;
+          width: 0.6rem;
+          height: 0.6rem;
+          background: $secondary-color;
+          border-radius: 100%;
+        }
+      }
+
+  .cv-navbar-brand {
+    width: 90px;
+  }
+
+    .cv-navbar-brand-image {
+      width: 100%;
+    }
+
