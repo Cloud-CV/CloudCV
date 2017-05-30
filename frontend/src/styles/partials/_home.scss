@@ -9,13 +9,13 @@
   }
 
     .cv-home-header-title {
-      color: transparent;
+      @include font-size(10, 1.8);
+      color: $heading-color;
+      -webkit-text-fill-color: transparent;
       display: inline-block;
       background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
-      @include font-size(10, 1.8);
       letter-spacing: 6rem;
       -webkit-background-clip: text;
-      background-clip: text;
     }
 
 

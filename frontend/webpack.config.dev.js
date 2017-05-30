@@ -1,8 +1,6 @@
 import webpack from "webpack";
 import path from "path";
 
-const theme = {};
-
 export default {
   devtool: "cheap-module-eval-source-map",
   entry: [
@@ -33,18 +31,13 @@ export default {
         include: path.join(__dirname, "src"),
         use: ["babel-loader"]
       },
-      { test: /jquery\.js$/, loader: "expose?jQuery!expose?$" },
-      { test: /(\.scss)$/, use: ["style-loader", "css-loader", "sass-loader"] },
+      {
+        test: /(\.scss)$/,
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+      },
       {
         test: /(\.less)$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "less-loader",
-            options: { modifyVars: theme }
-          }
-        ]
+        use: ["style-loader", "css-loader", "postcss-loader", "less-loader"]
       },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: ["file-loader"] },
       { test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000" },
