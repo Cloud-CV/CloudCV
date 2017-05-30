@@ -1,6 +1,7 @@
 /**********NAVBAR*********/
 
 .cv-navbar-container {
+  @include font-size(1.4, 1.4);
   font-family: $heading-font-family;
   font-weight: 500;
   display: flex;

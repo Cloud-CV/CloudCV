@@ -4,3 +4,15 @@
   max-width: 1320px;
   margin: 0 auto;
 }
+
+ /******BUTTON******/
+
+.cv-button {
+  @include font-size(1.2, 1);
+  background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
+  border-radius: 3rem;
+  color: $white;
+  cursor: pointer;
+  font-family: $heading-font-family;
+  padding: 1.7*$gutter-width 4.5*$gutter-width;
+}

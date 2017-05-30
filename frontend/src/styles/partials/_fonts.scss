@@ -1,13 +1,7 @@
-@font-face {
-  font-family: 'geometos';
-  src: url('../fonts/geometos-webfont.woff2') format('woff2'),
-       url('../fonts/geometos-webfont.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
 
 @font-face {
-  font-family: 'geometos-bold';
+  font-family: 'geometos';
   src: url('../fonts/geometos-webfont.woff2') format('woff2'),
        url('../fonts/geometos-webfont.woff') format('woff');
   font-weight: 500;
