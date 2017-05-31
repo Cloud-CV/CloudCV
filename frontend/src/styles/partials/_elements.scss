@@ -10,9 +10,28 @@
 .cv-button {
   @include font-size(1.2, 1);
   background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
-  border-radius: 3rem;
+  border-radius: 3*$gutter-width;
   color: $white;
   cursor: pointer;
   font-family: $heading-font-family;
   padding: 1.7*$gutter-width 4.5*$gutter-width;
+}
+
+/******CARD********/
+
+.cv-card {
+  padding: 5*$gutter-width;
+  border-radius: 0.5 * $gutter-width;
+  position: relative;
+}
+
+.cv-card-light {
+  background: $white;
+  box-shadow: $box-shadow;
+  color: $primary-color;
+}
+
+.cv-card-dark {
+  background: linear-gradient(45deg, $heading-color, $secondary-color);
+  color: $white;
 }

@@ -15,15 +15,13 @@
     .cv-navbar-list {
       list-style-type: none;
       display: flex;
+      flex-wrap: wrap;
+      position: relative;
     }
 
       .cv-navbar-list-item {
-        margin: 0 3*$gutter-width;
+        margin: $gutter-width 6*$gutter-width 0 0;
         position: relative;
-
-        &:first-child {
-          margin-left: 0;
-        }
 
         &:last-child {
           margin-right: 0;

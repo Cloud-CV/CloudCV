@@ -1,6 +1,10 @@
 /*******VARIABLES FILE*******/
 
-$root-font-size: 10px;
+$small-screen-root-font-size: 8px;
+
+$responsive-root-font-size: 0.8333vw;
+
+$large-screen-root-font-size: 10px;
 
 /******TYPOGRAPHY******/
 
@@ -27,9 +31,14 @@ $link-color--active: hsla(240, 100%, 47%, 1);
 $link-color--visited: hsla(271, 68%, 32%, 1);
 $white: hsla(0, 0%, 100%, 1);
 $black: hsla(0, 0%, 0%, 1);
+$shadow-color: hsla(0, 0%, 60%, 0.5);
 
 /******MARGINS******/
 
 $gutter-width: 1rem;
+
+/******BOX SHADOW******/
+
+$box-shadow: 0 0 2*$gutter-width -0.1*$gutter-width $shadow-color;
 
 /****END OF VARIABLES****/

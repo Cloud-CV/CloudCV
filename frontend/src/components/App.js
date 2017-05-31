@@ -3,9 +3,9 @@ import { PropTypes } from "prop-types";
 import { Link, Route, Switch, Miss } from "react-router-dom";
 import io from "socket.io-client";
 import style from "../styles/main.scss";
-import HomePageComponent from "./home/HomePage";
+import HomePageComponent from "./home";
 import PageNotFoundHandler from "./PageNotFoundHandler";
-import Navbar from "./navbar/Navbar";
+import Navbar from "./navbar";
 
 class App extends Component {
   constructor(props, context) {
@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div className="cv-container">
         <Navbar />
-        <main>
+        <main className="cv-main">
           <Switch>
             <Route exact path="/" component={HomePageComponent} />
             <Route component={PageNotFoundHandler} />

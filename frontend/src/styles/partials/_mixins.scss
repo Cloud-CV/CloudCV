@@ -39,10 +39,8 @@
  */
 @mixin font-size($size, $ratio) {
   font-size: $size * 10px;
-  font-size: $size * $root-font-size;
   font-size: $size * 1rem;
   line-height: $size * $ratio * 10px;
-  line-height: $size * $ratio * $root-font-size;
   line-height: $size * $ratio * 1rem;
 }
 
@@ -74,6 +72,14 @@
     height: 100%;
     width: 100%;
   }
+}
+
+
+@mixin text-gradient($color1, $color2) {
+  color: $color1;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(45deg, $color1, $color1 30%, $color2 70%, $color2);
+  -webkit-background-clip: text;
 }
 
 /****END OF MIXINS SECTION****/

@@ -1,11 +1,19 @@
 /*******TYPOGRAPHY*******/
 
 html {
-  font-size: $root-font-size;
+  font-size: $small-screen-root-font-size;
+
+  @media #{$bp-sm} {
+    font-size: $responsive-root-font-size;
+  }
+
+  @media #{$bp-lg} {
+    font-size: $large-screen-root-font-size;
+  }
 }
 
 body, input, button {
-  @include font-size(1.6, 1.6);
+  @include font-size(1.4, 1.6);
   font-family: $primary-font-family;
   font-weight: 300;
 }
@@ -25,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include font-size(4.8, 1);
+  @include font-size(4, 1);
 }
 
 h2 {
@@ -45,5 +53,5 @@ blockquote {
 }
 
 p {
-  @include font-size(1.6, 1);
+  @include font-size(1.8, 1.8);
 }
