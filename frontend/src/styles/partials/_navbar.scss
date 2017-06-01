@@ -20,8 +20,23 @@
     }
 
       .cv-navbar-list-item {
-        margin: $gutter-width 6*$gutter-width 0 0;
+        margin: $gutter-width 6*$gutter-width $gutter-width 0;
+        transition: all 0.3s linear;
+        padding-bottom: 0.5 * $gutter-width;
         position: relative;
+
+        &:after {
+          content: "";
+          top: 100%;
+          left: 47%;
+          position: absolute;
+          width: 0.6rem;
+          height: 0.6rem;
+          background: $secondary-color;
+          border-radius: 100%;
+          opacity: 0;
+          transition: all 0.3s linear;
+        }
 
         &:last-child {
           margin-right: 0;
@@ -34,17 +49,9 @@
 
       .cv-navbar-list-item.active {
         color: $secondary-color;
-        padding-bottom: 0.5 * $gutter-width;
 
         &:after {
-          content: "";
-          top: 100%;
-          left: 47%;
-          position: absolute;
-          width: 0.6rem;
-          height: 0.6rem;
-          background: $secondary-color;
-          border-radius: 100%;
+          opacity: 1;
         }
       }
 
