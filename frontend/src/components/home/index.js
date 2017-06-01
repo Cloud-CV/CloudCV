@@ -12,7 +12,7 @@ const HomePage = () => {
       <div className="cv-home-button">
         <Link to="/">
           <Button>
-            Get More Insights
+            Know More
           </Button>
         </Link>
       </div>

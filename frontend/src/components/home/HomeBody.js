@@ -5,7 +5,7 @@ import Card from "../common/Card";
 const HomeBody = props => {
   const ABOUT_US_TITLE = "WHO WE ARE";
   const ABOUT_US_DESC =
-    "We are witnessing a proliferation of massive visual data. Unfortunately scaling existing computer vision algorithms to large datasets leaves researchers repeatedly solving the same algorithmic, logistical, and infrastructural problems. Our goal is to democratize computer vision; one should not have to be a computer vision, big data and distributed computing expert to have access to state-of-the-art distributed computer vision algorithms. We present CloudCV, a comprehensive system to provide access to state-of-the-art distributed computer vision algorithms as a cloud service through a Web Interface and APIs.";
+    "CloudCV is a young open source cloud platform started in 2013 by students and faculty from Machine Learning and Perception Lab at Virginia Tech (now at Georgia Tech) with the aim to make AI research more reproducible. At CloudCV, we are building tools that enable researchers to build, compare and share start-of-the-algorithms. We believe that one shouldn't have to be an AI expert to have access to cutting edge vision algorithms. Likewise, researchers shouldn't have to worry about building a service around their deep learning models to showcase and share it with others.";
   const PAPER_IMAGE = require("../../images/arxiv_paper.jpg");
   const PAPER_TITLE = "Arxiv Paper";
   const PAPER_DESC = [
