@@ -19,6 +19,12 @@ $bp-lg: 'only screen and (min-width: 1200px)';
 $bp-xl: 'only screen and (min-width: 1500px)';
 $bp-xxl: 'only screen and (min-width: 2000px)';
 
+/****IMAGES****/
+
+$base-path: '../images/';
+$image-list : $base-path + 'list.svg';
+$image-close: $base-path + 'close.svg';
+
 /******COLORS******/
 
 $primary-color: hsla(0, 0%, 59%, 1);

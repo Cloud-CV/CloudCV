@@ -27,3 +27,16 @@ a {
 .no-select {
   user-select: none;
 }
+
+.hidden-small {
+  visibility: hidden;
+  opacity: 0 !important;
+  position: absolute;
+  top: -1000px;
+
+  @media #{$bp-sm} {
+    visibility: visible;
+    opacity: 1 !important;
+    position: static;
+  }
+}
