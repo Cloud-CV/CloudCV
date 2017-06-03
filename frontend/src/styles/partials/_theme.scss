@@ -1,0 +1,42 @@
+* {
+  @include placeholder {
+    color: $secondary-color;
+  }
+}
+
+body, input {
+  color: $primary-color;
+}
+
+body {
+  background-color: $primary-bg-color;
+  padding: 2 * $gutter-width;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-color;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.no-select {
+  user-select: none;
+}
+
+.hidden-small {
+  visibility: hidden;
+  opacity: 0 !important;
+  position: absolute;
+  top: -1000px;
+
+  @media #{$bp-sm} {
+    visibility: visible;
+    opacity: 1 !important;
+    position: static;
+  }
+}

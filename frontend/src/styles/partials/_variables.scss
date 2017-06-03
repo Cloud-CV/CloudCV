@@ -1,0 +1,50 @@
+/*******VARIABLES FILE*******/
+
+$small-screen-root-font-size: 8px;
+
+$responsive-root-font-size: 0.8333vw;
+
+$large-screen-root-font-size: 10px;
+
+/******TYPOGRAPHY******/
+
+$primary-font-family: "Ubuntu", sans-serif;
+$heading-font-family: "geometos", sans-serif;
+
+/******BREAKPOINTS******/
+
+$bp-sm: 'only screen and (min-width: 768px)';
+$bp-md: 'only screen and (min-width: 992px)';
+$bp-lg: 'only screen and (min-width: 1200px)';
+$bp-xl: 'only screen and (min-width: 1500px)';
+$bp-xxl: 'only screen and (min-width: 2000px)';
+
+/****IMAGES****/
+
+$base-path: '../images/';
+$image-list : $base-path + 'list.svg';
+$image-close: $base-path + 'close.svg';
+
+/******COLORS******/
+
+$primary-color: hsla(0, 0%, 59%, 1);
+$secondary-color: hsla(181, 51%, 66%, 1);
+$heading-color: hsla(219, 30%, 55%, 1);
+$primary-bg-color: hsla(193, 100%, 98%, 1);
+$link-color: hsla(0, 0%, 0%, 1);
+$link-color--hover: hsla(240, 100%, 47%, 1);
+$link-color--active: hsla(240, 100%, 47%, 1);
+$link-color--visited: hsla(271, 68%, 32%, 1);
+$white: hsla(0, 0%, 100%, 1);
+$black: hsla(0, 0%, 0%, 1);
+$shadow-color: hsla(0, 0%, 60%, 0.5);
+
+/******MARGINS******/
+
+$gutter-width: 1rem;
+
+/******BOX SHADOW******/
+
+$box-shadow: 0 0 2*$gutter-width -0.1*$gutter-width $shadow-color;
+
+/****END OF VARIABLES****/

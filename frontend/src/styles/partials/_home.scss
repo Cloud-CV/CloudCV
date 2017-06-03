@@ -1,0 +1,110 @@
+/*****HOME STYLES*****/
+
+.cv-home-container {
+  padding-top: 100px;
+  width: 100%;
+}
+
+  .cv-home-header {
+    font-weight: 500;
+  }
+
+    .cv-home-header-intro, .cv-home-header-desc {
+      @include font-size(1.8, 1.6);
+    }
+
+    .cv-home-header-title {
+      @include text-gradient($heading-color, $secondary-color);
+      @include font-size(5, 2);
+      display: inline-block;
+
+      @media #{$bp-sm} {
+        @include font-size(10, 1.8);
+        letter-spacing: 6rem;
+      }
+    }
+
+  .cv-home-button {
+    margin: 100px 0;
+  }
+
+  .cv-home-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 12*$gutter-width;
+  }
+
+    .cv-home-card-container {
+      width: 100%;
+      position: relative;
+      margin: 2*$gutter-width 0;
+
+      @media #{$bp-sm} {
+        width: 47%;
+        margin: 0 3%;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+      .cv-about-us-card-heading {
+        top: -13rem;
+        position: absolute;
+        display: inline-block;
+        white-space: nowrap;
+      }
+
+        .cv-about-us-heading-line {
+          @include text-gradient($heading-color, $secondary-color);
+        }
+
+        .cv-question-mark {
+          @include text-gradient($heading-color, $secondary-color);
+          font-family: $primary-font-family;
+          @include font-size(25, 1);
+          font-weight: 300;
+        }
+
+      .cv-about-us-card-desc {
+        margin-top: 10*$gutter-width;
+      }
+
+    .cv-arxiv-paper-card-container {
+      margin-top: 15 * $gutter-width;
+
+      @media #{$bp-sm} {
+        margin-top: 20*$gutter-width;
+      }
+    }
+
+      .cv-arxiv-paper-image-container {
+        left: 50%;
+        top: -20%;
+        position: absolute;
+        width: 40%;
+        box-shadow: $box-shadow;
+      }
+
+        .cv-arxiv-paper-image {
+          width: 100%;
+        }
+
+      .cv-arxiv-paper-heading {
+        color: $white;
+        margin-top: 30%;
+      }
+
+      .cv-arxiv-paper-desc {
+        margin-top: 2*$gutter-width;
+      }
+
+
+

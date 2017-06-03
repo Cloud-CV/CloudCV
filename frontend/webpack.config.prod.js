@@ -33,7 +33,6 @@ export default {
         include: path.join(__dirname, "src"),
         use: ["babel-loader"]
       },
-      { test: /jquery\.js$/, loader: "expose?jQuery!expose?$" },
       {
         test: /(\.scss)$/,
         use: ExtractTextPlugin.extract({
@@ -45,6 +44,7 @@ export default {
                 minimize: true
               }
             },
+            "postcss-loader",
             "sass-loader"
           ]
         })
@@ -60,6 +60,7 @@ export default {
                 minimize: true
               }
             },
+            "postcss-loader",
             "less-loader"
           ]
         })

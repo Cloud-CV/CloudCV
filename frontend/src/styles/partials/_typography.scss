@@ -1,0 +1,57 @@
+/*******TYPOGRAPHY*******/
+
+html {
+  font-size: $small-screen-root-font-size;
+
+  @media #{$bp-sm} {
+    font-size: $responsive-root-font-size;
+  }
+
+  @media #{$bp-lg} {
+    font-size: $large-screen-root-font-size;
+  }
+}
+
+body, input, button {
+  @include font-size(1.4, 1.6);
+  font-family: $primary-font-family;
+  font-weight: 300;
+}
+
+* {
+  @include placeholder {
+    @include font-size(1.4, 1);
+    font-family: $primary-font-family;
+    font-weight: 300;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h1 {
+  @include font-size(4, 1);
+}
+
+h2 {
+  @include font-size(3.6, 1);
+}
+
+h3 {
+  @include font-size(2.8, 1);
+}
+
+h4 {
+  @include font-size(1.8, 1);
+}
+
+blockquote {
+  @include font-size(2.4, 1);
+}
+
+p {
+  @include font-size(1.8, 1.8);
+}

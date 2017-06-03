@@ -1,0 +1,85 @@
+/*****MIXINS TO MAKE LIFE EASIER*****/
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
+
+/**
+ * Dump background-image styles
+ */
+@mixin dump-bg-image-styles($path) {
+  background-image: url($path);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/**
+ * Used for styling input placeholders
+ */
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+/**
+ * Used to generate font-size with line height.
+ * @param  {decimal} $size
+ */
+@mixin font-size($size, $ratio) {
+  font-size: $size * 10px;
+  font-size: $size * 1rem;
+  line-height: $size * $ratio * 10px;
+  line-height: $size * $ratio * 1rem;
+}
+
+
+/**
+ * Used to generate a responsive container of a fixed aspect ratio.
+ * @param  {integer} $width
+ * @param  {integer} $height
+ *
+ * `@include aspect-ratio(16:9);`
+ *
+ */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    padding-top: ($height / $width) * 100%;
+  }
+  > .maintain-aspect-ratio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  > .maintain-aspect-ratio img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+@mixin text-gradient($color1, $color2) {
+  color: $color1;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(45deg, $color1, $color1 30%, $color2 70%, $color2);
+  -webkit-background-clip: text;
+}
+
+/****END OF MIXINS SECTION****/

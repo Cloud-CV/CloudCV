@@ -1,0 +1,61 @@
+/****MAIN CONTAINER*****/
+
+.cv-container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+  .cv-main {
+    margin-top: 70px;
+
+    @media #{$bp-sm} {
+      margin-top: 0;
+    }
+  }
+
+ /******BUTTON******/
+
+.cv-button {
+  @include font-size(1.2, 1);
+  background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
+  border-radius: 3*$gutter-width;
+  color: $white;
+  cursor: pointer;
+  font-family: $heading-font-family;
+  padding: 1.7*$gutter-width 4.5*$gutter-width;
+}
+
+/******CARD********/
+
+.cv-card {
+  padding: 5*$gutter-width;
+  border-radius: 0.5 * $gutter-width;
+  position: relative;
+}
+
+.cv-card-light {
+  background: $white;
+  box-shadow: $box-shadow;
+  color: $primary-color;
+}
+
+.cv-card-dark {
+  background: linear-gradient(45deg, $heading-color, $secondary-color);
+  color: $white;
+}
+
+/*******ICONS*******/
+
+.cv-icon {
+  height: 3rem;
+  width: 3rem;
+  background-size: contain;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
