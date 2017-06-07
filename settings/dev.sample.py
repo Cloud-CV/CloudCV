@@ -5,10 +5,10 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "cloudcv",
-        'USER': "",
-        'PASSWORD': "",
-        'HOST': "localhost",
+        'NAME': "postgres",
+        'USER': "postgres",
+        'PASSWORD': "postgres",
+        'HOST': "db",
         'PORT': "5432",
     }
 }
