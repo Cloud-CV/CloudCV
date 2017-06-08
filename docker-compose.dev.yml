@@ -5,10 +5,12 @@ services:
   django:
     container_name: django
     hostname: django
+    env_file:
+      - docker/dev.env
     build:
       context: ./
-      dockerfile: docker/prod/django/Dockerfile
-    command: /code/docker/prod/django/container-start.sh
+      dockerfile: docker/dev/django/Dockerfile
+    command: /code/docker/dev/django/container-start.sh
     ports:
         - "8000:8000"
     depends_on:
@@ -18,7 +20,7 @@ services:
     hostname: nodejs
     build:
       context: ./
-      dockerfile: docker/prod/nodejs/Dockerfile
+      dockerfile: docker/dev/nodejs/Dockerfile
     environment:
       NODE_ENV: development
     ports:

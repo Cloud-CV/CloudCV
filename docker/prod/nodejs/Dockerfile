@@ -7,7 +7,7 @@ RUN gem install sass
 
 WORKDIR /code/
 COPY ./frontend/ /code/
-COPY ./docker/dev/nodejs/container-start.sh /code/
+COPY ./docker/prod/nodejs/container-start.sh /code/
 
 # Install Prerequisites
 RUN npm cache clean -f
