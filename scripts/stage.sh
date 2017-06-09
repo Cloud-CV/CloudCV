@@ -1,8 +1,8 @@
-BRANCH="master"
+BRANCH="develop"
 SHA=`git rev-parse --verify HEAD`
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$BRANCH" ]; then
-    echo "Skipping deploy; The request or commit is not on master"
+    echo "Skipping deploy to staging server; The request or commit is not on develop"
     exit 0
 fi
 
@@ -14,15 +14,15 @@ aws configure set default.region us-west-2
 eval $(aws ecr get-login)
 
 # Build and push the image
-docker build -t cloudcv/django -f docker/prod/django/Dockerfile .
-docker tag cloudcv/django:latest $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/django:latest
-docker push $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/django:latest
+docker build -t cloudcv/staging/django -f docker/staging/django/Dockerfile .
+docker tag cloudcv/staging/django:latest $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/django:latest
+docker push $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/django:latest
 
-docker build -t cloudcv/nodejs -f docker/prod/nodejs/Dockerfile .
-docker tag cloudcv/nodejs:latest $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/nodejs:latest
-docker push $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/nodejs:latest
+docker build -t cloudcv/staging/nodejs -f docker/staging/nodejs/Dockerfile .
+docker tag cloudcv/staging/nodejs:latest $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/nodejs:latest
+docker push $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/nodejs:latest
 
-cd aws
+cd aws/staging
 
 # Replace the <AWS_ACCOUNT_ID> with the real ID
 sed -i='' "s/<AWS_ACCOUNT_ID>/$AWS_ACCOUNT_ID/" Dockerrun.aws.json
@@ -37,5 +37,5 @@ aws elasticbeanstalk create-application-version --application-name $APPLICATION 
     --version-label $VERSION --source-bundle S3Bucket=$EB_BUCKET,S3Key=$ZIP
 
 # Update the environment to use the new application version
-aws elasticbeanstalk update-environment --environment-name $ENVIRONMENT \
+aws elasticbeanstalk update-environment --environment-name $STAGING_ENVIRONMENT \
       --version-label $VERSION

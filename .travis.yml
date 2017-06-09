@@ -36,9 +36,11 @@ script:
 after_success:
   - cd ../
   - pip install awscli
-  - bash deploy.sh
+  - bash scripts/stage.sh
+  - bash scripts/deploy.sh
 
 cache:
   directories:
     - frontend/node_modules
     - $HOME/.cache/pip
+

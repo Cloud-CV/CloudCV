@@ -22,5 +22,5 @@ RUN pip install -r requirements/prod.txt
 
 COPY ./ /code/
 
-CMD ["/bin/bash", "/code/docker/prod/django/container-start.sh"]
+CMD ["/bin/bash", "/code/docker/staging/django/container-start.sh"]
 EXPOSE 8000

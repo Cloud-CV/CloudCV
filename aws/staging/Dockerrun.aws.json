@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "node-app",
-      "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/cloudcv/nodejs:latest",
+      "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/nodejs:latest",
       "portMappings": [
         {
           "hostPort": 80,
@@ -15,7 +15,7 @@
     },
     {
       "name": "django-app",
-      "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/cloudcv/django:latest",
+      "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/django:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [
