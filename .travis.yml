@@ -26,9 +26,11 @@ install:
   - pip install -r requirements/dev.txt
   - cd frontend && yarn install
   - cd ../
+  - cp settings/dev/settings.sample.py settings/dev/settings.py
 
 script:
   - flake8 ./
+  - python manage.py test --settings=settings.dev.settings
   - cd frontend && npm run lint:build
   - npm run test
   - npm run build:alias

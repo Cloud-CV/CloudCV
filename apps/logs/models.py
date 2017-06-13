@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 from base.models import (TimeStampedModel, )
+from base.utils import RandomFileName
 from demos.models import (Demo, )
 
 
@@ -29,7 +30,7 @@ class DemoLog(TimeStampedModel):
         return '{0}: {1}: {2}'.format(self.log_type, self.demo.title, self.created_at)
 
 
-class LogImages(TimeStampedModel):
+class LogImage(TimeStampedModel):
     """Models representing the images associated with demo logs"""
 
     # Image type options
@@ -42,7 +43,7 @@ class LogImages(TimeStampedModel):
     )
 
     demo_log = models.ForeignKey(DemoLog)
-    image = models.ImageField(upload_to="demo_log_images", default=False)
+    image = models.ImageField(upload_to=RandomFileName("demo_log_images"), default=False)
     image_type = models.CharField(max_length=10, choices=IMAGE_TYPE_OPTIONS)
 
     class Meta:
@@ -50,10 +51,10 @@ class LogImages(TimeStampedModel):
         db_table = 'log_images'
 
     def __unicode__(self):
-        return '{0} : {1}'.format(self.image.url, self.image_type)
+        return '{0}: {1}'.format(self.image.url, self.image_type)
 
 
-class LogTexts(TimeStampedModel):
+class LogText(TimeStampedModel):
     """Models representing the texts associated with demo logs"""
 
     # Text type options
