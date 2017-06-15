@@ -1,4 +1,4 @@
-from .common import *  # noqa: ignore=F405
+from settings.common import *  # noqa: ignore=F405
 
 DEBUG = True
 

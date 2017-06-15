@@ -1,5 +1,5 @@
 FROM node:6
-MAINTAINER Utkarsh
+MAINTAINER CloudCV Team
 
 RUN apt-get update -qq && apt-get install -y build-essential git curl
 RUN apt-get install -y ruby

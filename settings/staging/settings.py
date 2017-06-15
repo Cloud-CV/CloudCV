@@ -1,13 +1,15 @@
-from .common import *  # noqa: ignore=F405
+from ..common import *  # noqa: ignore=F405
 
 import os
 
-DEBUG = True
+DEBUG = False
 
 # Database
 # https://docs.djangoproject.com/en/1.10.2/ref/settings/#databases
 
-ALLOWED_HOSTS += ["cloudcv.us-west-2.elasticbeanstalk.com"] # noqa
+ALLOWED_HOSTS = ["cloudcv-staging.us-west-2.elasticbeanstalk.com"]
+
+ADMINS = [('Admin', 'admin@cloudcv.org')]
 
 CORS_ORIGIN_ALLOW_ALL = False
 
@@ -36,14 +38,14 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 # static files configuration on S3
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'settings.custom_storages.StaticStorage'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+STATICFILES_LOCATION = 'staging/static'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION) # noqa
+STATICFILES_STORAGE = 'settings.staging.custom_storages.StaticStorage'
 
 # Media files configuration on S3
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'settings.custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'staging/media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION) # noqa
+DEFAULT_FILE_STORAGE = 'settings.staging.custom_storages.MediaStorage'
 
 # Setup Email Backend related settings
 DEFAULT_FROM_EMAIL = "noreply@cloudcv.org"

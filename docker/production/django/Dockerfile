@@ -1,5 +1,5 @@
 FROM python:2.7
-MAINTAINER Utkarsh Gupta
+MAINTAINER CloudCV Team
 ENV PYTHONUNBUFFERED 1
 
 ENV DEBIAN_FRONTEND noninteractive
