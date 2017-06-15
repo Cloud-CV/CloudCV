@@ -1,4 +1,5 @@
-from settings.common import *  # noqa: ignore=F405
+import os
+from ..common import *  # noqa: ignore=F405
 
 DEBUG = True
 
@@ -10,7 +11,7 @@ DATABASES = {
         'NAME': "postgres",
         'USER': "postgres",
         'PASSWORD': "postgres",
-        'HOST': "db",
+        'HOST': os.environ.get('DEV_DB_HOST', "db"),
         'PORT': "5432",
     }
 }
