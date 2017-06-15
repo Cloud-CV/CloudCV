@@ -23,7 +23,7 @@
     "> 0.5%",
     "ie > 9"
   ],
-  "author": "Utkarsh Gupta",
+  "author": "CloudCV Team",
   "license": "GPL-3.0",
   "dependencies": {
     "antd": "^2.10.0",
