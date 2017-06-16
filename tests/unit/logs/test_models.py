@@ -20,7 +20,7 @@ class LogTestCase(DemoTestCase):
             log_type='Submission'
         )
 
-    def test__str__(self):
+    def test__unicode__(self):
         log_type = self.demo_log.log_type
         demo_title = self.demo.title
         created_at = self.demo_log.created_at
@@ -44,7 +44,7 @@ class LogImageTestCase(LogTestCase):
                 image_type='Input'
             )
 
-    def test__str__(self):
+    def test__unicode__(self):
         image_url = self.demo_log_image.image.url
         image_type = self.demo_log_image.image_type
         final_str = '{0}: {1}'.format(image_url, image_type)
@@ -62,7 +62,7 @@ class LogTextTestCase(LogTestCase):
             text_type='Output'
         )
 
-    def test__str__(self):
+    def test__unicode__(self):
         text = self.demo_log_text.text
         text_type = self.demo_log_text.text_type
         final_str = '{0}: {1}'.format(text, text_type)

@@ -20,7 +20,7 @@ class DemoTestCase(TestCase):
             image_outputs=0,
         )
 
-    def test__str__(self):
+    def test__unicode__(self):
         title = self.demo.title
         demo_url = self.demo.demo_url
         final_str = '{0}: {1}'.format(title, demo_url)

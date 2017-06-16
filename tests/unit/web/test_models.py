@@ -28,7 +28,7 @@ class ContactTestCase(TestCase):
                 )
             )
 
-    def test__str__(self):
+    def test__unicode__(self):
         name = self.contact.name
         email = self.contact.email
         message = self.contact.message
@@ -63,5 +63,5 @@ class TeamTestCase(TestCase):
                 visible=True,
             )
 
-    def test__str__(self):
+    def test__unicode__(self):
         self.assertEqual(self.team.name, self.team.__str__())
