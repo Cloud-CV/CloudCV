@@ -35,6 +35,7 @@ script:
   - npm run build:alias
 
 after_success:
+  - coveralls --rcfile=.coveragerc
   - cd ../
   - pip install awscli
   - bash scripts/stage.sh
