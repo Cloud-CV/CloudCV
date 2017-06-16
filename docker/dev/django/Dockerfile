@@ -21,7 +21,7 @@ COPY /requirements /code/requirements
 RUN pip install -r requirements/dev.txt
 
 COPY ./ /code/
-COPY settings/dev.sample.py /code/settings/dev.py
+COPY settings/dev/settings.sample.py /code/settings/dev/settings.py
 
 CMD ["/bin/bash", "/code/docker/dev/django/container-start.sh"]
 EXPOSE 8000
