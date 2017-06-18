@@ -1,6 +1,7 @@
 from ..common import *  # noqa: ignore=F405
 
 import os
+import raven
 
 DEBUG = False
 
@@ -18,6 +19,8 @@ CORS_ORIGIN_WHITELIST = (
     'cloudcvbucket.s3.amazonaws.com',
     'cloudcv.us-west-2.elasticbeanstalk.com'
 )
+
+INSTALLED_APPS += ('raven.contrib.django.raven_compat',) # noqa
 
 DATABASES = {
     'default': {
@@ -59,4 +62,9 @@ EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '')
 # Port number for the python-memcached cache backend.
 CACHES['default']['LOCATION'] = os.environ.get('MEMCACHED_LOCATION', '127.0.0.1:11211') # noqa: ignore=F405
 
-# https://docs.djangoproject.com/en/1.10/ref/settings/#secure-proxy-ssl-header
+RAVEN_CONFIG = {
+    'dsn': os.environ.get('SENTRY_URL'),
+    # If you are using git, you can also automatically configure the
+    # release based on the git info.
+    'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
+}
