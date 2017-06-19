@@ -23,5 +23,6 @@ omit =
     */tests/*
     */middleware/*
     frontend/
-    settings/prod/settings.py
-    settings/staging/staging.py
+    settings/prod/*
+    settings/staging/*
+    settings/dev/*
