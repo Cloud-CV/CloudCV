@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+APPS_DIR = os.path.join(BASE_DIR, 'apps')
 
+sys.path.append(APPS_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -25,7 +28,6 @@ SECRET_KEY = 'vumjqmvqdxn^4$-e1@&!q%=&#dvo)bfh!74bo@@$9&#@-g8lj!'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -40,7 +42,12 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = []
 
-OUR_APPS = []
+OUR_APPS = [
+    'base',
+    'demos',
+    'logs',
+    'web',
+]
 
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + OUR_APPS
 

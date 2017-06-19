@@ -1,3 +1,3 @@
 #!/bin/sh
 cd /code && \
-npm run dev -s
+npm run open:src
