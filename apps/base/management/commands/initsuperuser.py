@@ -11,7 +11,7 @@ class Command(BaseCommand):
         email = os.environ.get('DJANGO_EMAIL', 'admin@cloudcv.org')
         password = os.environ.get('DJANGO_PASSWORD', 'pass')
         try:
-            User.objects.create_superuser(username, email, password)
+            User.objects.filter(username=username).exists() or User.objects.create_superuser(username, email, password)
         except:
             raise CommandError('DB is not connected properly')
 
