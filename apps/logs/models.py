@@ -43,7 +43,7 @@ class LogImage(TimeStampedModel):
     )
 
     demo_log = models.ForeignKey(DemoLog)
-    image = models.ImageField(upload_to=RandomFileName("demo_log_images"), default=False)
+    image = models.ImageField(upload_to=RandomFileName('demo_log_images'), default=False)
     image_type = models.CharField(max_length=10, choices=IMAGE_TYPE_OPTIONS)
 
     class Meta:

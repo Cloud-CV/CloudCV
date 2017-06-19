@@ -10,7 +10,7 @@ class Contact(TimeStampedModel):
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
     message = models.CharField(max_length=500)
-    image = models.ImageField(upload_to="screenshots", null=True, blank=True)
+    image = models.ImageField(upload_to='screenshots', null=True, blank=True)
 
     def __unicode__(self):
         return '{0}: {1}: {2}'.format(self.name, self.email, self.message)
@@ -37,7 +37,7 @@ class Team(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100, null=True, blank=True)
     description = models.TextField(null=True)
-    image = models.ImageField(upload_to="team", null=True, blank=True)
+    image = models.ImageField(upload_to='team', null=True, blank=True)
     visible = models.BooleanField(default=False)
     github_url = models.URLField(max_length=200, null=True, blank=True)
     linkedin_url = models.URLField(max_length=200, null=True, blank=True)
