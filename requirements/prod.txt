@@ -2,3 +2,5 @@
 
 gunicorn==19.7.1
 raven==6.1.0
+boto==2.47.0
+django-storages==1.5.2
