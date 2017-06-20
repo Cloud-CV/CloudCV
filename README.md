@@ -1,6 +1,6 @@
 # CloudCV
 
-[![Join the chat at https://gitter.im/Cloud-CV/Lobby](https://badges.gitter.im/Cloud-CV/Lobby.svg)](https://gitter.im/Cloud-CV/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)       [![Build Status](https://travis-ci.org/Cloud-CV/CloudCV.svg?branch=master)](https://travis-ci.org/Cloud-CV/CloudCV)    [![Code Health](https://landscape.io/github/Cloud-CV/CloudCV/master/landscape.svg?style=flat)](https://landscape.io/github/Cloud-CV/CloudCV/master)
+[![Join the chat at https://gitter.im/Cloud-CV/Lobby](https://badges.gitter.im/Cloud-CV/Lobby.svg)](https://gitter.im/Cloud-CV/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)       [![Build Status](https://travis-ci.org/Cloud-CV/CloudCV.svg?branch=develop)](https://travis-ci.org/Cloud-CV/CloudCV)    [![Code Health](https://landscape.io/github/Cloud-CV/CloudCV/develop/landscape.svg?style=flat)](https://landscape.io/github/Cloud-CV/CloudCV/develop)    [![Coverage Status](https://coveralls.io/repos/github/Cloud-CV/CloudCV/badge.svg)](https://coveralls.io/github/Cloud-CV/CloudCV)
 
 ## How to Setup
 
