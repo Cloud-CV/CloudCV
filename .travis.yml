@@ -29,13 +29,14 @@ install:
 
 script:
   - flake8 ./
-  - python manage.py test --settings=settings.test.settings
+  - py.test --cov . --cov-config .coveragerc
   - cd frontend && npm run lint:build
   - npm run test
   - npm run build:alias
 
 after_success:
   - cd ../
+  - coveralls --rcfile=.coveragerc
   - pip install awscli
   - bash scripts/stage.sh
   - bash scripts/deploy.sh
