@@ -22,7 +22,8 @@ sys.path.append(APPS_DIR)
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vumjqmvqdxn^4$-e1@&!q%=&#dvo)bfh!74bo@@$9&#@-g8lj!'
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'vumjqmvqdxn^4$-e1@&!q%=&#dvo)bfh!74bo@@$9&#@-g8lj!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,7 +73,15 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/minute',
+        'user': '100/minute'
+    },
 }
 
 TEMPLATES = [

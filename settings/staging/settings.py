@@ -69,3 +69,13 @@ RAVEN_CONFIG = {
     # release based on the git info.
     'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
 }
+
+LOGGING['root'] = {                                     # noqa
+    'level': 'INFO',
+    'handlers': ['console', 'sentry'],
+}
+
+LOGGING['handlers']['sentry'] = {                       # noqa
+    'level': 'ERROR',
+    'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+}
