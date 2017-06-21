@@ -2,3 +2,5 @@ Django==1.11.1
 psycopg2==2.7.1
 Pillow==4.1.1
 python-memcached==1.58
+djangorestframework==3.6.3
+django-cors-headers==2.1.0
