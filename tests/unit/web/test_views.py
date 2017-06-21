@@ -63,14 +63,14 @@ class GetTeamTest(APITestCase):
         response = self.client.get(self.url)
         expected = [
             {
-                "name": self.team_member.name,
-                "email": self.team_member.email,
-                "description": self.team_member.description,
-                "image": "http://testserver%s" % self.team_member.image.url,
-                "github_url": self.team_member.github_url,
-                "linkedin_url": self.team_member.linkedin_url,
-                "personal_website": self.team_member.personal_website,
-                "team_type": self.team_member.team_type,
+                'name': self.team_member.name,
+                'email': self.team_member.email,
+                'description': self.team_member.description,
+                'image': 'http://testserver%s' % self.team_member.image.url,
+                'github_url': self.team_member.github_url,
+                'linkedin_url': self.team_member.linkedin_url,
+                'personal_website': self.team_member.personal_website,
+                'team_type': self.team_member.team_type,
             }
         ]
         self.assertEqual(response.data, expected)
