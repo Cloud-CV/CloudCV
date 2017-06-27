@@ -1,6 +1,8 @@
 version: "2"
 services:
   db:
+    container_name: db
+    hostname: db
     image: postgres
   django:
     container_name: django
