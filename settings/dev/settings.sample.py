@@ -15,3 +15,5 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+CACHES['default']['LOCATION'] = os.environ.get('MEMCACHED_LOCATION', '127.0.0.1:11211') # noqa: ignore=F405
