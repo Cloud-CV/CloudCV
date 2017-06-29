@@ -22,7 +22,8 @@ sys.path.append(APPS_DIR)
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vumjqmvqdxn^4$-e1@&!q%=&#dvo)bfh!74bo@@$9&#@-g8lj!'
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'vumjqmvqdxn^4$-e1@&!q%=&#dvo)bfh!74bo@@$9&#@-g8lj!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,7 +41,10 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'corsheaders',
+]
 
 OUR_APPS = [
     'base',
@@ -52,6 +56,7 @@ OUR_APPS = [
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + OUR_APPS
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,6 +67,26 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'cloudcv.urls'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/minute',
+        'user': '100/minute'
+    },
+}
 
 TEMPLATES = [
     {

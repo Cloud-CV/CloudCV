@@ -1,4 +1,3 @@
-import os
 from ..common import *  # noqa: ignore=F405
 
 DEBUG = True
@@ -11,7 +10,13 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': os.environ.get('DEV_DB_HOST', 'db'),
+        'HOST': 'localhost',
         'PORT': '5432',
+    }
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
