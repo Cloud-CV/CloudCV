@@ -20,6 +20,12 @@ CORS_ORIGIN_WHITELIST = (
     'cloudcv.us-west-2.elasticbeanstalk.com'
 )
 
+DATADOG_APP_NAME = 'CloudCV'
+DATADOG_APP_KEY = os.environ.get('DATADOG_APP_KEY', '')
+DATADOG_API_KEY = os.environ.get('DATADOG_API_KEY', '')
+
+MIDDLEWARE += ('middleware.metrics.DatadogMiddleware', )     # noqa
+
 INSTALLED_APPS += ('raven.contrib.django.raven_compat',) # noqa
 
 DATABASES = {
