@@ -1,3 +1,3 @@
-from metrics_middleware import DatadogMiddleware
+from middleware.metrics.metrics_middleware import DatadogMiddleware
 
-__all__ = [DatadogMiddleware]
+__all__ = ['DatadogMiddleware']
