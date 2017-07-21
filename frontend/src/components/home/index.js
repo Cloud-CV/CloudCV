@@ -34,7 +34,7 @@ class HomePage extends React.Component {
       }, 0);
     } else {
       setTimeout(() => {
-        const element = document.body;
+        const element = document.html;
         if (element)
           element.scrollIntoView({
             behavior: "smooth"
