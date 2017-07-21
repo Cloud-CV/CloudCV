@@ -29,82 +29,159 @@
   }
 
   .cv-home-body {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
     padding-top: 12*$gutter-width;
   }
 
-    .cv-home-card-container {
+    .cv-home-about-us {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       width: 100%;
-      position: relative;
-      margin: 2*$gutter-width 0;
-
-      @media #{$bp-sm} {
-        width: 47%;
-        margin: 0 3%;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
     }
 
-      .cv-about-us-card-heading {
-        top: -13rem;
-        position: absolute;
-        display: inline-block;
-        white-space: nowrap;
+      .cv-home-card-container {
+        width: 100%;
+        position: relative;
+        margin: 2*$gutter-width 0;
+
+        @media #{$bp-sm} {
+          width: 47%;
+          margin: 0 3%;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
       }
 
-        .cv-about-us-heading-line {
-          @include text-gradient($heading-color, $secondary-color);
+        .cv-about-us-card-heading {
+          top: -13rem;
+          position: absolute;
+          display: inline-block;
+          white-space: nowrap;
         }
 
-        .cv-question-mark {
-          @include text-gradient($heading-color, $secondary-color);
-          font-family: $primary-font-family;
-          @include font-size(25, 1);
-          font-weight: 300;
+          .cv-about-us-heading-line {
+            @include text-gradient($heading-color, $secondary-color);
+          }
+
+          .cv-question-mark {
+            @include text-gradient($heading-color, $secondary-color);
+            font-family: $primary-font-family;
+            @include font-size(25, 1);
+            font-weight: 300;
+          }
+
+        .cv-about-us-card-desc {
+          margin-top: 10*$gutter-width;
         }
 
-      .cv-about-us-card-desc {
-        margin-top: 10*$gutter-width;
+      .cv-arxiv-paper-card-container {
+        margin-top: 15 * $gutter-width;
+
+        @media #{$bp-sm} {
+          margin-top: 20*$gutter-width;
+        }
       }
 
-    .cv-arxiv-paper-card-container {
-      margin-top: 15 * $gutter-width;
+        .cv-arxiv-paper-image-container {
+          left: 50%;
+          top: -20%;
+          position: absolute;
+          width: 40%;
+          box-shadow: $box-shadow;
+        }
 
-      @media #{$bp-sm} {
-        margin-top: 20*$gutter-width;
-      }
+          .cv-arxiv-paper-image {
+            width: 100%;
+          }
+
+        .cv-arxiv-paper-heading {
+          color: $white;
+          margin-top: 30%;
+        }
+
+        .cv-arxiv-paper-desc {
+          margin-top: 2*$gutter-width;
+        }
+
+    .cv-home-showcase {
+      padding: 10*$gutter-width 0 5*$gutter-width 0;
     }
 
-      .cv-arxiv-paper-image-container {
-        left: 50%;
-        top: -20%;
-        position: absolute;
-        width: 40%;
-        box-shadow: $box-shadow;
+      .cv-home-showcase-heading {
+        display: inline;
+        @include text-gradient($heading-color, $secondary-color);
       }
 
-        .cv-arxiv-paper-image {
+      .cv-home-showcase-content {
+        padding-top: 1*$gutter-width;
+      }
+
+        .cv-home-showcase-card {
+          box-shadow: none;
           width: 100%;
+          position: relative;
+          margin: 1*$gutter-width 0;
+
+          @media #{$bp-sm} {
+            width: 47%;
+            margin: 0 3%;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
         }
 
-      .cv-arxiv-paper-heading {
-        color: $white;
-        margin-top: 30%;
+          .cv-home-showcase-card-image {
+            img {
+              display: block;
+              margin: 0 auto;
+              height: 80px;
+            }
+          }
+
+          .cv-home-showcase-card-desc {
+            padding-top: 1 * $gutter-width;
+            text-align: center;
+            min-height: 100px;
+          }
+
+      .cv-home-showcase-links {
+        display: flex;
+        justify-content: space-around;
       }
 
-      .cv-arxiv-paper-desc {
-        margin-top: 2*$gutter-width;
+    .cv-home-news {
+      padding: 5*$gutter-width 0;
+      position: relative;
+      background: linear-gradient($heading-color, $white 400px);
+    }
+
+      .cv-home-news-title-container {
+        padding: 0 0 4*$gutter-width 0;
+        text-align: center;
       }
 
+        .cv-home-news-title {
+          display: inline;
+          color: $white;
+        }
 
-
+  .cv-home-footer {
+    margin: 0;
+    padding: 15 * $gutter-width 0 0 0;
+  }
+    .cv-home-footer-image {
+      width: 100%;
+      height: 100%;
+    }

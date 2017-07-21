@@ -16,12 +16,12 @@
     z-index: 10;
 
   @media #{$bp-sm} {
+    background: transparent;
     position: static;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    margin-top: $gutter-width;
-    padding: 0;
+    margin-top: 2 * $gutter-width;
     box-shadow: none;
   }
 }

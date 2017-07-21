@@ -1,8 +1,10 @@
 /****MAIN CONTAINER*****/
 
 .cv-container {
-  max-width: 1160px;
-  margin: 0 auto;
+  padding-left: calc(50% - #{$half-max-width}) !important;
+  padding-right: calc(50% - #{$half-max-width}) !important;
+  box-sizing: content-box !important;
+  max-width: $max-width !important;
 }
 
   .cv-main {
@@ -17,13 +19,24 @@
 
 .cv-button {
   @include font-size(1.2, 1);
-  background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
   border-radius: 3*$gutter-width;
-  color: $white;
   cursor: pointer;
   font-family: $heading-font-family;
   padding: 1.7*$gutter-width 4.5*$gutter-width;
 }
+
+  .cv-button-light {
+    color: $heading-color;
+  }
+
+  .cv-button-dark {
+    background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
+    color: $white;
+  }
+
+  .cv-button-small {
+    padding: 1.1*$gutter-width 1.7*$gutter-width;
+  }
 
 /******CARD********/
 

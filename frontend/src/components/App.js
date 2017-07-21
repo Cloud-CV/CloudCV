@@ -28,11 +28,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="cv-container">
+      <div>
         <Navbar />
         <main className="cv-main">
           <Switch>
             <Route exact path="/" component={HomePageComponent} />
+            <Route path="/news" component={HomePageComponent} />
             <Route component={PageNotFoundHandler} />
           </Switch>
         </main>

@@ -34,7 +34,7 @@ class Navbar extends Component {
       : "cv-navbar-list-icon";
 
     return (
-      <nav className="cv-navbar-container">
+      <nav className="cv-navbar-container cv-container">
         <div className={`cv-navbar-list-container ${listHiddenClass}`}>
           <ul className="cv-navbar-list">
             {listItems}
