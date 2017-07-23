@@ -177,6 +177,97 @@
           color: $white;
         }
 
+    .cv-home-projects {
+      padding: 3 * $gutter-width 0 6 * $gutter-width 0;
+      text-align: center;
+
+      h4 {
+        color: $primary-color;
+        margin: 0 0 2 * $gutter-width 0;
+      }
+    }
+
+    .cv-home-sponsor-card {
+      box-shadow: none;
+      width: 100%;
+      position: relative;
+      margin: 5*$gutter-width 0;
+      padding: 1*$gutter-width;
+
+      @media #{$bp-sm} {
+        width: 31%;
+        margin-left: 1%;
+        margin-right: 1%;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+      .cv-home-sponsor-card-image {
+        height: 100px;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .cv-home-sponsor-card-desc {
+        margin: 2*$gutter-width 0;
+        display: block;
+        text-align: justify;
+      }
+
+    .cv-home-sponsors {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+      .cv-home-spon-card {
+        box-shadow: none;
+        width: 50%;
+        position: relative;
+        margin: 5*$gutter-width auto;
+        padding: 1*$gutter-width;
+
+        @media #{$bp-sm} {
+          width: 20%;
+          margin-left: 1%;
+          margin-right: 1%;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+    .cv-home-github {
+      text-align: center;
+      padding: 2 * $gutter-width 0;
+
+      h1 {
+        display: inline-block;
+        margin: 0 0 3 * $gutter-width 0;
+      }
+    }
+
+      .cv-home-gihub-image {
+        margin: 3 * $gutter-width 0;
+        width: 10%;
+        max-width: 150px;
+        min-width: 80px;
+      }
+
   .cv-home-footer {
     margin: 0;
     padding: 15 * $gutter-width 0 0 0;

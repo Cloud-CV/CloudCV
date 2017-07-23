@@ -1,10 +1,15 @@
 /****MAIN CONTAINER*****/
 
 .cv-container {
-  padding-left: calc(50% - #{$half-max-width}) !important;
-  padding-right: calc(50% - #{$half-max-width}) !important;
-  box-sizing: content-box !important;
+  padding-left: 2*$gutter-width !important;
+  padding-right: 2*$gutter-width !important;
   max-width: $max-width !important;
+
+  @media #{$bp-lg} {
+    box-sizing: content-box !important;
+    padding-left: calc(50% - #{$half-max-width}) !important;
+    padding-right: calc(50% - #{$half-max-width}) !important;
+  }
 }
 
   .cv-main {
