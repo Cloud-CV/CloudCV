@@ -4,6 +4,7 @@ import { Link, Route, Switch, Miss } from "react-router-dom";
 import io from "socket.io-client";
 import style from "../styles/main.scss";
 import HomePageComponent from "./home";
+import TeamPageComponent from "./team";
 import PageNotFoundHandler from "./PageNotFoundHandler";
 import Navbar from "./navbar";
 
@@ -34,6 +35,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePageComponent} />
             <Route path="/news" component={HomePageComponent} />
+            <Route path="/team" component={TeamPageComponent} />
             <Route component={PageNotFoundHandler} />
           </Switch>
         </main>
