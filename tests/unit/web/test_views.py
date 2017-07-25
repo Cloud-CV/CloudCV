@@ -56,6 +56,7 @@ class GetTeamTest(APITestCase):
                 linkedin_url='www.linkedin.com/testuser',
                 personal_website='CloudCV.org',
                 team_type=Team.TEAM,
+                year=2017,
                 visible=True,
             )
 
@@ -71,6 +72,7 @@ class GetTeamTest(APITestCase):
                 'linkedin_url': self.team_member.linkedin_url,
                 'personal_website': self.team_member.personal_website,
                 'team_type': self.team_member.team_type,
+                'year': self.team_member.year
             }
         ]
         self.assertEqual(response.data, expected)
