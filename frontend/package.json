@@ -27,6 +27,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "antd": "^2.10.0",
+    "axios": "^0.16.2",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "immutable": "^3.8.1",

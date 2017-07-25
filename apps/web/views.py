@@ -29,7 +29,7 @@ def get_team_members(request):
     """
     Get a list of team members
     """
-    members = Team.objects.filter(visible=True)
+    members = Team.objects.filter(visible=True).order_by('name')
     serializer = TeamSerializer(members, many=True, context={'request': request})
     response_data = serializer.data
     return Response(response_data, status=status.HTTP_200_OK)
