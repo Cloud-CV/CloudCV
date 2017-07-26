@@ -7,6 +7,7 @@
 
   .cv-home-header {
     font-weight: 500;
+    margin-top: 7 * $gutter-width;
   }
 
     .cv-home-header-intro, .cv-home-header-desc {
@@ -29,7 +30,11 @@
   }
 
   .cv-home-body {
-    padding-top: 12*$gutter-width;
+    padding-top: 5*$gutter-width;
+
+    @media #{$bp-sm} {
+      padding-top: 12*$gutter-width;
+    }
   }
 
     .cv-home-about-us {
@@ -59,10 +64,13 @@
       }
 
         .cv-about-us-card-heading {
-          top: -13rem;
           position: absolute;
           display: inline-block;
           white-space: nowrap;
+
+          @media #{$bp-sm} {
+            top: -13rem;
+          }
         }
 
           .cv-about-us-heading-line {
@@ -70,10 +78,15 @@
           }
 
           .cv-question-mark {
+            display: none;
             @include text-gradient($heading-color, $secondary-color);
             font-family: $primary-font-family;
             @include font-size(25, 1);
             font-weight: 300;
+
+            @media #{$bp-sm} {
+              display: inline;
+            }
           }
 
         .cv-about-us-card-desc {
@@ -162,7 +175,7 @@
       }
 
     .cv-home-news {
-      padding: 5*$gutter-width 0;
+      padding: 7*$gutter-width 0;
       position: relative;
       background: linear-gradient($heading-color, $white 400px);
     }
@@ -186,6 +199,10 @@
         margin: 0 0 2 * $gutter-width 0;
       }
     }
+
+  .cv-home-sponsors-container {
+    margin-top: 10*$gutter-width;
+  }
 
     .cv-home-sponsor-card {
       box-shadow: none;
@@ -270,7 +287,7 @@
 
   .cv-home-footer {
     margin: 0;
-    padding: 15 * $gutter-width 0 0 0;
+    padding: 8 * $gutter-width 0 0 0;
   }
     .cv-home-footer-image {
       width: 100%;

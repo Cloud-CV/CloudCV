@@ -41,7 +41,7 @@ const HomeSponsors = props => {
           );
         })}
       </div>
-      <div className="right-align">
+      <div className="right-align cv-home-sponsors-container">
         <h1 className="cv-home-showcase-heading">
           {SPONSOR_TITLE}
         </h1>
