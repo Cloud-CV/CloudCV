@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeAboutUs from "./homeBody/HomeAboutUs";
-import HomeShowcase from "./homeBody/HomeShowcase";
 import HomeNews from "./homeBody/HomeNews";
 import HomeSponsors from "./homeBody/HomeSponsors";
 import Button from "../common/Button";
@@ -15,7 +14,6 @@ const HomeBody = props => {
   return (
     <div className="cv-home-body">
       <HomeAboutUs />
-      <HomeShowcase />
       <HomeNews />
       <div className="cv-home-projects cv-container">
         <h4>{PROJECT_DESC}</h4>

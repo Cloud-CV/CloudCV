@@ -30,28 +30,24 @@
   }
 
   .cv-home-body {
-    padding-top: 5*$gutter-width;
-
-    @media #{$bp-sm} {
-      padding-top: 12*$gutter-width;
-    }
+    padding: 5*$gutter-width 0;
   }
 
     .cv-home-about-us {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;;
+      align-items: center;
       flex-wrap: wrap;
       width: 100%;
+      margin: 5*$gutter-width 0 10*$gutter-width 0;
     }
 
       .cv-home-card-container {
         width: 100%;
-        position: relative;
-        margin: 2*$gutter-width 0;
+        text-align: justify;
 
         @media #{$bp-sm} {
-          width: 47%;
-          margin: 0 3%;
+          width: 95%;
 
           &:first-child {
             margin-left: 0;
@@ -67,6 +63,7 @@
           position: absolute;
           display: inline-block;
           white-space: nowrap;
+          margin: 0 auto;
 
           @media #{$bp-sm} {
             top: -13rem;
