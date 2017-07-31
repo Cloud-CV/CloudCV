@@ -1,0 +1,35 @@
+.cv-project-section {
+  display: flex;
+  min-height: 100%;
+  box-shadow: $box-shadow;
+}
+
+  .cv-project-sidebar {
+    @include font-size(1.4, 1.2);
+    width: 15%;
+    max-width: 300px;
+    padding: 3 * $gutter-width 2 * $gutter-width;
+    background: $secondary-bg-color;
+
+    @media #{$bp-xl} {
+      @include font-size(1.8, 1.4);
+      padding-left: 3 * $gutter-width;
+      padding-right: 3 * $gutter-width;
+    }
+  }
+
+    .cv-project-sections {
+      padding: 1.5 * $gutter-width 0;
+    }
+
+      .cv-project-list-heading {
+        padding-bottom: 2 * $gutter-width;
+      }
+
+      .cv-project-list {
+        padding-left: 5px;
+      }
+
+        .cv-project-list-item {
+          padding-bottom: 2 * $gutter-width;
+        }

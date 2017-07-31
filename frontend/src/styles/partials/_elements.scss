@@ -13,11 +13,8 @@
 }
 
   .cv-main {
-    margin-top: 70px;
-
-    @media #{$bp-sm} {
-      margin-top: 0;
-    }
+    padding-top: 7 * $gutter-width;
+    height: 100%;
   }
 
  /******BUTTON******/

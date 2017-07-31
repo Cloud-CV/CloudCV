@@ -7,9 +7,21 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      isOnTop: document.body.scrollTop === 0
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll");
+  }
+
+  handleScroll(event) {
+    let isOnTop = document.body.scrollTop === 0;
+    this.setState({ isOnTop });
   }
 
   handleClick() {
@@ -32,9 +44,9 @@ class Navbar extends Component {
     let listIconClass = this.state.isOpen
       ? "cv-navbar-close-icon"
       : "cv-navbar-list-icon";
-
+    let navbarClass = this.state.isOnTop ? "" : "navbar-box-shadow";
     return (
-      <nav className="cv-navbar-container cv-container">
+      <nav className={`cv-navbar-container cv-container ${navbarClass}`}>
         <div className={`cv-navbar-list-container ${listHiddenClass}`}>
           <ul className="cv-navbar-list">
             {listItems}

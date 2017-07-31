@@ -38,6 +38,7 @@ class Team extends React.Component {
     let coreMembers = [];
     let internMembers = [];
     let contributorMembers = [];
+    if (members.length === 0) this.setState({ isFetching: false });
     members.forEach((member, index, array) => {
       if (member.team_type === CORE_TYPE) coreMembers.push(member);
       else if (member.team_type === INTERN_TYPE) internMembers.push(member);

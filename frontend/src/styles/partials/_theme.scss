@@ -8,8 +8,17 @@ body, input {
   color: $primary-color;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   padding: 0;
+  height: 100%;
+}
+
+#app,.cv-root-container {
+  height: 100%
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,6 +38,10 @@ a {
 
 .right-align {
   text-align: right;
+}
+
+.navbar-box-shadow {
+  box-shadow: $box-shadow !important;
 }
 
 .hidden-small {
