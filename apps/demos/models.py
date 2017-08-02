@@ -6,7 +6,9 @@ from django.db import models
 class Demo(models.Model):
     """"Models representing details of Demo."""
     title = models.CharField(max_length=40)
-    demo_url = models.URLField(max_length=100)
+    demo_url = models.URLField(max_length=200)
+    demo_base_url = models.URLField(max_length=100)
+    permalink = models.CharField(max_length=100)
     tag_line = models.CharField(max_length=140, null=True, blank=True)
     description = models.CharField(max_length=500, null=True, blank=True)
     source_code_url = models.URLField(max_length=100, null=True, blank=True)

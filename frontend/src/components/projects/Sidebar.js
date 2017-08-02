@@ -9,6 +9,7 @@ class ProjectSidebar extends React.Component {
   }
 
   render() {
+    const DEMOS = this.props.demos;
     const PROJECTS = [
       {
         link: "https://evalai.cloudcv.org/",
@@ -27,7 +28,19 @@ class ProjectSidebar extends React.Component {
       <aside className="cv-project-sidebar">
         <section className="cv-project-sections">
           <h6 className="cv-project-list-heading">Demos</h6>
-          <ul className="cv-project-list" />
+          <ul className="cv-project-list">
+            {DEMOS.map((project, index) => {
+              let activeClass = project.active ? "active" : "";
+              return (
+                <li
+                  key={index}
+                  className={`cv-project-list-item ${activeClass}`}
+                >
+                  <Link to={project.link}>{project.name}</Link>
+                </li>
+              );
+            })}
+          </ul>
         </section>
         <section className="cv-project-sections">
           <h6 className="cv-project-list-heading">Projects</h6>
@@ -45,5 +58,9 @@ class ProjectSidebar extends React.Component {
     );
   }
 }
+
+ProjectSidebar.propTypes = {
+  demos: PropTypes.array
+};
 
 export default ProjectSidebar;

@@ -11,6 +11,8 @@ class DemoTestCase(TestCase):
         self.demo = Demo.objects.create(
             title='CloudCV Classification',
             demo_url='http://cloudcv.org/classify/',
+            demo_base_url='http://cloudcv.org/',
+            permalink='classify',
             tag_line='Use CloudCV to automatically find which objects are present in an image',
             description='Click on one of these images to send it to our servers (Or upload your own images below)',
             sample=True,

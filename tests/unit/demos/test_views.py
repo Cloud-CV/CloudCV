@@ -13,6 +13,8 @@ class GetDemoTest(APITestCase):
         self.demo = Demo.objects.create(
             title='title',
             demo_url='www.github.com/Cloud-CV',
+            demo_base_url='http://cloudcv.org/',
+            permalink='classify',
             tag_line='Tag line for demo',
             description='Description for demo',
             source_code_url='www.github.com/Cloud-CV',
@@ -32,6 +34,8 @@ class GetDemoTest(APITestCase):
             {
                 'title': self.demo.title,
                 'demo_url': self.demo.demo_url,
+                'demo_base_url': self.demo.demo_base_url,
+                'permalink': self.demo.permalink,
                 'description': self.demo.description,
                 'tag_line': self.demo.tag_line,
                 'source_code_url': self.demo.source_code_url,
