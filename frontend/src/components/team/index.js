@@ -25,7 +25,7 @@ class Team extends React.Component {
 
   fetchTeamMembers() {
     axios
-      .get(`http://${process.env.AJAX_ROOT}/api/web/team`)
+      .get(`${process.env.AJAX_ROOT}/api/web/team`)
       .then(response => {
         this.sortTeamMembers(response.data);
       })

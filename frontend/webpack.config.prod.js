@@ -5,7 +5,7 @@ import ExtractTextPlugin from "extract-text-webpack-plugin";
 const GLOBALS = {
   "process.env.NODE_ENV": JSON.stringify("production"),
   "process.env.AJAX_ROOT": JSON.stringify(
-    process.env.AJAX_ROOT || "localhost:8000"
+    process.env.AJAX_ROOT || "http://localhost:8000"
   )
 };
 

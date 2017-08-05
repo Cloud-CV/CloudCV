@@ -3,7 +3,7 @@ import path from "path";
 
 const GLOBALS = {
   "process.env.AJAX_ROOT": JSON.stringify(
-    process.env.AJAX_ROOT || "localhost:8000"
+    process.env.AJAX_ROOT || "http://localhost:8000"
   )
 };
 

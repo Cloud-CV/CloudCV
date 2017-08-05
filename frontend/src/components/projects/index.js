@@ -30,7 +30,7 @@ class Projects extends React.Component {
 
   fetchDemos() {
     axios
-      .get(`http://${process.env.AJAX_ROOT}/api/demos/demos/`)
+      .get(`${process.env.AJAX_ROOT}/api/demos/demos/`)
       .then(response => {
         this.setState({ isFetching: false, demos: response.data });
       })

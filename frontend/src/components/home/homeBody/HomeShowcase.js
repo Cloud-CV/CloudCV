@@ -18,7 +18,7 @@ class HomeShowcase extends React.Component {
 
   fetchProjects() {
     axios
-      .get(`http://${process.env.AJAX_ROOT}/api/demos/projects/`)
+      .get(`${process.env.AJAX_ROOT}/api/demos/projects/`)
       .then(response => {
         this.setState({ projects: response.data, isFetching: false });
       })
