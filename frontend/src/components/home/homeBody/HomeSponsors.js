@@ -1,22 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../../common/Card";
-import Button from "../../common/Button";
 
 const HomeSponsors = props => {
-  const SUPPORT_TITLE = "OUR SUPPORT";
+  const SUPPORT_TITLE = "WE FAVOR OPEN SOURCE";
+  const SUPPORT_DESC =
+    "We use a lot of open source softwares as the basis for our work. Some of them are:";
   const SUPPORTERS = [
     {
-      image: require("../../../images/supporter_virginia.png"),
-      desc: "This is a project being developed at the Machine Learning and Perception Lab, led by Prof. Dhruv Batra"
+      title: "Django",
+      image: require("../../../images/django_logo.svg"),
+      link: "https://www.djangoproject.com/"
     },
     {
-      image: require("../../../images/supporter_graph_lab.png"),
-      desc: "CloudCV uses GraphLab for implementing distributed computer vision algorithms."
+      title: "Python",
+      image: require("../../../images/python_logo.png"),
+      link: "https://www.python.org/"
     },
     {
-      image: require("../../../images/supporter_opencv.jpg"),
-      desc: "Some of the functionality is derived from using OpenCV with Graphlab SDK."
+      title: "RabbitMQ",
+      image: require("../../../images/rabbitmq_logo.svg"),
+      link: "https://www.rabbitmq.com/"
+    },
+    {
+      title: "React",
+      image: require("../../../images/reactjs_logo.svg"),
+      link: "https://facebook.github.io/react/"
+    },
+    {
+      title: "Angular",
+      image: require("../../../images/angular_logo.svg"),
+      link: "https://angular.io/"
+    },
+    {
+      title: "Pytorch",
+      image: require("../../../images/pytorch_logo.png"),
+      link: "http://pytorch.org/"
+    },
+    {
+      title: "Keras",
+      image: require("../../../images/keras_logo.jpg"),
+      link: "https://keras.io/"
     }
   ];
   const SPONSOR_TITLE = "SPONSORS";
@@ -31,12 +55,21 @@ const HomeSponsors = props => {
       <h1 className="cv-home-showcase-heading">
         {SUPPORT_TITLE}
       </h1>
-      <div className="cv-home-about-us">
+      <br />
+      <br />
+      <p>{SUPPORT_DESC}</p>
+      <div className="cv-home-showcase-content">
         {SUPPORTERS.map((company, index) => {
           return (
             <Card key={index} extraClass="cv-home-sponsor-card">
-              <img src={company.image} className="cv-home-sponsor-card-image" />
-              <span className="cv-home-sponsor-card-desc">{company.desc}</span>
+              <Link to={company.link} target="_blank">
+                <img
+                  src={company.image}
+                  className="cv-home-sponsor-card-image"
+                  alt={company.title}
+                  title={company.title}
+                />
+              </Link>
             </Card>
           );
         })}

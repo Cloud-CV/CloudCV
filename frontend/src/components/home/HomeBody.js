@@ -3,39 +3,51 @@ import { Link } from "react-router-dom";
 import HomeAboutUs from "./homeBody/HomeAboutUs";
 import HomeNews from "./homeBody/HomeNews";
 import HomeSponsors from "./homeBody/HomeSponsors";
+import HomeShowcase from "./homeBody/HomeShowcase";
 import Button from "../common/Button";
 
 const HomeBody = props => {
-  const PROJECT_DESC = "We have multiple projects going on!";
-  const PROJECT_BUTTON = "View our Projects";
-  const GITHUB_DESC = "Yes, we love open source";
-  const GITHUB_BUTTON = "Start Contributing";
+  const PROJECT_HEADING = "Projects";
+  const GITHUB_DESC = "Interested in contributing?";
+  const GITHUB_STRING =
+    "We are looking for active open source contributors who could help us taking the projects to next level. Please feel free to visit following links if you are interested in joining our team";
   const GITHUB_IMAGE = require("../../images/github_logo.png");
+  const GITTER_IMAGE = require("../../images/gitter_logo.png");
+  const GSOC_LOGO = require("../../images/gsoc_logo.png");
   return (
     <div className="cv-home-body">
       <HomeAboutUs />
       <HomeNews />
-      <div className="cv-home-projects cv-container">
-        <h4>{PROJECT_DESC}</h4>
-        <Button themeClass="cv-button-dark" extraClass="cv-button-small">
-          {PROJECT_BUTTON}
-        </Button>
-      </div>
+      <HomeShowcase />
       <HomeSponsors />
       <div className="cv-home-github cv-container">
         <h1 className="cv-home-showcase-heading">{GITHUB_DESC}</h1>
         <br />
-        <Link to="https://github.com/Cloud-CV/" target="_blank">
-          <Button themeClass="cv-button-dark">
-            {GITHUB_BUTTON}
-          </Button>
+        <p>{GITHUB_STRING}</p>
+        <Link
+          to="https://summerofcode.withgoogle.com/organizations/5427409970003968/"
+          target="_blank"
+        >
+          <img
+            className="cv-home-gihub-image"
+            src={GSOC_LOGO}
+            alt="GSOC Logo"
+          />
         </Link>
-        <br />
-        <img
-          className="cv-home-gihub-image"
-          src={GITHUB_IMAGE}
-          alt="Github Logo"
-        />
+        <Link to="https://github.com/Cloud-CV/" target="_blank">
+          <img
+            className="cv-home-gihub-image"
+            src={GITHUB_IMAGE}
+            alt="Github Logo"
+          />
+        </Link>
+        <Link to="https://gitter.im/Cloud-CV/Lobby" target="_blank">
+          <img
+            className="cv-home-gihub-image"
+            src={GITTER_IMAGE}
+            alt="Gitter Logo"
+          />
+        </Link>
       </div>
     </div>
   );

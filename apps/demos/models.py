@@ -27,3 +27,20 @@ class Demo(models.Model):
 
     def __unicode__(self):
         return '{0}: {1}'.format(self.title, self.demo_url)
+
+
+class Project(models.Model):
+    """"Models representing details of Project."""
+    title = models.CharField(max_length=40)
+    project_url = models.URLField(max_length=200)
+    github_url = models.URLField(max_length=200, null=True, blank=True)
+    documentation_url = models.URLField(max_length=200, null=True, blank=True)
+    image = models.ImageField(upload_to='team', null=True, blank=True)
+    is_visible = models.BooleanField(default=False)
+
+    class Meta:
+        app_label = 'demos'
+        db_table = 'projects'
+
+    def __unicode__(self):
+        return '{0}: {1}'.format(self.title, self.project_url)

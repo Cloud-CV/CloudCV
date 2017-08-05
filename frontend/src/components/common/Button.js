@@ -4,7 +4,10 @@ import { PropTypes } from "prop-types";
 const Button = props => {
   const { extraClass, themeClass } = props;
   return (
-    <button className={`cv-button ${themeClass} ${extraClass}`}>
+    <button
+      className={`cv-button ${themeClass} ${extraClass}`}
+      onClick={props.onClick}
+    >
       {props.children}
     </button>
   );
@@ -21,6 +24,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.string,
   extraClass: PropTypes.string,
+  onClick: PropTypes.func,
   themeClass: PropTypes.oneOf(themeClassOptions)
 };
 

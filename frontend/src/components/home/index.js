@@ -11,6 +11,7 @@ class HomePage extends React.Component {
     super(props);
     this.state = {};
     this.hashLinkScroll = this.hashLinkScroll.bind(this);
+    this.scrollToAboutUs = this.scrollToAboutUs.bind(this);
   }
 
   componentDidMount() {
@@ -43,16 +44,22 @@ class HomePage extends React.Component {
     }
   }
 
+  scrollToAboutUs() {
+    const element = document.getElementById("about");
+    if (element)
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
+  }
+
   render() {
     return (
       <div className="cv-home-container">
         <HomeHeader />
         <div className="cv-home-button cv-container">
-          <Link to="/">
-            <Button themeClass="cv-button-dark">
-              Know More
-            </Button>
-          </Link>
+          <Button themeClass="cv-button-dark" onClick={this.scrollToAboutUs}>
+            Know More
+          </Button>
         </div>
         <HomeBody />
         <HomeFooter />

@@ -4,5 +4,6 @@ from .import views
 
 
 urlpatterns = [
-    url(r'^all/$', views.get_demos, name='get_demos'),
+    url(r'^demos/$', views.get_demos, name='get_demos'),
+    url(r'^projects/$', views.get_projects, name='get_projects'),
 ]
