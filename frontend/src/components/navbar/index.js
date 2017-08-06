@@ -32,8 +32,8 @@ class Navbar extends Component {
   handleScroll(event) {
     let isOnTop =
       (window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop) === 0;
+        document.documentElement.scrollTop ||
+        document.body.scrollTop) === 0;
     this.setState({ isOnTop });
   }
 
