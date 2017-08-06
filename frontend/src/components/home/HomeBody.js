@@ -24,30 +24,35 @@ const HomeBody = props => {
         <h1 className="cv-home-showcase-heading">{GITHUB_DESC}</h1>
         <br />
         <p>{GITHUB_STRING}</p>
-        <Link
-          to="https://summerofcode.withgoogle.com/organizations/5427409970003968/"
-          target="_blank"
-        >
-          <img
-            className="cv-home-gihub-image"
-            src={GSOC_LOGO}
-            alt="GSOC Logo"
-          />
-        </Link>
-        <Link to="https://github.com/Cloud-CV/" target="_blank">
-          <img
-            className="cv-home-gihub-image"
-            src={GITHUB_IMAGE}
-            alt="Github Logo"
-          />
-        </Link>
-        <Link to="https://gitter.im/Cloud-CV/Lobby" target="_blank">
-          <img
-            className="cv-home-gihub-image"
-            src={GITTER_IMAGE}
-            alt="Gitter Logo"
-          />
-        </Link>
+        <div className="cv-home-github-icons">
+          <Link
+            to="https://summerofcode.withgoogle.com/organizations/5427409970003968/"
+            target="_blank"
+          >
+            <img
+              className="cv-home-gihub-image"
+              src={GSOC_LOGO}
+              alt="GSOC Logo"
+            />
+            <p>GSoC</p>
+          </Link>
+          <Link to="https://github.com/Cloud-CV/" target="_blank">
+            <img
+              className="cv-home-gihub-image"
+              src={GITHUB_IMAGE}
+              alt="Github Logo"
+            />
+            <p>Github</p>
+          </Link>
+          <Link to="https://gitter.im/Cloud-CV/Lobby" target="_blank">
+            <img
+              className="cv-home-gihub-image"
+              src={GITTER_IMAGE}
+              alt="Gitter Logo"
+            />
+            <p>Gitter</p>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -260,12 +260,18 @@
       }
     }
 
-      .cv-home-gihub-image {
-        margin: 3 * $gutter-width $gutter-width;
-        width: 7%;
-        max-width: 90px;
-        min-width: 70px;
+      .cv-home-github-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
+
+        .cv-home-gihub-image {
+          margin: 3 * $gutter-width $gutter-width 1 * $gutter-width $gutter-width;
+          width: 7%;
+          max-width: 90px;
+          min-width: 70px;
+        }
 
   .cv-home-footer {
     margin: 0;
