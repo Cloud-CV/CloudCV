@@ -69,6 +69,7 @@ const HomeSponsors = props => {
                   alt={company.title}
                   title={company.title}
                 />
+                <p className="cv-home-sponsor-card-desc">{company.title}</p>
               </Link>
             </Card>
           );

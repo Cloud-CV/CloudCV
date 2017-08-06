@@ -89,41 +89,12 @@
           margin-top: 10*$gutter-width;
         }
 
-      .cv-arxiv-paper-card-container {
-        margin-top: 15 * $gutter-width;
-
-        @media #{$bp-sm} {
-          margin-top: 20*$gutter-width;
-        }
-      }
-
-        .cv-arxiv-paper-image-container {
-          left: 50%;
-          top: -20%;
-          position: absolute;
-          width: 40%;
-          box-shadow: $box-shadow;
-        }
-
-          .cv-arxiv-paper-image {
-            width: 100%;
-          }
-
-        .cv-arxiv-paper-heading {
-          color: $white;
-          margin-top: 30%;
-        }
-
-        .cv-arxiv-paper-desc {
-          margin-top: 2*$gutter-width;
-        }
-
     .cv-home-showcase {
       padding: 10*$gutter-width 0 5*$gutter-width 0;
     }
 
       .cv-home-showcase-heading {
-        display: inline;
+        display: inline-block;
         @include text-gradient($heading-color, $secondary-color);
       }
 
@@ -245,7 +216,7 @@
       .cv-home-sponsor-card-desc {
         margin: 2*$gutter-width 0;
         display: block;
-        text-align: justify;
+        text-align: center;
       }
 
     .cv-home-sponsors {

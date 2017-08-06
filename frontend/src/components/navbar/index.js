@@ -11,7 +11,9 @@ class Navbar extends Component {
     super(props);
     this.state = {
       isOpen: false,
-      isOnTop: document.body.scrollTop === 0
+      isOnTop: (window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop) === 0
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -28,7 +30,10 @@ class Navbar extends Component {
   }
 
   handleScroll(event) {
-    let isOnTop = document.body.scrollTop === 0;
+    let isOnTop =
+      (window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop) === 0;
     this.setState({ isOnTop });
   }
 
