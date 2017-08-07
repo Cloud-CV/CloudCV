@@ -14,7 +14,6 @@ const app = express();
 const compiler = webpack(config);
 
 const http = require("http").Server(app);
-const io = require("socket.io")(http);
 
 app.use(bodyParser.urlencoded({ limit: "500mb", extended: true }));
 app.use(bodyParser.json({ limit: "500mb" }));
@@ -30,12 +29,6 @@ app.use(require("webpack-hot-middleware")(compiler));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../src/index.html"));
-});
-
-io.on("connection", socket => {
-  socket.on("hello", () => {
-    socket.emit("world");
-  });
 });
 
 http.listen(port, err => {
