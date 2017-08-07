@@ -2,7 +2,7 @@ FROM node:6
 MAINTAINER CloudCV Team
 
 RUN apt-get update -qq && apt-get install -y build-essential git curl
-RUN apt-get install -y ruby
+RUN apt-get install -y ruby ruby-dev
 RUN gem install sass
 
 WORKDIR /code/
