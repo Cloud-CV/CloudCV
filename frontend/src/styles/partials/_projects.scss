@@ -1,0 +1,93 @@
+.cv-project-section {
+  display: flex;
+  min-height: 100%;
+  box-shadow: $box-shadow;
+}
+  .cv-project-sidebar {
+    @include font-size(1.4, 1.2);
+    width: 15%;
+    max-width: 300px;
+    padding: 3 * $gutter-width 2 * $gutter-width;
+    background: $secondary-bg-color;
+    min-width: 115px;
+
+    @media #{$bp-sm} {
+      display: block;
+    }
+
+    @media #{$bp-xl} {
+      @include font-size(1.8, 1.4);
+      padding-left: 3 * $gutter-width;
+      padding-right: 3 * $gutter-width;
+    }
+  }
+
+  .cv-project-section > .cv-project-sidebar {
+    display: none;
+
+    @media #{$bp-sm} {
+      display: block;
+    }
+  }
+
+    .cv-project-sections {
+      padding: 1.5 * $gutter-width 0;
+    }
+
+      .cv-project-list-heading {
+        padding-bottom: 2 * $gutter-width;
+      }
+
+      .cv-project-list {
+        padding-left: 5px;
+      }
+
+        .cv-project-list-item {
+          padding-bottom: 2 * $gutter-width;
+        }
+
+        .cv-project-list-item.active {
+          color: $white;
+        }
+
+  .cv-project-demo-container {
+    width: 100%;
+    @media #{$bp-sm} {
+      width: 85%;
+      flex-grow: 2;
+    }
+  }
+
+    .cv-project-demo-iframe {
+      min-height: 100%;
+      width: 100%;
+      border:0;
+    }
+
+
+/******MOBILE SIDEBAR*******/
+
+/* General sidebar styles */
+.cv-mobile-sidebar, .bm-overlay {
+  @media #{$bp-sm} {
+    display: none;
+  }
+}
+
+.cv-mobile-sidebar .cv-project-sidebar {
+  height: 100%;
+}
+
+.bm-menu-wrap {
+}
+
+  .bm-menu {
+    padding: 0;
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: hsla(0, 0%, 0%, 0.7);
+  }
+
+

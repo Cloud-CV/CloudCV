@@ -19,7 +19,11 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.array
+  ]),
   extraClass: PropTypes.string,
   themeClass: PropTypes.oneOf(themeClassOptions)
 };

@@ -13,6 +13,8 @@ $heading-font-family: "geometos", sans-serif;
 
 /******BREAKPOINTS******/
 
+$max-width: 1160px;
+$half-max-width: $max-width / 2;
 $bp-sm: 'only screen and (min-width: 768px)';
 $bp-md: 'only screen and (min-width: 992px)';
 $bp-lg: 'only screen and (min-width: 1200px)';
@@ -29,8 +31,11 @@ $image-close: $base-path + 'close.svg';
 
 $primary-color: hsla(0, 0%, 59%, 1);
 $secondary-color: hsla(181, 51%, 66%, 1);
+$translucent-secondary-color: hsla(181, 51%, 66%, 0.7);
 $heading-color: hsla(219, 30%, 55%, 1);
+$translucent-heading-color: hsla(219, 30%, 55%, 0.7);
 $primary-bg-color: hsla(193, 100%, 98%, 1);
+$secondary-bg-color: hsla(0, 0%, 10%, 1);
 $link-color: hsla(0, 0%, 0%, 1);
 $link-color--hover: hsla(240, 100%, 47%, 1);
 $link-color--active: hsla(240, 100%, 47%, 1);

@@ -1,29 +1,44 @@
 /****MAIN CONTAINER*****/
 
 .cv-container {
-  max-width: 1160px;
-  margin: 0 auto;
+  padding-left: 2*$gutter-width !important;
+  padding-right: 2*$gutter-width !important;
+  max-width: $max-width !important;
+
+  @media #{$bp-lg} {
+    box-sizing: content-box !important;
+    padding-left: calc(50% - #{$half-max-width}) !important;
+    padding-right: calc(50% - #{$half-max-width}) !important;
+  }
 }
 
   .cv-main {
-    margin-top: 70px;
-
-    @media #{$bp-sm} {
-      margin-top: 0;
-    }
+    padding-top: 7 * $gutter-width;
+    height: 100%;
   }
 
  /******BUTTON******/
 
 .cv-button {
   @include font-size(1.2, 1);
-  background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
   border-radius: 3*$gutter-width;
-  color: $white;
   cursor: pointer;
   font-family: $heading-font-family;
   padding: 1.7*$gutter-width 4.5*$gutter-width;
 }
+
+  .cv-button-light {
+    color: $heading-color;
+  }
+
+  .cv-button-dark {
+    background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
+    color: $white;
+  }
+
+  .cv-button-small {
+    padding: 1.1*$gutter-width 1.7*$gutter-width;
+  }
 
 /******CARD********/
 

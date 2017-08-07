@@ -1,3 +1,5 @@
 export default {
-  holder: []
+  sidebar: {
+    showQueue: false
+  }
 };

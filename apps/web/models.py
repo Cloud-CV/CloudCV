@@ -25,7 +25,7 @@ class Team(models.Model):
 
     # Team Type Options
     TEAM = 'Team'
-    INTERN = 'GSoC Participants and Interns'
+    INTERN = 'GSoC Students, Mentors and Interns'
     CONTRIBUTOR = 'Contributors'
 
     TEAM_TYPE_OPTIONS = (
@@ -43,6 +43,7 @@ class Team(models.Model):
     linkedin_url = models.URLField(max_length=200, null=True, blank=True)
     personal_website = models.URLField(max_length=200, null=True, blank=True)
     team_type = models.CharField(choices=TEAM_TYPE_OPTIONS, max_length=50)
+    year = models.IntegerField(null=True, blank=True)
 
     def __unicode__(self):
         return self.name

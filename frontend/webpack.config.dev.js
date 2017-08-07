@@ -1,6 +1,12 @@
 import webpack from "webpack";
 import path from "path";
 
+const GLOBALS = {
+  "process.env.AJAX_ROOT": JSON.stringify(
+    process.env.AJAX_ROOT || "http://localhost:8000"
+  )
+};
+
 export default {
   devtool: "cheap-module-eval-source-map",
   entry: [
@@ -18,6 +24,7 @@ export default {
     contentBase: "./src"
   },
   plugins: [
+    new webpack.DefinePlugin(GLOBALS),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],

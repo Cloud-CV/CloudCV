@@ -20,6 +20,8 @@ services:
   nodejs:
     container_name: nodejs
     hostname: nodejs
+    env_file:
+      - docker/dev.env
     build:
       context: ./
       dockerfile: docker/dev/nodejs/Dockerfile

@@ -13,7 +13,7 @@ html {
 }
 
 body, input, button {
-  @include font-size(1.4, 1.6);
+  @include font-size(1.8, 1.6);
   font-family: $primary-font-family;
   font-weight: 300;
 }
