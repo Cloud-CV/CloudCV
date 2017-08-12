@@ -9,7 +9,7 @@ const HomeAboutUs = props => {
   return (
     <div className="cv-home-about-us cv-container" id="about">
       <div className="cv-home-card-container">
-        <Card extraClass="cv-about-us-card" themeClass="cv-card-light">
+        <Card extraClass="cv-about-us-card" themeClass="cv-card-deep-light">
           <h1 className="cv-about-us-card-heading">
             <span className="cv-about-us-heading-line">{ABOUT_US_TITLE}</span>
             &nbsp; &nbsp;

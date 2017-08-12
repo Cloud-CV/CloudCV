@@ -54,6 +54,12 @@
   color: $primary-color;
 }
 
+.cv-card-deep-light {
+  background: $white;
+  box-shadow: $deep-box-shadow;
+  color: $primary-color;
+}
+
 .cv-card-dark {
   background: linear-gradient(45deg, $heading-color, $secondary-color);
   color: $white;
