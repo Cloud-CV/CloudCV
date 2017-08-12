@@ -11,6 +11,10 @@
     ```
     git clone git@github.com:Cloud-CV/CloudCV.git cloudcv
     ```
+    If you have not added `ssh` keys to your GitHub account then get the source code by running the following command
+    ```
+    git clone https://github.com/Cloud-CV/CloudCV.git cloudcv
+    ```
 3. Create a python virtual environment and install python dependencies.
     ```
     cd cloudcv
