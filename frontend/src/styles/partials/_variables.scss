@@ -43,7 +43,7 @@ $link-color--visited: hsla(271, 68%, 32%, 1);
 $white: hsla(0, 0%, 100%, 1);
 $black: hsla(0, 0%, 0%, 1);
 $shadow-color: hsla(0, 0%, 60%, 0.5);
-
+$deep-shadow-color: rgb(232, 232, 232);
 /******MARGINS******/
 
 $gutter-width: 1rem;
@@ -51,5 +51,6 @@ $gutter-width: 1rem;
 /******BOX SHADOW******/
 
 $box-shadow: 0 0 2*$gutter-width -0.1*$gutter-width $shadow-color;
+$deep-box-shadow: 0 2em 5rem -0.1rem $deep-shadow-color;
 
 /****END OF VARIABLES****/
