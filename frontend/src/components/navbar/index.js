@@ -53,13 +53,21 @@ class Navbar extends Component {
     let listItems = [
       "",
       "Projects",
-      "News",
       "GSoC",
       "Team",
       "Contribute",
       "Contact Us"
     ];
     listItems = listItems.map((path, index) => {
+      if (path === "GSoC") {
+        return (
+          <NavbarItem active={active} key={path}>
+            <Link to="http://gsoc.cloudcv.org" target="_blank">
+              {path}
+            </Link>
+          </NavbarItem>
+        );
+      }
       let active = path.toLowerCase() === firstPath;
       let formattedPath = path.toLowerCase().replace(/ /g, "-");
       return (

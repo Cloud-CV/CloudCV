@@ -19,6 +19,9 @@ class Projects extends React.Component {
       showQueue: this.props.showQueue
     };
     this.fetchDemos = this.fetchDemos.bind(this);
+  }
+
+  componentDidMount() {
     this.fetchDemos();
   }
 
@@ -47,9 +50,9 @@ class Projects extends React.Component {
     let sidebarLinks = this.state.demos.map((demo, index) => {
       let link = `/projects/${demo.permalink}`;
       let active =
-        this.props.match.path === link ||
-        (this.props.match.path === "/projects" && index === 0);
-      activeDemo = demo;
+        this.props.location.pathname === link ||
+        (this.props.location.pathname === "/projects" && index === 0);
+      if (active) activeDemo = demo;
       return {
         name: demo.tag_line,
         link,
@@ -76,7 +79,7 @@ class Projects extends React.Component {
 }
 
 Projects.propTypes = {
-  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
   sidebarActions: PropTypes.object.isRequired,
   showQueue: PropTypes.bool.isRequired
 };
