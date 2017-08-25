@@ -4,7 +4,6 @@ import os
 import raven
 
 DEBUG = False
-
 # Database
 # https://docs.djangoproject.com/en/1.10.2/ref/settings/#databases
 
@@ -26,7 +25,12 @@ DATADOG_API_KEY = os.environ.get('DATADOG_API_KEY', '')
 
 MIDDLEWARE += ('middleware.metrics.DatadogMiddleware', )     # noqa
 
+INSTALLED_APPS = ['otto_admin', 'pipeline',] + INSTALLED_APPS # noqa
 INSTALLED_APPS += ('raven.contrib.django.raven_compat',) # noqa
+
+PIPELINE = {
+    'PIPELINE_ENABLED': False,
+}
 
 DATABASES = {
     'default': {
@@ -64,6 +68,10 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
 EMAIL_PORT = os.environ.get('EMAIL_PORT', '')
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '')
+
+OA_ANALYTICS_CREDENTIALS_JSON = os.path.join(BASE_DIR, 'CloudCV.json') # noqa
+OA_ANALYTICS_VIEW_ID = 158735598
+OA_COPYRIGHT = '2017 CloudCV'
 
 # Port number for the python-memcached cache backend.
 CACHES['default']['LOCATION'] = os.environ.get('MEMCACHED_LOCATION', '127.0.0.1:11211') # noqa: ignore=F405

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DEFAULT_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
