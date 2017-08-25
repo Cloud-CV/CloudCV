@@ -1,5 +1,3 @@
-/*eslint-disable  import/default */
-
 import "babel-polyfill";
 import Raven from "raven-js";
 import React from "react";
@@ -11,10 +9,14 @@ import style from "./styles/main.scss";
 
 import App from "./components/App";
 import configureStore from "./store/configureStore";
+import ReactGA from "react-ga";
 
-Raven.config(
-  "https://6d5ebe81f8fb40c0b967b6ff91c80cdb@sentry.io/178146"
-).install();
+if (process.env.NODE_ENV === "production") {
+  Raven.config(
+    "https://6d5ebe81f8fb40c0b967b6ff91c80cdb@sentry.io/178146"
+  ).install();
+  ReactGA.initialize("UA-105308910-1");
+}
 
 const store = configureStore();
 injectTapEventPlugin();
