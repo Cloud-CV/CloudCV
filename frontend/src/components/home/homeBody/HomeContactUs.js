@@ -23,7 +23,7 @@ const HomeContactUs = props => {
   };
   const CONTACT_US_TITLE = "Contact Us";
   return (
-    <div className="cv-home-contact-us cv-container" id="contact">
+    <div className="cv-home-contact-us cv-container" id="contact-us">
       <h1 className="cv-home-showcase-heading">
         {CONTACT_US_TITLE}
       </h1>

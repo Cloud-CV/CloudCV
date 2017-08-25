@@ -19,6 +19,7 @@ const App = props => {
           <Route path="/news" component={HomePageComponent} />
           <Route path="/team" component={TeamPageComponent} />
           <Route path="/projects" component={ProjectPageComponent} />
+          <Route path="/contact-us" component={HomePageComponent} />
           <Route component={PageNotFoundHandler} />
         </Switch>
       </main>
