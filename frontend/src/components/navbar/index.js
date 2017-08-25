@@ -61,7 +61,7 @@ class Navbar extends Component {
     listItems = listItems.map((path, index) => {
       if (path === "GSoC") {
         return (
-          <NavbarItem active={active} key={path}>
+          <NavbarItem active={false} key={path}>
             <Link to="http://gsoc.cloudcv.org" target="_blank">
               {path}
             </Link>

@@ -24,7 +24,12 @@ class DemoContainer extends React.Component {
       this.setState({ demo: nextProps.demo });
   }
 
-  saveInput(formData) {
+  saveInput(data) {
+    let formData = new FormData();
+    Object.entries(data).forEach(([key, value]) => {
+      if (value instanceof Blob) formData.set(key, value, key);
+      else formData.set(key, value);
+    });
     axios({
       method: "post",
       url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
@@ -32,7 +37,7 @@ class DemoContainer extends React.Component {
     })
       .then(response => {
         let payload = JSON.parse(response.data);
-        if (response.status === 200) this.log = payload.id;
+        if (response.status === 200) this.log = payload.success.id;
       })
       .catch(error => {});
   }

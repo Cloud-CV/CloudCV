@@ -1,3 +1,5 @@
+import json
+import logging
 from rest_framework import permissions, status
 from rest_framework.decorators import (api_view, permission_classes, throttle_classes,)
 from rest_framework.response import Response
@@ -18,7 +20,8 @@ def post_log(request, demo_permalink):
     """
     demo = Demo.objects.get(permalink=demo_permalink)
     if not demo:
-        return Response('Unexpected Error', status=status.HTTP_404_NOT_FOUND)
+        error_message = {'error': 'Demo not found!'}
+        return Response(json.dumps(error_message), status=status.HTTP_404_NOT_FOUND)
 
     try:
         demo_log = DemoLog.objects.create(
@@ -26,7 +29,8 @@ def post_log(request, demo_permalink):
             log_type='Submission'
         )
     except Exception:
-        return Response('Unexpected Error', status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        error_message = {'error': 'Demo log could not be created'}
+        return Response(json.dumps(error_message), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     i = 0
     try:
@@ -39,6 +43,7 @@ def post_log(request, demo_permalink):
             )
             i += 1
     except Exception:
+        logging.exception('Key not found while saving input')
         pass
 
     imagedata = []
@@ -53,9 +58,11 @@ def post_log(request, demo_permalink):
             )
             i += 1
     except Exception:
+        logging.exception('Key not found while saving output')
         pass
 
-    return Response('{ "id" : ' + str(demo_log.id) + ' }', status=status.HTTP_200_OK)
+    success_message = {'success': {'id': demo_log.id}}
+    return Response(json.dumps(success_message), status=status.HTTP_200_OK)
 
 
 @throttle_classes([AnonRateThrottle, ])
@@ -67,7 +74,8 @@ def post_output(request, log_id):
     """
     demo_log = DemoLog.objects.get(id=log_id)
     if not demo_log:
-        return Response('Unexpected Error', status=status.HTTP_404_NOT_FOUND)
+        error_message = {'error': 'Demo log not found!'}
+        return Response(json.dumps(error_message), status=status.HTTP_404_NOT_FOUND)
 
     count_image_inputs = demo_log.demo.image_inputs
     count_text_inputs = demo_log.demo.text_inputs
