@@ -36,8 +36,7 @@ class DemoContainer extends React.Component {
       data: formData
     })
       .then(response => {
-        let payload = JSON.parse(response.data);
-        if (response.status === 200) this.log = payload.success.id;
+        if (response.status === 200) this.log = response.data.success.id;
       })
       .catch(error => {});
   }

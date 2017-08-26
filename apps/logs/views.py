@@ -1,4 +1,3 @@
-import json
 import logging
 from rest_framework import permissions, status
 from rest_framework.decorators import (api_view, permission_classes, throttle_classes,)
@@ -21,7 +20,7 @@ def post_log(request, demo_permalink):
     demo = Demo.objects.get(permalink=demo_permalink)
     if not demo:
         error_message = {'error': 'Demo not found!'}
-        return Response(json.dumps(error_message), status=status.HTTP_404_NOT_FOUND)
+        return Response(error_message, status=status.HTTP_404_NOT_FOUND)
 
     try:
         demo_log = DemoLog.objects.create(
@@ -30,7 +29,7 @@ def post_log(request, demo_permalink):
         )
     except Exception:
         error_message = {'error': 'Demo log could not be created'}
-        return Response(json.dumps(error_message), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response(error_message, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     i = 0
     try:
@@ -62,7 +61,7 @@ def post_log(request, demo_permalink):
         pass
 
     success_message = {'success': {'id': demo_log.id}}
-    return Response(json.dumps(success_message), status=status.HTTP_200_OK)
+    return Response(success_message, status=status.HTTP_200_OK)
 
 
 @throttle_classes([AnonRateThrottle, ])
@@ -75,7 +74,7 @@ def post_output(request, log_id):
     demo_log = DemoLog.objects.get(id=log_id)
     if not demo_log:
         error_message = {'error': 'Demo log not found!'}
-        return Response(json.dumps(error_message), status=status.HTTP_404_NOT_FOUND)
+        return Response(error_message, status=status.HTTP_404_NOT_FOUND)
 
     count_image_inputs = demo_log.demo.image_inputs
     count_text_inputs = demo_log.demo.text_inputs
@@ -99,5 +98,5 @@ def post_output(request, log_id):
                 text=text,
                 text_type='Output'
             )
-
-    return Response('OK', status=status.HTTP_200_OK)
+    success_message = {'success': 'OK'}
+    return Response(success_message, status=status.HTTP_200_OK)
