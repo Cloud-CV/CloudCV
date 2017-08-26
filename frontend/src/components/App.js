@@ -16,10 +16,10 @@ const App = props => {
         <Route component={AnalyticsComponent} />
         <Switch>
           <Route exact path="/" component={HomePageComponent} />
-          <Route path="/news" component={HomePageComponent} />
           <Route path="/team" component={TeamPageComponent} />
           <Route path="/projects" component={ProjectPageComponent} />
           <Route path="/contact-us" component={HomePageComponent} />
+          <Route path="/contribute" component={HomePageComponent} />
           <Route component={PageNotFoundHandler} />
         </Switch>
       </main>

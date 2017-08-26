@@ -10,7 +10,11 @@ const Card = props => {
   );
 };
 
-const themeClassOptions = ["cv-card-light", "cv-card-dark"];
+const themeClassOptions = [
+  "cv-card-light",
+  "cv-card-dark",
+  "cv-card-deep-light"
+];
 
 Card.defaultProps = {
   children: null,

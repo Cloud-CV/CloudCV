@@ -21,7 +21,7 @@ const HomeBody = props => {
       <HomeNews />
       <HomeShowcase />
       <HomeSponsors />
-      <div className="cv-home-github cv-container">
+      <div className="cv-home-github cv-container" id="contribute">
         <h1 className="cv-home-showcase-heading">{GITHUB_DESC}</h1>
         <br />
         <p>{GITHUB_STRING}</p>

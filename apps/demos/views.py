@@ -12,7 +12,7 @@ from .serializers import DemoSerializer, ProjectSerializer
 @permission_classes((permissions.AllowAny,))
 def get_demos(request):
     """
-    Get a list of team members
+    Get a list of demos
     """
     demos = Demo.objects.filter(is_disabled=False).order_by('title')
     serializer = DemoSerializer(demos, many=True, context={'request': request})
@@ -25,7 +25,7 @@ def get_demos(request):
 @permission_classes((permissions.AllowAny,))
 def get_projects(request):
     """
-    Get a list of team members
+    Get a list of projects
     """
     projects = Project.objects.filter(is_visible=True).order_by('title')
     serializer = ProjectSerializer(projects, many=True, context={'request': request})
