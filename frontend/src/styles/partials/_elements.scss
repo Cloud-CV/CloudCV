@@ -25,6 +25,7 @@
   cursor: pointer;
   font-family: $heading-font-family;
   padding: 1.7*$gutter-width 4.5*$gutter-width;
+  transition: all 0.2s linear;
 }
 
   .cv-button-light {
@@ -34,6 +35,10 @@
   .cv-button-dark {
     background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
     color: $white;
+
+    &:hover {
+      background: linear-gradient(45deg, $heading-color, $heading-color 50%, $secondary-color 90%, $secondary-color);
+    }
   }
 
   .cv-button-small {
@@ -80,3 +85,25 @@
   }
 }
 
+/********FORM ELEMENTS********/
+
+.cv-input-text {
+  margin: 3 * $gutter-width 0 0 0;
+  padding: 0 0 1 * $gutter-width 0;
+  border-bottom: 2px solid $secondary-color;
+  transition: all 0.3s linear;
+  width: 350px;
+
+  &:focus {
+    border-bottom: 2px solid $heading-color;
+  }
+}
+
+.cv-input-label {
+  display: block;
+  padding: 4 * $gutter-width 0 0 0;
+}
+
+.cv-input-file {
+  padding: $gutter-width 0 0 0;
+}

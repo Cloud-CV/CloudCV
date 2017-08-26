@@ -275,6 +275,23 @@
           min-width: 70px;
         }
 
+    .cv-home-contact-us {
+      padding: 8 * $gutter-width 0 0 0;
+    }
+
+      .cv-home-contact-form {
+        margin: 3 * $gutter-width 0;
+      }
+        .cv-home-contact-form-elements {
+          margin: 5 * $gutter-width 0;
+        }
+
+        .cv-home-form-success {
+          padding: 2 * $gutter-width 0;
+          color: $success-color;
+          display: block;
+        }
+
   .cv-home-footer {
     margin: 0;
     padding: 8 * $gutter-width 0 0 0;

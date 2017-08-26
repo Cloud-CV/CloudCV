@@ -1,7 +1,13 @@
 * {
   @include placeholder {
-    color: $secondary-color;
+    @include font-size(1.8, 1.2);
+    color: $primary-color;
   }
+
+}
+
+input:not(output):-moz-ui-invalid {
+  box-shadow:none !important;
 }
 
 body, input {

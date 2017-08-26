@@ -50,12 +50,21 @@ class Navbar extends Component {
       firstPath = this.props.location.pathname.substr(1);
     }
     let projectActive = firstPath === "projects";
-    let listItems = ["", "Projects", "News", "GSoC", "Team", "Contribute"];
+    let listItems = [
+      "",
+      "Projects",
+      "News",
+      "GSoC",
+      "Team",
+      "Contribute",
+      "Contact Us"
+    ];
     listItems = listItems.map((path, index) => {
       let active = path.toLowerCase() === firstPath;
+      let formattedPath = path.toLowerCase().replace(/ /g, "-");
       return (
         <NavbarItem active={active} key={path}>
-          <Link to={`\/${path.toLowerCase()}`}>
+          <Link to={`\/${formattedPath}`}>
             {path === "" ? "Home" : path}
           </Link>
         </NavbarItem>

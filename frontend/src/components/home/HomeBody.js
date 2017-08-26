@@ -4,6 +4,7 @@ import HomeAboutUs from "./homeBody/HomeAboutUs";
 import HomeNews from "./homeBody/HomeNews";
 import HomeSponsors from "./homeBody/HomeSponsors";
 import HomeShowcase from "./homeBody/HomeShowcase";
+import HomeContactUs from "./homeBody/HomeContactUs";
 import Button from "../common/Button";
 
 const HomeBody = props => {
@@ -54,6 +55,7 @@ const HomeBody = props => {
           </Link>
         </div>
       </div>
+      <HomeContactUs />
     </div>
   );
 };
