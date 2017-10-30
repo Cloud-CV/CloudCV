@@ -23,16 +23,20 @@
     "> 0.5%",
     "ie > 9"
   ],
-  "author": "Utkarsh Gupta",
+  "author": "CloudCV Team",
   "license": "GPL-3.0",
   "dependencies": {
     "antd": "^2.10.0",
+    "axios": "^0.16.2",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "immutable": "^3.8.1",
     "prop-types": "^15.5.8",
+    "raven-js": "^3.16.0",
     "react": "^15.4.2",
+    "react-burger-menu": "^2.1.4",
     "react-dom": "^15.3.2",
+    "react-ga": "^2.2.0",
     "react-redux": "^5.0.3",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^4.0.6",
@@ -41,7 +45,8 @@
     "redux-thunk": "^2.1.0",
     "socket.io": "^2.0.1",
     "socket.io-client": "^2.0.1",
-    "superagent": "^3.0.0"
+    "superagent": "^3.0.0",
+    "to-string-loader": "^1.1.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -56,6 +61,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-register": "^6.16.3",
+    "base64-font-loader": "^0.0.4",
     "colors": "^1.1.2",
     "compression": "^1.6.2",
     "cross-env": "4.0.0",

@@ -1,0 +1,118 @@
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/fonts';
+@import 'partials/reset';
+@import 'partials/animations';
+@import 'partials/typography';
+@import 'partials/theme';
+
+body {
+  overflow: auto !important;
+}
+
+.origami-demo-wrapper {
+  width: 100%;
+  padding: 2 * $gutter-width;
+}
+
+  .origami-demo-header {
+    text-align: center;
+  }
+
+    .origami-demo-heading {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 2 * $gutter-width;
+      @include text-gradient($heading-color, $secondary-color);
+    }
+
+  .origami-demo-input {
+    padding: 2 * $gutter-width 0;
+  }
+
+    .origami-demo-input-heading {
+      color: $black;
+    }
+
+    .origami-demo-input-components {
+      display: flex;
+      justify-content: space-around;
+
+      > div {
+        width: 22% !important;
+        margin: 2 * $gutter-width 1.5%;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+      }
+    }
+      .origami-demo-input-text-components {
+        border: none !important;
+
+        input {
+          width: 100% !important;
+          margin: 2 * $gutter-width 1.5%;
+          border-bottom: 1px solid $primary-color;
+        }
+      }
+
+        .origami-demo-input-image-label {
+          text-align: center;
+          font-weight: 700;
+        }
+
+        .origami-demo-input-image-component-desc {
+          text-align: center;
+        }
+
+    .origami-demo-send-button {
+      display: flex;
+      justify-content: center;
+      padding: 4 * $gutter-width 0;
+
+      > div {
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+        button {
+          @include font-size(1.2, 1);
+          border-radius: 3*$gutter-width !important;
+          cursor: pointer;
+          font-family: $heading-font-family;
+          padding: 1.7*$gutter-width 4.5*$gutter-width;
+          background: linear-gradient(45deg, $heading-color, $heading-color 30%, $secondary-color 70%, $secondary-color);
+          color: $white;
+        }
+    }
+
+  .origami-demo-output {
+    padding: 2 * $gutter-width 0;
+  }
+
+    .origami-demo-output-heading {
+      color: $black;
+      padding: 3 * $gutter-width 0;
+    }
+
+    .origami-demo-output-components {
+      display: flex;
+      justify-content: space-around;
+
+      > div {
+        width: 22% !important;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        margin: 0 1.5%;
+      }
+    }
+
+      .origami-demo-output-text-component {
+        text-align: center;
+        padding: 2%;
+        font-weight: 700;
+        color: $black;
+      }
+
+        .origami-demo-output-image {
+          width: 100%;
+        }

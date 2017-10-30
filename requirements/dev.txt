@@ -1,3 +1,8 @@
 -r base.txt
 
 flake8==3.3.0
+coveralls==1.1
+coverage==4.4.1
+pytest-cov==2.5.1
+pytest-django==3.1.2
+pytest==3.1.2

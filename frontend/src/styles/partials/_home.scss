@@ -1,12 +1,12 @@
 /*****HOME STYLES*****/
 
 .cv-home-container {
-  padding-top: 100px;
   width: 100%;
 }
 
   .cv-home-header {
     font-weight: 500;
+    margin-top: 7 * $gutter-width;
   }
 
     .cv-home-header-intro, .cv-home-header-desc {
@@ -25,25 +25,178 @@
     }
 
   .cv-home-button {
-    margin: 100px 0;
+    margin: 100px 0 0 0;
   }
 
   .cv-home-body {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-top: 12*$gutter-width;
+    padding: 0 0 5*$gutter-width 0;
   }
 
-    .cv-home-card-container {
+    .cv-home-about-us {
+      display: flex;
+      justify-content: center;;
+      align-items: center;
+      flex-wrap: wrap;
       width: 100%;
+      padding: 20*$gutter-width 0 10*$gutter-width 0;
+    }
+
+      .cv-home-card-container {
+        width: 100%;
+        text-align: justify;
+
+        @media #{$bp-sm} {
+          width: 95%;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+        .cv-about-us-card-heading {
+          position: absolute;
+          display: inline-block;
+          white-space: nowrap;
+          margin: 0 auto;
+          right: 0;
+
+          @media #{$bp-sm} {
+            top: -13rem;
+          }
+        }
+
+          .cv-about-us-heading-line {
+            @include text-gradient($heading-color, $secondary-color);
+          }
+
+          .cv-question-mark {
+            display: none;
+            @include text-gradient($heading-color, $secondary-color);
+            font-family: $primary-font-family;
+            @include font-size(25, 1);
+            font-weight: 300;
+
+            @media #{$bp-sm} {
+              display: inline;
+            }
+          }
+
+        .cv-about-us-card-desc {
+          margin-top: 10*$gutter-width;
+        }
+
+    .cv-home-showcase {
+      padding: 10*$gutter-width 0 5*$gutter-width 0;
+    }
+
+      .cv-home-showcase-heading {
+        display: inline-block;
+        @include text-gradient($heading-color, $secondary-color);
+      }
+
+      .cv-home-showcase-content {
+        padding-top: 1*$gutter-width;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+        .cv-home-showcase-card {
+          box-shadow: none;
+          width: 100%;
+          position: relative;
+          margin: 1*$gutter-width 0;
+          padding: 2rem;
+
+          @media #{$bp-sm} {
+            width: 29%;
+            margin: 0 3%;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+          .cv-home-showcase-card-image {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              display: block;
+              width: 60%;
+            }
+          }
+
+          .cv-home-showcase-links {
+            padding-top: 1 * $gutter-width;
+            text-align: center;
+            min-height: 100px;
+          }
+
+      .cv-home-showcase-links {
+        display: flex;
+        justify-content: space-around;
+      }
+
+    .cv-home-news {
+      padding: 7*$gutter-width 0;
       position: relative;
-      margin: 2*$gutter-width 0;
+      background: linear-gradient($heading-color, $white 400px);
+    }
+
+      .cv-home-news-title-container {
+        padding: 0 0 4*$gutter-width 0;
+        text-align: center;
+      }
+
+        .cv-home-news-title {
+          display: inline;
+          color: $white;
+        }
+
+      .cv-home-news-timeline-container {
+        text-align: center;
+      }
+
+    .cv-home-projects {
+      padding: 3 * $gutter-width 0 6 * $gutter-width 0;
+      text-align: center;
+
+      h4 {
+        color: $primary-color;
+        margin: 0 0 2 * $gutter-width 0;
+      }
+    }
+
+  .cv-home-sponsors-container {
+    margin-top: 10*$gutter-width;
+  }
+
+    .cv-home-sponsor-card {
+      box-shadow: none;
+      width: 45%;
+      position: relative;
+      margin: 5*$gutter-width 0;
+      padding: 0.5*$gutter-width;
 
       @media #{$bp-sm} {
-        width: 47%;
-        margin: 0 3%;
+        width: 12%;
+        margin-left: 1%;
+        margin-right: 1%;
 
         &:first-child {
           margin-left: 0;
@@ -55,56 +208,94 @@
       }
     }
 
-      .cv-about-us-card-heading {
-        top: -13rem;
-        position: absolute;
+      .cv-home-sponsor-card-image {
+        max-height: 80px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .cv-home-sponsor-card-desc {
+        margin: 2*$gutter-width 0;
+        display: block;
+        text-align: center;
+      }
+
+    .cv-home-sponsors {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+      .cv-home-spon-card {
+        box-shadow: none;
+        max-height: 80px;
+        max-width: 50%;
+        position: relative;
+        margin: 5*$gutter-width auto;
+        padding: 1*$gutter-width;
+
+        @media #{$bp-sm} {
+          max-height: 120px;
+          max-width: 20%;
+          margin-left: 1%;
+          margin-right: 1%;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+    .cv-home-github {
+      text-align: center;
+      padding: 8 * $gutter-width 0 2 * $gutter-width 0;
+
+      h1 {
         display: inline-block;
-        white-space: nowrap;
-      }
-
-        .cv-about-us-heading-line {
-          @include text-gradient($heading-color, $secondary-color);
-        }
-
-        .cv-question-mark {
-          @include text-gradient($heading-color, $secondary-color);
-          font-family: $primary-font-family;
-          @include font-size(25, 1);
-          font-weight: 300;
-        }
-
-      .cv-about-us-card-desc {
-        margin-top: 10*$gutter-width;
-      }
-
-    .cv-arxiv-paper-card-container {
-      margin-top: 15 * $gutter-width;
-
-      @media #{$bp-sm} {
-        margin-top: 20*$gutter-width;
+        margin: 0 0 3 * $gutter-width 0;
       }
     }
 
-      .cv-arxiv-paper-image-container {
-        left: 50%;
-        top: -20%;
-        position: absolute;
-        width: 40%;
-        box-shadow: $box-shadow;
+      .cv-home-github-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-        .cv-arxiv-paper-image {
-          width: 100%;
+        .cv-home-gihub-image {
+          margin: 3 * $gutter-width $gutter-width 1 * $gutter-width $gutter-width;
+          width: 7%;
+          max-width: 90px;
+          min-width: 70px;
         }
 
-      .cv-arxiv-paper-heading {
-        color: $white;
-        margin-top: 30%;
+    .cv-home-contact-us {
+      padding: 8 * $gutter-width 0 0 0;
+    }
+
+      .cv-home-contact-form {
+        margin: 3 * $gutter-width 0;
       }
+        .cv-home-contact-form-elements {
+          margin: 5 * $gutter-width 0;
+        }
 
-      .cv-arxiv-paper-desc {
-        margin-top: 2*$gutter-width;
-      }
+        .cv-home-form-success {
+          padding: 2 * $gutter-width 0;
+          color: $success-color;
+          display: block;
+        }
 
-
-
+  .cv-home-footer {
+    margin: 0;
+    padding: 8 * $gutter-width 0 0 0;
+  }
+    .cv-home-footer-image {
+      width: 100%;
+      height: 100%;
+    }

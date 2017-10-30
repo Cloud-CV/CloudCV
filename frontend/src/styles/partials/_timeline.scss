@@ -1,0 +1,213 @@
+
+/*==================================
+    TIMELINE
+==================================*/
+
+  /*-- GENERAL STYLES
+  ------------------------------*/
+  .timeline {
+    line-height: 1.4em;
+    list-style: none;
+    margin: 0;
+    padding: 0 1 * $gutter-width;
+    width: 100%;
+    h1, h2, h3, h4, h5, h6 {
+      line-height: inherit;
+    }
+  }
+
+  /*----- TIMELINE ITEM -----*/
+
+  .timeline-item {
+    padding-left: 40px;
+    position: relative;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  /*----- TIMELINE INFO -----*/
+
+  .timeline-info {
+    @include font-size(1.4, 1.5);
+    color: $black;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 0 .5em 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  /*----- TIMELINE MARKER -----*/
+
+  .timeline-marker {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 10px;
+    &:before {
+      background: $black;
+      border: 1px solid transparent;
+      border-radius: 100%;
+      content: "";
+      display: block;
+      height: 10px;
+      position: absolute;
+      top: 4px; left: 0;
+      width: 10px;
+      transition: background 0.3s ease-in-out,
+              border 0.3s ease-in-out;
+    }
+    &:after {
+      content: "";
+      width: 1px;
+      background: $black;
+      display: block;
+      position: absolute;
+      top: 24px; bottom: 0; left: 4px;
+    }
+    .timeline-item:last-child &:after {
+      content: none;
+    }
+  }
+  .timeline-item:not(.period):hover .timeline-marker:before {
+    background: transparent;
+    border: 1px solid $black;
+  }
+
+  /*----- TIMELINE CONTENT -----*/
+
+  .timeline-content {
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 2rem 2rem;
+    margin: 1rem 0;
+
+    @include font-size(1.4, 1.5);
+
+    a {
+      color: $heading-color;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /*----------------------------------------------
+      MOD: TIMELINE SPLIT
+  ----------------------------------------------*/
+
+  .timeline-split {
+    @media (min-width: 768px) {
+      .timeline {
+        display: table;
+      }
+      .timeline-item {
+        display: table-row;
+        padding: 0;
+      }
+      .timeline-info,
+      .timeline-marker,
+      .timeline-content,
+      .period .timeline-info {
+        display: table-cell;
+        vertical-align: top;
+      }
+      .timeline-marker {
+        position: relative;
+      }
+      .timeline-content {
+        padding-left: 30px;
+      }
+      .timeline-info {
+        padding-right: 30px;
+      }
+      .period .timeline-title {
+        position: relative;
+        left: -45px;
+      }
+    }
+  }
+
+  /*----------------------------------------------
+      MOD: TIMELINE CENTERED
+  ----------------------------------------------*/
+
+  .timeline-centered {
+    @extend .timeline-split;
+    @media (min-width: 992px) {
+      &,
+      .timeline-item,
+      .timeline-info,
+      .timeline-marker,
+      .timeline-content {
+        display: block;
+        margin: 0;
+      }
+      .timeline-item {
+        padding-bottom: 40px;
+        overflow: hidden;
+      }
+      .timeline-marker {
+        position: absolute;
+        left: 50%;
+        margin-left: -7.5px;
+      }
+      .timeline-info,
+      .timeline-content {
+        width: 47%;
+      }
+      > .timeline-item:nth-child(odd) .timeline-info {
+        float: left;
+        text-align: right;
+        padding-right: 30px;
+      }
+      > .timeline-item:nth-child(odd) .timeline-content {
+        float: right;
+        text-align: left;
+        padding-left: 30px;
+      }
+      > .timeline-item:nth-child(even) .timeline-info {
+        float: right;
+        text-align: left;
+        padding-left: 30px;
+      }
+      > .timeline-item:nth-child(even) .timeline-content {
+        float: left;
+        text-align: left;
+        padding-right: 30px;
+      }
+      > .timeline-item.period .timeline-content {
+        float: none;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+      }
+      .timeline-item.period {
+        padding: 50px 0 90px;
+      }
+      .period .timeline-marker:after {
+        height: 30px;
+        bottom: 0;
+        top: auto;
+      }
+      .period .timeline-title {
+        left: auto;
+      }
+    }
+  }
+
+  /*----------------------------------------------
+      MOD: MARKER OUTLINE
+  ----------------------------------------------*/
+
+  .marker-outline {
+    .timeline-marker {
+      &:before {
+        background: transparent;
+        border-color: $black;
+      }
+    }
+    .timeline-item:hover .timeline-marker:before {
+      background: $black;
+    }
+  }
