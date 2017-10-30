@@ -11,6 +11,7 @@ const clientIP = appConfig.CLIENT_IP || "0.0.0.0";
 const app = express();
 
 const http = require("http").Server(app);
+const io = require("socket.io")(http);
 
 app.use(bodyParser.urlencoded({ limit: "500mb", extended: true }));
 app.use(bodyParser.json({ limit: "500mb" }));
@@ -18,7 +19,13 @@ app.use(compression());
 app.use(express.static("dist"));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../dist/index.html"));
+  res.sendFile(path.resolve(__dirname, "../src/index.html"));
+});
+
+io.on("connection", socket => {
+  socket.on("hello", () => {
+    socket.emit("world");
+  });
 });
 
 http.listen(port, err => {

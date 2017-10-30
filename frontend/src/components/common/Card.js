@@ -10,11 +10,7 @@ const Card = props => {
   );
 };
 
-const themeClassOptions = [
-  "cv-card-light",
-  "cv-card-dark",
-  "cv-card-deep-light"
-];
+const themeClassOptions = ["cv-card-light", "cv-card-dark"];
 
 Card.defaultProps = {
   children: null,
@@ -23,11 +19,7 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object,
-    PropTypes.array
-  ]),
+  children: PropTypes.array,
   extraClass: PropTypes.string,
   themeClass: PropTypes.oneOf(themeClassOptions)
 };
