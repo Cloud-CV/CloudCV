@@ -1,30 +1,16 @@
 * {
   @include placeholder {
-    @include font-size(1.8, 1.2);
-    color: $primary-color;
+    color: $secondary-color;
   }
-
-}
-
-input:not(output):-moz-ui-invalid {
-  box-shadow:none !important;
 }
 
 body, input {
   color: $primary-color;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  padding: 0;
-  height: 100%;
-}
-
-#app,.cv-root-container {
-  height: 100%
+  background-color: $primary-bg-color;
+  padding: 2 * $gutter-width;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,14 +26,6 @@ a {
 
 .no-select {
   user-select: none;
-}
-
-.right-align {
-  text-align: right;
-}
-
-.navbar-box-shadow {
-  box-shadow: $box-shadow !important;
 }
 
 .hidden-small {
