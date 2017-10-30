@@ -1,6 +1,12 @@
 import webpack from "webpack";
 import path from "path";
 
+const GLOBALS = {
+  "process.env.AJAX_ROOT": JSON.stringify(
+    process.env.AJAX_ROOT || "http://localhost:8000"
+  )
+};
+
 export default {
   devtool: "cheap-module-eval-source-map",
   entry: [
@@ -18,6 +24,7 @@ export default {
     contentBase: "./src"
   },
   plugins: [
+    new webpack.DefinePlugin(GLOBALS),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
@@ -32,22 +39,21 @@ export default {
         use: ["babel-loader"]
       },
       {
+        test: /(demo.scss)$/,
+        use: ["to-string-loader", "css-loader", "postcss-loader", "sass-loader"]
+      },
+      {
         test: /(\.scss)$/,
+        exclude: /(demo.scss)$/,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
       },
       {
         test: /(\.less)$/,
         use: ["style-loader", "css-loader", "postcss-loader", "less-loader"]
       },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: ["file-loader"] },
-      { test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000" },
       {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader?limit=10000&mimetype=application/octet-stream"
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+        test: /\.(woff|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "base64-font-loader"
       },
       { test: /\.png$/, loader: "url-loader?limit=8192&mimetype=image/png" },
       { test: /\.jpg$/, loader: "url-loader?limit=8192&mimetype=image/jpg" }

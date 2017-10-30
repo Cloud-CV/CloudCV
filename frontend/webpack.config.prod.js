@@ -3,7 +3,10 @@ import path from "path";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 const GLOBALS = {
-  "process.env.NODE_ENV": JSON.stringify("production")
+  "process.env.NODE_ENV": JSON.stringify("production"),
+  "process.env.AJAX_ROOT": JSON.stringify(
+    process.env.AJAX_ROOT || "http://localhost:8000"
+  )
 };
 
 export default {
@@ -34,7 +37,12 @@ export default {
         use: ["babel-loader"]
       },
       {
+        test: /(demo.scss)$/,
+        use: ["to-string-loader", "css-loader", "postcss-loader", "sass-loader"]
+      },
+      {
         test: /(\.scss)$/,
+        exclude: /(demo.scss)$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use: [
@@ -65,15 +73,9 @@ export default {
           ]
         })
       },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: ["file-loader"] },
-      { test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000" },
       {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader?limit=10000&mimetype=application/octet-stream"
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+        test: /\.(woff|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "base64-font-loader"
       },
       { test: /\.png$/, loader: "url-loader?limit=8192&mimetype=image/png" },
       { test: /\.jpg$/, loader: "url-loader?limit=8192&mimetype=image/jpg" }

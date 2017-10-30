@@ -1,0 +1,29 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "node-app",
+      "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/nodejs:latest",
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 6003
+        }
+      ],
+      "essential": true,
+      "memory": 512
+    },
+    {
+      "name": "django-app",
+      "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/django:latest",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 8000,
+          "containerPort": 8000
+        }
+      ]
+    }
+  ]
+}
