@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HomeAboutUs from "./homeBody/HomeAboutUs";
 import HomeNews from "./homeBody/HomeNews";
+import HomeDemos from "./homeBody/HomeDemos";
 import HomeSponsors from "./homeBody/HomeSponsors";
 import HomeShowcase from "./homeBody/HomeShowcase";
 import HomeContactUs from "./homeBody/HomeContactUs";
@@ -20,6 +21,7 @@ const HomeBody = props => {
       <HomeAboutUs />
       <HomeNews />
       <HomeShowcase />
+      <HomeDemos />
       <HomeSponsors />
       <div className="cv-home-github cv-container" id="contribute">
         <h1 className="cv-home-showcase-heading">{GITHUB_DESC}</h1>
