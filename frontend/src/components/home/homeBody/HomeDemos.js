@@ -40,28 +40,31 @@ class HomeDemos extends React.Component {
               {this.state.demos.map((demo, index) => {
                 return (
                   <Card key={index} extraClass="cv-home-demos-card">
-                    <div className="cv-home-demos-card-image">
-                      <img src={demo.image} />
+                    <div className="cv-home-demos-card-title">
+                      {demo.title}
+                    </div>
+                    <div className="cv-home-demos-card-description">
+                      {demo.description}
                     </div>
                     <div className="cv-home-demos-links">
-                      <Link to={demo.github_url} target="_blank">
+                      <Link to={demo.source_code_url} target="_blank">
                         <Button extraClass="cv-button-small">
-                          Github
+                          Source code
                         </Button>
                       </Link>
-                      <Link to={demo.documentation_url} target="_blank">
+                      <Link to={demo.demo_url} target="_blank">
                         <Button
                           themeClass="cv-button-dark"
                           extraClass="cv-button-small"
                         >
-                          Documentation
+                          Website
                         </Button>
                       </Link>
                     </div>
                   </Card>
                 );
               })}
-
+              
             </div>
           </div>}
       </div>
