@@ -169,10 +169,15 @@
         flex-wrap: wrap;
         width: 100%;
       }
-
+        
+        .cv-home-demos-card-wrapper{
+          padding: 15px;
+          height: 320px;
+        }
         .cv-home-demos-card {
           box-shadow: none;
           width: 100%;
+          max-height: 100px;
           position: relative;
           margin: 1*$gutter-width 0;
           padding: 2rem;
@@ -199,6 +204,7 @@
           }
           
           .cv-home-demos-card-description {
+             height: 70px;
              padding-top: 1 * $gutter-width;
              text-align: center;
           }
@@ -206,9 +212,10 @@
           .cv-home-demos-links {
             padding-top: 1 * $gutter-width;
             text-align: center;
-            min-height: 100px;
+            align-items: flex-end;
+            min-height: 50px;
           }
-
+          
       .cv-home-demos-links {
         display: flex;
         justify-content: space-around;
