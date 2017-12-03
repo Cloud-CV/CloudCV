@@ -220,6 +220,18 @@
         display: flex;
         justify-content: space-around;
       }
+      
+      .slider-decorator-0 {
+          height: 30px;
+      }
+      .carousel-button {
+        border-radius: 50%;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        vertical-align: middle;
+        background: linear-gradient(45deg, $heading-color, $secondary-color);
+      }
 
     .cv-home-news {
       padding: 7*$gutter-width 0;

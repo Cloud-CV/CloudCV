@@ -5,6 +5,7 @@ import Card from "../../common/Card";
 import Button from "../../common/Button";
 import Preloader from "../../common/Preloader";
 import Carousel from "nuka-carousel";
+import CarouselDecorators from "../../common/CarouselDecorators";
 
 class HomeDemos extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class HomeDemos extends React.Component {
             <h1 className="cv-home-demos-heading">
               {DEMOS_TITLE}
             </h1>
-            <Carousel slideWidth={0.5}>
+            <Carousel slideWidth={0.5} decorators={CarouselDecorators}>
               {this.state.demos.map((demo, index) => {
                 return (
                   <div key={index} className="cv-home-demos-card-wrapper">
