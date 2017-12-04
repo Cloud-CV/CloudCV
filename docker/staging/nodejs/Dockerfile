@@ -1,3 +1,4 @@
+
 FROM node:6
 MAINTAINER CloudCV Team
 
@@ -14,7 +15,8 @@ RUN npm cache clean -f
 RUN apt-get install apt-transport-https
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install yarnRUN yarn install
+RUN apt-get update && apt-get install yarn
+RUN yarn install
 
 CMD ["/bin/bash", "/code/container-start.sh"]
 EXPOSE 6003
