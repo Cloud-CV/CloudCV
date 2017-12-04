@@ -63,7 +63,10 @@ const HomeContactUs = props => {
           <label className="cv-input-label" htmlFor="image">
             Any screenshot/image you would like to add :
           </label>
-          <input className="cv-input-file" type="file" name="image" />
+          <div className="cv-input-file-wrapper cv-button cv-button-dark">
+            <input className="cv-input-file" type="file" name="image" />
+            <span>Choose File</span>
+          </div>
         </section>
         <input
           className="cv-button cv-button-dark"
