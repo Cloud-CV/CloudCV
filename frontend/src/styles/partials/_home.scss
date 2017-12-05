@@ -151,7 +151,7 @@
         display: flex;
         justify-content: space-around;
       }
-      
+
     .cv-home-demos {
       padding: 10*$gutter-width 0 5*$gutter-width 0;
     }
@@ -169,7 +169,7 @@
         flex-wrap: wrap;
         width: 100%;
       }
-        
+
         .cv-home-demos-card-wrapper{
           padding: 15px;
           height: 320px;
@@ -202,7 +202,7 @@
             font-family: $heading-font-family;
             @include text-gradient($heading-color, $secondary-color);
           }
-          
+
           .cv-home-demos-card-description {
              height: 70px;
              padding-top: 1 * $gutter-width;
@@ -215,12 +215,12 @@
             align-items: flex-end;
             min-height: 50px;
           }
-          
+
       .cv-home-demos-links {
         display: flex;
         justify-content: space-around;
       }
-      
+
       .slider-decorator-0 {
           height: 30px;
       }
