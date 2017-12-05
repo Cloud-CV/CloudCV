@@ -98,6 +98,21 @@
     border-bottom: 2px solid $heading-color;
   }
 }
+.cv-input-textarea {
+  margin: 3 * $gutter-width 0 0 0;
+  padding: 0 0 1 * $gutter-width 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  overflow: auto;
+  border-bottom: 2px solid $secondary-color;
+  transition: all 0.3s linear;
+  width: 350px;
+
+  &:focus {
+    border-bottom: 2px solid $heading-color;
+  }
+}
 
 .cv-input-label {
   display: block;

@@ -52,8 +52,8 @@ const HomeContactUs = props => {
             required
           />
           <br />
-          <input
-            className="cv-input-text"
+          <textarea
+            className="cv-input-textarea"
             type="text"
             name="message"
             placeholder="Message/Query"
