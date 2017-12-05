@@ -103,7 +103,25 @@
   display: block;
   padding: 4 * $gutter-width 0 0 0;
 }
-
+.cv-input-file-label {
+  display: block;
+  margin: 3rem 0 0 0; 
+}
+.cv-input-file-label p {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+}
 .cv-input-file {
+  display: none;
+  width: 350px;
   padding: $gutter-width 0 0 0;
+}
+.cv-input-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.cv-input-input:hover::before {
+  border-color: black;
+}
+.cv-input-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
