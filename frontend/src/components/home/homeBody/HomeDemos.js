@@ -5,7 +5,8 @@ import Card from "../../common/Card";
 import Button from "../../common/Button";
 import Preloader from "../../common/Preloader";
 import Carousel from "nuka-carousel";
-import CarouselDecorators from "../../common/CarouselDecorators";
+import CarouselDecorators
+  from "../../common/carouselDecorators/CarouselDecorators";
 
 class HomeDemos extends React.Component {
   constructor(props) {
