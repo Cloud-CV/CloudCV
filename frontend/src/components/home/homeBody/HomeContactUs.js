@@ -5,6 +5,11 @@ import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;
 
 const HomeContactUs = props => {
+  const CONTACT_US_TITLE = "Contact Us";
+  const FILE_UPLOAD_TEXT = "Choose File";
+  const FILE_UPLOADED_TEXT = "Image Uploaded";
+  let inputFileTextElement;
+
   const sendResponse = event => {
     event.preventDefault();
     let formElement = document.getElementById("contact-us-form");
@@ -21,7 +26,12 @@ const HomeContactUs = props => {
       }
     });
   };
-  const CONTACT_US_TITLE = "Contact Us";
+
+  const updateFileUploadText = event => {
+    event.preventDefault();
+    inputFileTextElement.innerHTML = FILE_UPLOADED_TEXT;
+  };
+
   return (
     <div className="cv-home-contact-us cv-container" id="contact-us">
       <h1 className="cv-home-showcase-heading">
@@ -64,8 +74,19 @@ const HomeContactUs = props => {
             Any screenshot/image you would like to add :
           </label>
           <div className="cv-input-file-wrapper cv-button cv-button-dark">
-            <input className="cv-input-file" type="file" name="image" />
-            <span>Choose File</span>
+            <input
+              className="cv-input-file"
+              type="file"
+              name="image"
+              onChange={updateFileUploadText}
+            />
+            <span
+              ref={element => {
+                inputFileTextElement = element;
+              }}
+            >
+              {FILE_UPLOAD_TEXT}
+            </span>
           </div>
         </section>
         <input
