@@ -21,6 +21,9 @@ const HomeContactUs = props => {
       }
     });
   };
+  const updateText = event => {
+    document.getElementById("cv-input-file-inner-p").innerHTML = "File Added";
+  };
   const CONTACT_US_TITLE = "Contact Us";
   return (
     <div className="cv-home-contact-us cv-container" id="contact-us">
@@ -60,10 +63,10 @@ const HomeContactUs = props => {
             required
           />
           <br />
-          <label className="cv-input-label" htmlFor="image">
-            Any screenshot/image you would like to add :
+          <label className="cv-input-file-label cv-button cv-button-dark" style={{ width: "350px" }} >
+          <input className="cv-input-file" id="file-upload" onChange={updateText} type="file" name="image" />
+            <p id="cv-input-file-inner-p">Any screenshot/image you would like to add : </p>
           </label>
-          <input className="cv-input-file" type="file" name="image" />
         </section>
         <input
           className="cv-button cv-button-dark"
