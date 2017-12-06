@@ -30,90 +30,71 @@ class HomeDemos extends React.Component {
       });
   }
 
+  makeDescription(description) {
+    const limit = 80;
+    if (description.length > 80)
+      return description.substring(0, limit).concat("...");
+    return description;
+  }
+
+  renderCards(demos, carousel) {
+    return demos.map((demo, index) => {
+      return (
+        <Card
+          key={index}
+          extraClass={
+            carousel ? "cv-home-demos-carousel-card" : "cv-home-demos-card"
+          }
+        >
+          <div className="cv-home-demos-card-title">
+            {demo.title}
+          </div>
+          <div className="cv-home-demos-card-description">
+            {this.makeDescription(demo.description)}
+          </div>
+          <div
+            className={
+              carousel
+                ? "cv-home-demos-card-links-carousel"
+                : "cv-home-demos-card-links"
+            }
+          >
+            <Link to={demo.source_code_url} target="_blank">
+              <Button className="cv-home-demos-source">
+                Source code
+              </Button>
+            </Link>
+            <Link to={demo.demo_url} target="_blank">
+              <Button themeClass="cv-button-dark" extraClass="cv-button-small">
+                Website
+              </Button>
+            </Link>
+          </div>
+        </Card>
+      );
+    });
+  }
+
   render() {
     const DEMOS_TITLE = "DEMOS";
-    if (this.state.demos.length > 2) {
-      return (
-        <div className="cv-home-demos cv-container">
+    const CAROUSEL = this.state.demos.length > 2;
+    return (
+      <div className="cv-home-demos cv-container">
+        {!this.state.isFetching &&
           <div>
             <h1 className="cv-home-demos-heading">
               {DEMOS_TITLE}
             </h1>
-            <Carousel slideWidth={0.5} decorators={CarouselDecorators}>
-              {this.state.demos.map((demo, index) => {
-                return (
-                  <div key={index} className="cv-home-demos-card-wrapper">
-                    <Card className="cv-home-demos-card" style="height: 300px;">
-                      <div className="cv-home-demos-card-title">
-                        {demo.title}
-                      </div>
-                      <div className="cv-home-demos-card-description">
-                        {demo.description}
-                      </div>
-                      <div className="cv-home-demos-links">
-                        <Link to={demo.source_code_url} target="_blank">
-                          <Button extraClass="cv-button-small">
-                            Source code
-                          </Button>
-                        </Link>
-                        <Link to={demo.demo_url} target="_blank">
-                          <Button
-                            themeClass="cv-button-dark"
-                            extraClass="cv-button-small"
-                          >
-                            Website
-                          </Button>
-                        </Link>
-                      </div>
-                    </Card>
-                  </div>
-                );
-              })}
-            </Carousel>
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="cv-home-demos cv-container">
-          {!this.state.isFetching &&
-            <div>
-              <h1 className="cv-home-demos-heading">
-                {DEMOS_TITLE}
-              </h1>
-              <div className="cv-home-demos-content">
-                {this.state.demos.map((demo, index) => {
-                  return (
-                    <Card key={index} extraClass="cv-home-demos-card">
-                      <div className="cv-home-demos-card-title">
-                        {demo.title}
-                      </div>
-                      <div className="cv-home-demos-card-description">
-                        {demo.description}
-                      </div>
-                      <div className="cv-home-demos-links">
-                        <Link to={demo.source_code_url} target="_blank">
-                          <Button extraClass="cv-button-small">
-                            Source code
-                          </Button>
-                        </Link>
-                        <Link to={demo.demo_url} target="_blank">
-                          <Button
-                            themeClass="cv-button-dark"
-                            extraClass="cv-button-small"
-                          >
-                            Website
-                          </Button>
-                        </Link>
-                      </div>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>}
-        </div>
-      );
-    }
+            {CAROUSEL
+              ? <Carousel decorators={CarouselDecorators} slidesToShow={1}>
+                  {this.renderCards(this.state.demos, CAROUSEL)}
+                </Carousel>
+              : <div className="cv-home-demos-content">
+                  {this.renderCards(this.state.demos)}
+                </div>}
+          </div>}
+      </div>
+    );
   }
 }
 

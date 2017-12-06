@@ -35,11 +35,11 @@ class CarouselRight extends React.Component {
   }
 }
 CarouselRight.propTypes = {
-  currentSlide: PropTypes.func.isRequired,
+  currentSlide: PropTypes.number.isRequired,
   nextSlide: PropTypes.func.isRequired,
-  wrapAround: PropTypes.func.isRequired,
-  slidesToScroll: PropTypes.func.isRequired,
-  slideCount: PropTypes.func.isRequired
+  wrapAround: PropTypes.bool.isRequired,
+  slidesToScroll: PropTypes.number.isRequired,
+  slideCount: PropTypes.number.isRequired
 };
 
 export default CarouselRight;

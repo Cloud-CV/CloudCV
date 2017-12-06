@@ -34,9 +34,9 @@ class CarouselLeft extends React.Component {
   }
 }
 CarouselLeft.propTypes = {
-  currentSlide: PropTypes.func.isRequired,
+  currentSlide: PropTypes.number.isRequired,
   previousSlide: PropTypes.func.isRequired,
-  wrapAround: PropTypes.func.isRequired
+  wrapAround: PropTypes.bool.isRequired
 };
 
 export default CarouselLeft;
