@@ -152,6 +152,97 @@
         justify-content: space-around;
       }
 
+    .cv-home-demos {
+      padding: 10*$gutter-width 0 5*$gutter-width 0;
+    }
+
+      .cv-home-demos-heading {
+        display: inline-block;
+        @include text-gradient($heading-color, $secondary-color);
+      }
+
+      .cv-home-demos-content {
+        padding-top: 1*$gutter-width;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+        .cv-home-demos-card {
+          box-shadow: none;
+          width: 100%;
+          position: relative;
+          padding: 2rem;
+          margin: 1*$gutter-width 0;
+
+          @media #{$bp-sm} {
+            width: 29%;
+            margin: 0 3%;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+          .cv-home-demos-card-title {
+            text-align: center;
+            font-size: 30px;
+            font-family: $heading-font-family;
+            @include text-gradient($heading-color, $secondary-color);
+          }
+
+          .cv-home-demos-card-description {
+             padding-top: 1 * $gutter-width;
+             text-align: center;
+          }
+
+          .cv-home-demos-card-links {
+            padding-top: 1 * $gutter-width;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+          }
+
+          .cv-home-demos-card-links-carousel {
+            padding-top: 1 * $gutter-width;
+            text-align: center;
+            display: flex;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            justify-content: space-around;
+          }
+
+          .cv-home-demos-carousel-card {
+            height: 210px;
+            box-shadow: none;
+          }
+
+          .slider-slide {
+            padding: 15px;
+          }
+
+          .slider-decorator-0 {
+            height: 30px;
+          }
+
+          .carousel-button {
+            border-radius: 50%;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            vertical-align: middle;
+            background: linear-gradient(45deg, $heading-color, $secondary-color);
+          }
+
     .cv-home-news {
       padding: 7*$gutter-width 0;
       position: relative;
