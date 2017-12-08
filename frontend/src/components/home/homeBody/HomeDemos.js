@@ -64,9 +64,9 @@ class HomeDemos extends React.Component {
                 Source code
               </Button>
             </Link>
-            <Link to={demo.demo_url} target="_blank">
+            <Link to={`/projects/${demo.permalink}`} target="_blank">
               <Button themeClass="cv-button-dark" extraClass="cv-button-small">
-                Website
+                Demo
               </Button>
             </Link>
           </div>
