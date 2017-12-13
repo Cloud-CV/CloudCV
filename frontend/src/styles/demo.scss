@@ -116,3 +116,32 @@ body {
         .origami-demo-output-image {
           width: 100%;
         }
+
+@media only screen and (max-width: 600px) {
+  .origami-demo-heading {
+    width: 100%;
+  }
+
+  .origami-demo-description {
+    width: 100%;
+  }
+
+  .origami-demo-input-components {
+    display: inline-block;
+    width: 100% !important;
+    > div {
+      width: 100% !important;
+      margin: 0px;
+    }
+  }
+
+  .origami-demo-output-components {
+    display: inline-block;
+    width: 100% !important;
+    margin: 0px;
+    > div {
+      width: 75% !important;
+      margin: auto;
+    }
+  }
+}
