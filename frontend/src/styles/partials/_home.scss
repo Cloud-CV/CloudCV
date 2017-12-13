@@ -195,7 +195,12 @@
             text-align: center;
             font-size: 30px;
             font-family: $heading-font-family;
+            line-height: 32px;
             @include text-gradient($heading-color, $secondary-color);
+            @media #{$bp-mobile-small} {
+              font-size: 26px;
+              line-height: 28px;
+            }
           }
 
           .cv-home-demos-card-description {
@@ -224,14 +229,21 @@
           .cv-home-demos-carousel-card {
             height: 210px;
             box-shadow: none;
+            @media #{$bp-mobile} {
+              height: 240px;
+            }
+            @media #{$bp-mobile-small} {
+              height: 270px;
+            }
           }
 
           .slider-slide {
             padding: 15px;
           }
 
-          .slider-decorator-0 {
-            height: 30px;
+          .slider-decorator-2 {
+            width: 100%;
+            text-align: center;
           }
 
           .carousel-button {
