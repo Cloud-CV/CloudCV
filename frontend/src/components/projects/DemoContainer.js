@@ -33,9 +33,7 @@ class DemoContainer extends React.Component {
     });
     axios({
       method: "post",
-      url: `${process.env.AJAX_ROOT}/api/logs/${
-        this.state.demo.permalink
-      }/add/`,
+      url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
       data: formData
     })
       .then(response => {
