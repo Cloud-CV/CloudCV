@@ -1,0 +1,60 @@
+.react-tabs {
+  height: 100%;
+  &__tab-list {
+    font-family: "geometos", sans-serif;
+    font-size: 1.4rem;
+    //border-bottom: 1px solid #7cd3d5;
+    margin: 0 0 0;
+    padding: 0;
+  }
+
+  &__tab {
+    display: inline-block;
+    //border: 1px solid transparent;
+    //border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    &--selected {
+      background: #fff;
+      border-color: #aaa;
+      color: #7cd3d5;
+      border-bottom: 2px solid #7cd3d5;
+      border-radius: 5px 5px 0 0;
+    }
+
+    &--disabled {
+      color: GrayText;
+      cursor: default;
+    }
+
+    &:focus {
+      box-shadow: 0 0 5px hsl(208, 99%, 50%);
+      border-color: hsl(208, 99%, 50%);
+      outline: none;
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        left: -4px;
+        right: -4px;
+        bottom: -5px;
+        background: #fff;
+      }
+    }
+  }
+
+  &__tab-panel {
+    display: none;
+    &--selected {
+      color: #7cd3d5;
+      height: 100%;
+      display: block;
+      width: 100%;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import styles from "../../styles/demo.scss";
 import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 class DemoContainer extends React.Component {
   constructor(props) {
@@ -79,13 +80,26 @@ class DemoContainer extends React.Component {
 
   render() {
     return (
-      <main className="cv-project-demo-container">
-        <iframe
-          className="cv-project-demo-iframe"
-          src={this.state.demo.demo_url}
-          height={this.state.height}
-        />
-      </main>
+
+          <main className="cv-project-demo-container">
+            <Tabs>
+            <TabList>
+              <Tab>Demo</Tab>
+              <Tab>About</Tab>
+            </TabList>
+            <TabPanel>
+            <iframe
+              className="cv-project-demo-iframe"
+              src={this.state.demo.demo_url}
+              height={this.state.height}
+            />
+            </TabPanel>
+            <TabPanel>
+              {this.state.demo.description}
+            </TabPanel>
+              </Tabs>
+          </main>
+
     );
   }
 }
