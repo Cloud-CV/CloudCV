@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import styles from "../../styles/demo.scss";
 import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 class DemoContainer extends React.Component {
   constructor(props) {
@@ -33,7 +33,9 @@ class DemoContainer extends React.Component {
     });
     axios({
       method: "post",
-      url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
+      url: `${process.env.AJAX_ROOT}/api/logs/${
+        this.state.demo.permalink
+      }/add/`,
       data: formData
     })
       .then(response => {
@@ -80,26 +82,22 @@ class DemoContainer extends React.Component {
 
   render() {
     return (
-
-          <main className="cv-project-demo-container">
-            <Tabs>
-            <TabList>
-              <Tab>Demo</Tab>
-              <Tab>About</Tab>
-            </TabList>
-            <TabPanel>
+      <main className="cv-project-demo-container">
+        <Tabs>
+          <TabList>
+            <Tab>Demo</Tab>
+            <Tab>About</Tab>
+          </TabList>
+          <TabPanel>
             <iframe
               className="cv-project-demo-iframe"
               src={this.state.demo.demo_url}
               height={this.state.height}
             />
-            </TabPanel>
-            <TabPanel>
-              {this.state.demo.description}
-            </TabPanel>
-              </Tabs>
-          </main>
-
+          </TabPanel>
+          <TabPanel>{this.state.demo.description}</TabPanel>
+        </Tabs>
+      </main>
     );
   }
 }
