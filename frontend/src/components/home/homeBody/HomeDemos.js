@@ -19,6 +19,19 @@ class HomeDemos extends React.Component {
     this.fetchDemos();
   }
 
+  componentDidMount() {
+    this.update;
+    window.addEventListener("resize", this.update.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.update.bind(this));
+  }
+
+  update() {
+    this.setState(this.state);
+  }
+
   fetchDemos() {
     axios
       .get(`${process.env.AJAX_ROOT}/api/demos/demos/`)
@@ -98,19 +111,6 @@ class HomeDemos extends React.Component {
           </div>}
       </div>
     );
-  }
-  
-  update() {
-    this.setState(this.state);
-  }
-  
-  componentDidMount() {
-    this.update;
-    window.addEventListener("resize", this.update.bind(this));
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.update.bind(this));
   }
 }
 
