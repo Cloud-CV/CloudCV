@@ -226,6 +226,10 @@
             justify-content: space-around;
           }
 
+          .cv-home-demos-source {
+            padding-left: 0;
+          }
+
           .cv-home-demos-carousel-card {
             height: 210px;
             box-shadow: none;
@@ -234,6 +238,9 @@
             }
             @media #{$bp-mobile-small} {
               height: 270px;
+            }
+            @media only screen and (min-width : 1000px) {
+              height: 240px;
             }
           }
 

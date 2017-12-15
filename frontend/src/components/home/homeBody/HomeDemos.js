@@ -60,7 +60,7 @@ class HomeDemos extends React.Component {
             }
           >
             <Link to={demo.source_code_url} target="_blank">
-              <Button className="cv-home-demos-source">
+              <Button extraClass="cv-home-demos-source">
                 Source code
               </Button>
             </Link>
@@ -86,7 +86,10 @@ class HomeDemos extends React.Component {
               {DEMOS_TITLE}
             </h1>
             {CAROUSEL
-              ? <Carousel decorators={CarouselDecorators} slidesToShow={1}>
+              ? <Carousel
+                  decorators={CarouselDecorators}
+                  slidesToShow={window.innerWidth > 1000 ? 2 : 1}
+                >
                   {this.renderCards(this.state.demos, CAROUSEL)}
                 </Carousel>
               : <div className="cv-home-demos-content">
@@ -95,6 +98,19 @@ class HomeDemos extends React.Component {
           </div>}
       </div>
     );
+  }
+  
+  update() {
+    this.setState(this.state);
+  }
+  
+  componentDidMount() {
+    this.update;
+    window.addEventListener("resize", this.update.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.update.bind(this));
   }
 }
 
