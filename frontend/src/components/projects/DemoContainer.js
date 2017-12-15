@@ -93,7 +93,21 @@ class DemoContainer extends React.Component {
               height={this.state.height}
             />
           </TabPanel>
-          <TabPanel>{this.state.demo.description}</TabPanel>
+          <TabPanel>
+            <center>
+              <h3>{this.state.demo.title}</h3>
+            </center>
+            <div className="about-text">{this.state.demo.description}</div>
+            <div className="about-text">
+              <a href={this.state.demo.source_code_url}>Link to source code</a>
+            </div>
+            <div className="about-text">
+              {this.state.demo.paper_description}
+            </div>
+            <div className="about-text">
+              <a href={this.state.demo.paper_url}>Link to Paper</a>
+            </div>
+          </TabPanel>
         </Tabs>
       </main>
     );
