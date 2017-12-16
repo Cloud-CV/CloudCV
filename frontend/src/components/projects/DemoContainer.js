@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import styles from "../../styles/demo.scss";
 import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 class DemoContainer extends React.Component {
   constructor(props) {
@@ -80,11 +81,42 @@ class DemoContainer extends React.Component {
   render() {
     return (
       <main className="cv-project-demo-container">
-        <iframe
-          className="cv-project-demo-iframe"
-          src={this.state.demo.demo_url}
-          height={this.state.height}
-        />
+        <Tabs>
+          <TabList>
+            <Tab>Demo</Tab>
+            <Tab>About</Tab>
+          </TabList>
+          <TabPanel>
+            <iframe
+              className="cv-project-demo-iframe"
+              src={this.state.demo.demo_url}
+              height={this.state.height}
+            />
+          </TabPanel>
+          <TabPanel>
+            <center>
+              <h3>{this.state.demo.title}</h3>
+            </center>
+            <div className="about-text">
+              {this.state.demo.description
+                ? this.state.demo.description
+                : "Sorry, no description for the demo is available."}
+            </div>
+            <div className="about-text">
+              <a href={this.state.demo.source_code_url}>
+                {this.state.demo.source_code_url ? "Link to source code" : ""}
+              </a>
+            </div>
+            <div className="about-text">
+              {this.state.demo.paper_description}
+            </div>
+            <div className="about-text">
+              <a href={this.state.demo.paper_url}>
+                {this.state.demo.paper_url ? "Link to Paper" : ""}
+              </a>
+            </div>
+          </TabPanel>
+        </Tabs>
       </main>
     );
   }
