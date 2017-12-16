@@ -11,11 +11,7 @@ class CarouselMid extends React.Component {
   }
   getIndexes(count, inc) {
     let arr = [];
-    for (
-      let i = 0;
-      i < count - (this.props.slidesToShow > 1 ? 1 : 0);
-      i += inc
-    ) {
+    for (let i = 0; i < count - (this.props.slidesToShow - 1); i += inc) {
       arr.push(i);
     }
     return arr;

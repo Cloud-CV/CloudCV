@@ -29,7 +29,7 @@ class CarouselRight extends React.Component {
         style={this.getButtonStyles(
           this.props.currentSlide +
             this.props.slidesToScroll +
-            (this.props.slidesToShow > 1 ? 1 : 0) >=
+            (this.props.slidesToShow - 1) >=
             this.props.slideCount && !this.props.wrapAround
         )}
       />
