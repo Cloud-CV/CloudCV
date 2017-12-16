@@ -66,7 +66,7 @@
 3. Open a command prompt and Install python dependencies.
     ```
     cd cloudcv
-    pip install -r requirements/dev.txt
+    pip install -r requirements\dev.txt
     ```
 4. Rename `settings/dev/settings.sample.py` as `settings/dev/settings.py` and change credentials in `settings/dev/settings.py`
     ```
