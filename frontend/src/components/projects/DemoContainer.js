@@ -97,15 +97,23 @@ class DemoContainer extends React.Component {
             <center>
               <h3>{this.state.demo.title}</h3>
             </center>
-            <div className="about-text">{this.state.demo.description}</div>
             <div className="about-text">
-              <a href={this.state.demo.source_code_url}>Link to source code</a>
+              {this.state.demo.description
+                ? this.state.demo.description
+                : "Sorry, no description for the demo is available."}
+            </div>
+            <div className="about-text">
+              <a href={this.state.demo.source_code_url}>
+                {this.state.demo.source_code_url ? "Link to source code" : ""}
+              </a>
             </div>
             <div className="about-text">
               {this.state.demo.paper_description}
             </div>
             <div className="about-text">
-              <a href={this.state.demo.paper_url}>Link to Paper</a>
+              <a href={this.state.demo.paper_url}>
+                {this.state.demo.paper_url ? "Link to Paper" : ""}
+              </a>
             </div>
           </TabPanel>
         </Tabs>

@@ -1,79 +1,56 @@
 .react-tabs {
   height: 100%;
   &__tab-list {
-    font-family: "geometos", sans-serif;
-    font-size: 1.4rem;
-    //border-bottom: 1px solid #7cd3d5;
+    font-family: $heading-font-family;
+    @include font-size(1.4, 1.4);
     margin: 0 0 0;
     padding: 0;
   }
 
   &__tab {
     display: inline-block;
-    //border: 1px solid transparent;
-    //border-bottom: none;
-    bottom: -1px;
+    bottom: -0.2rem;
     position: relative;
     list-style: none;
-    padding: 6px 12px;
+    padding: 1rem 1rem;
     cursor: pointer;
 
     &--selected {
-      background: #fff;
-      border-color: #aaa;
-      color: #7cd3d5;
-      border-bottom: 2px solid #7cd3d5;
-      border-radius: 5px 5px 0 0;
+      color: $secondary-color;
+      border-bottom: 0.3rem solid $secondary-color;
+      border-radius: 1rem 1rem 0 0;
     }
 
     &--disabled {
-      color: GrayText;
+      color: $primary-color;
       cursor: default;
     }
 
-    &:focus {
-      box-shadow: 0 0 5px hsl(208, 99%, 50%);
-      border-color: hsl(208, 99%, 50%);
-      outline: none;
-
-      &:after {
-        content: "";
-        position: absolute;
-        height: 5px;
-        left: -4px;
-        right: -4px;
-        bottom: -5px;
-        background: #fff;
-      }
-    }
   }
 
   &__tab-panel {
     display: none;
     &--selected {
-      color: #7cd3d5;
+      color: $secondary-color;
       height: 100%;
       display: block;
       width: 100%;
     }
     h3{
-      font-size: 4rem;
-      padding: 1.5rem;
-      padding-top: 2.5rem;
-
+      @include font-size(4,4);
       white-space: nowrap;
     }
   }
 }
 
 .about-text{
-  font-family: sans-serif;
+  font-family: $primary-font-family;
   white-space: pre-line;
-  color: black;
+  color: $black;
   margin-left: 0.7rem;
-  font-size: 2rem;
+  @include font-size(2,2);
   padding: 1rem;
   a{
-    color: #6a82af;
+    color: $heading-color;
   }
 }
