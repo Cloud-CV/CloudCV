@@ -12,7 +12,7 @@ ZIP=$VERSION.zip
 openssl aes-256-cbc -K $encrypted_47cc4c169e78_key -iv $encrypted_47cc4c169e78_iv -in CloudCV.json.enc -out CloudCV.json -d
 aws configure set default.region us-west-2
 # Authenticate against our Docker registry
-eval $(aws ecr get-login)
+eval $(aws ecr get-login | sed 's|https://||')
 
 # Build and push the image
 docker build -t cloudcv/django -f docker/production/django/Dockerfile .
