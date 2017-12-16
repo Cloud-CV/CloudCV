@@ -191,7 +191,7 @@
           }
         }
 
-          .cv-home-demos-card-title{
+          .cv-home-demos-card-title {
             text-align: center;
             font-family: $heading-font-family;
             @include font-size(3.5, 1);
@@ -201,12 +201,12 @@
             }
           }
 
-          .cv-home-demos-card-description{
+          .cv-home-demos-card-description {
              padding-top: 1 * $gutter-width;
              text-align: center;
           }
 
-          .cv-home-demos-card-links{
+          .cv-home-demos-card-links {
             padding-top: 1 * $gutter-width;
             text-align: center;
             display: flex;
