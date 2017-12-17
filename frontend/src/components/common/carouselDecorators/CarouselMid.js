@@ -11,7 +11,7 @@ class CarouselMid extends React.Component {
   }
   getIndexes(count, inc) {
     let arr = [];
-    for (let i = 0; i < count; i += inc) {
+    for (let i = 0; i < count - (this.props.slidesToShow - 1); i += inc) {
       arr.push(i);
     }
     return arr;
@@ -66,5 +66,8 @@ class CarouselMid extends React.Component {
     );
   }
 }
+CarouselMid.propTypes = {
+  slidesToShow: PropTypes.number.isRequired
+};
 
 export default CarouselMid;

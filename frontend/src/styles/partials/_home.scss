@@ -193,9 +193,12 @@
 
           .cv-home-demos-card-title {
             text-align: center;
-            font-size: 30px;
             font-family: $heading-font-family;
+            @include font-size(3.5, 1);
             @include text-gradient($heading-color, $secondary-color);
+            @media #{$bp-mobile-small} {
+              @include font-size(3, 1);
+            }
           }
 
           .cv-home-demos-card-description {
@@ -210,28 +213,34 @@
             justify-content: space-around;
           }
 
-          .cv-home-demos-card-links-carousel {
-            padding-top: 1 * $gutter-width;
-            text-align: center;
-            display: flex;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 30px;
-            justify-content: space-around;
+          .cv-home-demos-source {
+            padding-left: 0;
           }
 
+          .cv-home-demos-carousel {
+            width: 100% !important;
+          }
+          
           .cv-home-demos-carousel-card {
-            height: 210px;
             box-shadow: none;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
           }
+          
+            .cv-home-demos-carousel-links {
+              padding-top: 1 * $gutter-width;
+              text-align: center;
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              margin-top: auto;
+              align-self: flex-end;
+            }
 
-          .slider-slide {
-            padding: 15px;
-          }
-
-          .slider-decorator-0 {
-            height: 30px;
+          .slider-decorator-2 {
+            width: 100%;
+            text-align: center;
           }
 
           .carousel-button {

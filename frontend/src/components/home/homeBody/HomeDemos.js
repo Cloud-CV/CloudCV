@@ -19,6 +19,54 @@ class HomeDemos extends React.Component {
     this.fetchDemos();
   }
 
+  componentDidMount() {
+    this.updateCarousel();
+    window.addEventListener("resize", this.updateCarousel.bind(this));
+  }
+
+  componentDidUpdate() {
+    this.equalizeCards();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateCarousel.bind(this));
+  }
+
+  updateCarousel() {
+    const SLIDES_TO_SHOW_SMALL = 1;
+    const SLIDES_TO_SHOW_LARGE = 2;
+    this.setState({
+      slidesToShow: window.innerWidth > 800
+        ? SLIDES_TO_SHOW_LARGE
+        : SLIDES_TO_SHOW_SMALL
+    });
+  }
+
+  equalizeCards() {
+    const cards = document.getElementsByClassName(
+      "cv-home-demos-carousel-card"
+    );
+    const list = document.getElementsByClassName("slider-list");
+    const frame = document.getElementsByClassName("slider-frame");
+    if (frame[0] !== undefined) {
+      const cardWidth = frame[0].offsetWidth / this.state.slidesToShow;
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].style.height = "auto";
+        cards[i].style.width = cardWidth.toString().concat("px");
+      }
+      let max = 0;
+      for (let i = 0; i < cards.length; i++) {
+        if (cards[i].offsetHeight > max) max = cards[i].offsetHeight;
+      }
+      max = max.toString().concat("px");
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].style.height = max;
+      }
+      frame[0].style.height = max;
+      list[0].style.height = max;
+    }
+  }
+
   fetchDemos() {
     axios
       .get(`${process.env.AJAX_ROOT}/api/demos/demos/`)
@@ -32,7 +80,7 @@ class HomeDemos extends React.Component {
 
   makeDescription(description) {
     const limit = 80;
-    if (description.length > 80)
+    if (description.length > limit)
       return description.substring(0, limit).concat("...");
     return description;
   }
@@ -55,12 +103,12 @@ class HomeDemos extends React.Component {
           <div
             className={
               carousel
-                ? "cv-home-demos-card-links-carousel"
+                ? "cv-home-demos-carousel-links"
                 : "cv-home-demos-card-links"
             }
           >
             <Link to={demo.source_code_url} target="_blank">
-              <Button className="cv-home-demos-source">
+              <Button extraClass="cv-home-demos-source">
                 Source code
               </Button>
             </Link>
@@ -86,7 +134,11 @@ class HomeDemos extends React.Component {
               {DEMOS_TITLE}
             </h1>
             {CAROUSEL
-              ? <Carousel decorators={CarouselDecorators} slidesToShow={1}>
+              ? <Carousel
+                  decorators={CarouselDecorators}
+                  slidesToShow={this.state.slidesToShow}
+                  className="cv-home-demos-carousel"
+                >
                   {this.renderCards(this.state.demos, CAROUSEL)}
                 </Carousel>
               : <div className="cv-home-demos-content">

@@ -27,7 +27,9 @@ class CarouselRight extends React.Component {
         className="carousel-button"
         onClick={this.handleClick}
         style={this.getButtonStyles(
-          this.props.currentSlide + this.props.slidesToScroll >=
+          this.props.currentSlide +
+            this.props.slidesToScroll +
+            (this.props.slidesToShow - 1) >=
             this.props.slideCount && !this.props.wrapAround
         )}
       />
@@ -39,7 +41,8 @@ CarouselRight.propTypes = {
   nextSlide: PropTypes.func.isRequired,
   wrapAround: PropTypes.bool.isRequired,
   slidesToScroll: PropTypes.number.isRequired,
-  slideCount: PropTypes.number.isRequired
+  slideCount: PropTypes.number.isRequired,
+  slidesToShow: PropTypes.number.isRequired
 };
 
 export default CarouselRight;
