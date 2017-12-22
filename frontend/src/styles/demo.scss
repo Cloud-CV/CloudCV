@@ -12,14 +12,22 @@ body {
 }
 
 .ant-row{
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100% !important;
-  img{
-    float: left;
-    margin: 1em;
-    height: 20em;
-    width: 30% !important;
-    border-radius: 10%;
+  div{
+    width: 100%;
+  }
+  .ant-col-5{
+    max-width: 23%;
+    margin: 1%;
+    img{
+      height: 100%;
+      width: 100% !important;
+      border-radius: 5%;
+    }
   }
 }
 
