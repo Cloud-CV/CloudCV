@@ -11,6 +11,26 @@ body {
   overflow: auto !important;
 }
 
+.ant-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100% !important;
+  div{
+    width: 100%;
+  }
+  .ant-col-5{
+    max-width: 23%;
+    margin: 1%;
+    img{
+      height: 100%;
+      width: 100% !important;
+      border-radius: 5%;
+    }
+  }
+}
+
 .origami-demo-wrapper {
   width: 100%;
   padding: 2 * $gutter-width;
