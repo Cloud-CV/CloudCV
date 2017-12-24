@@ -16,6 +16,7 @@ class DemoContainer extends React.Component {
     this.sendStyleSheet = this.sendStyleSheet.bind(this);
     this.saveInput = this.saveInput.bind(this);
     this.saveOutput = this.saveOutput.bind(this);
+    this.sendBrokenDemo = this.sendBrokenDemo.bind(this);
     this.log = -1;
     window.addEventListener("message", this.receiveMessage, false);
   }
@@ -78,6 +79,20 @@ class DemoContainer extends React.Component {
     }
   }
 
+  sendBrokenDemo() {
+    let formData = new FormData();
+    //formData.set("csrfmiddlewaretoken",);
+    formData.set("demo", this.state.demo.permalink);
+    formData.set("log_type", "Break");
+    axios({
+      method: "post",
+      url: `${process.env.AJAX_ROOT}/api/logs/demolog/add/`,
+      data: formData
+    })
+      .then(response => {})
+      .catch(error => {});
+  }
+
   render() {
     return (
       <main className="cv-project-demo-container">
@@ -117,6 +132,12 @@ class DemoContainer extends React.Component {
             </div>
           </TabPanel>
         </Tabs>
+        <a
+          className="cv-project-demo-not-working"
+          onClick={this.sendBrokenDemo()}
+        >
+          Demo not working?
+        </a>
       </main>
     );
   }
