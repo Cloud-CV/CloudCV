@@ -25,7 +25,7 @@ def post_log(request, demo_permalink):
     try:
         demo_log = DemoLog.objects.create(
             demo=demo,
-            log_type='Submission'
+            log_type=request.POST.get('log_type')
         )
     except Exception:
         error_message = {'error': 'Demo log could not be created'}

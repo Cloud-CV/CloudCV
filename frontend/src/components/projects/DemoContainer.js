@@ -81,12 +81,10 @@ class DemoContainer extends React.Component {
 
   sendBrokenDemo() {
     let formData = new FormData();
-    //formData.set("csrfmiddlewaretoken",);
-    formData.set("demo", this.state.demo.permalink);
     formData.set("log_type", "Break");
     axios({
       method: "post",
-      url: `${process.env.AJAX_ROOT}/api/logs/demolog/add/`,
+      url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
       data: formData
     })
       .then(response => {})
@@ -134,7 +132,7 @@ class DemoContainer extends React.Component {
         </Tabs>
         <a
           className="cv-project-demo-not-working"
-          onClick={this.sendBrokenDemo()}
+          onClick={this.sendBrokenDemo}
         >
           Demo not working?
         </a>
