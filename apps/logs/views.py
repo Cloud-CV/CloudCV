@@ -31,7 +31,7 @@ def post_log(request, demo_permalink):
     except Exception:
         error_message = {'error': 'Demo log could not be created'}
         return Response(error_message, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+
     if log_type == 'Submission':
         i = 0
         try:
