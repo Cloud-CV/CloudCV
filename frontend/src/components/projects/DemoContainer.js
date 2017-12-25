@@ -4,6 +4,7 @@ import styles from "../../styles/demo.scss";
 import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import Button from "../common/Button";
 
 class DemoContainer extends React.Component {
   constructor(props) {
@@ -131,12 +132,12 @@ class DemoContainer extends React.Component {
             </div>
           </TabPanel>
         </Tabs>
-        <a
-          className="cv-project-demo-not-working"
+        <Button
+          extraClass="cv-project-demo-not-working"
           onClick={this.sendBrokenDemo}
         >
           Demo not working?
-        </a>
+        </Button>
       </main>
     );
   }
