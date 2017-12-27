@@ -4,6 +4,7 @@ import styles from "../../styles/demo.scss";
 import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import Button from "../common/Button";
 
 class DemoContainer extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class DemoContainer extends React.Component {
     this.sendStyleSheet = this.sendStyleSheet.bind(this);
     this.saveInput = this.saveInput.bind(this);
     this.saveOutput = this.saveOutput.bind(this);
+    this.sendBrokenDemo = this.sendBrokenDemo.bind(this);
     this.log = -1;
     window.addEventListener("message", this.receiveMessage, false);
   }
@@ -31,6 +33,7 @@ class DemoContainer extends React.Component {
       if (value instanceof Blob) formData.set(key, value, key);
       else formData.set(key, value);
     });
+    formData.set("log_type", "Submission");
     axios({
       method: "post",
       url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
@@ -78,6 +81,18 @@ class DemoContainer extends React.Component {
     }
   }
 
+  sendBrokenDemo() {
+    let formData = new FormData();
+    formData.set("log_type", "Break");
+    axios({
+      method: "post",
+      url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
+      data: formData
+    })
+      .then(response => {})
+      .catch(error => {});
+  }
+
   render() {
     return (
       <main className="cv-project-demo-container">
@@ -117,6 +132,12 @@ class DemoContainer extends React.Component {
             </div>
           </TabPanel>
         </Tabs>
+        <Button
+          extraClass="cv-project-demo-not-working"
+          onClick={this.sendBrokenDemo}
+        >
+          Demo not working?
+        </Button>
       </main>
     );
   }

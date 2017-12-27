@@ -18,6 +18,7 @@ def post_log(request, demo_permalink):
     Create and save a log
     """
     demo = Demo.objects.get(permalink=demo_permalink)
+    log_type = request.POST.get('log_type')
     if not demo:
         error_message = {'error': 'Demo not found!'}
         return Response(error_message, status=status.HTTP_404_NOT_FOUND)
@@ -25,40 +26,41 @@ def post_log(request, demo_permalink):
     try:
         demo_log = DemoLog.objects.create(
             demo=demo,
-            log_type='Submission'
+            log_type=log_type
         )
     except Exception:
         error_message = {'error': 'Demo log could not be created'}
         return Response(error_message, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    i = 0
-    try:
-        while True:
-            textdata = request.data['input-text-{}'.format(i)]
-            LogText.objects.create(
-                demo_log=demo_log,
-                text=textdata,
-                text_type='Input'
-            )
-            i += 1
-    except Exception:
-        logging.exception('Key not found while saving input')
-        pass
+    if log_type == 'Submission':
+        i = 0
+        try:
+            while True:
+                textdata = request.data['input-text-{}'.format(i)]
+                LogText.objects.create(
+                    demo_log=demo_log,
+                    text=textdata,
+                    text_type='Input'
+                )
+                i += 1
+        except Exception:
+            logging.exception('Key not found while saving input')
+            pass
 
-    imagedata = []
-    i = 0
-    try:
-        while True:
-            imagedata = request.FILES['input-image-{}'.format(i)]
-            LogImage.objects.create(
-                demo_log=demo_log,
-                image=imagedata,
-                image_type='Input'
-            )
-            i += 1
-    except Exception:
-        logging.exception('Key not found while saving output')
-        pass
+        imagedata = []
+        i = 0
+        try:
+            while True:
+                imagedata = request.FILES['input-image-{}'.format(i)]
+                LogImage.objects.create(
+                    demo_log=demo_log,
+                    image=imagedata,
+                    image_type='Input'
+                )
+                i += 1
+        except Exception:
+            logging.exception('Key not found while saving output')
+            pass
 
     success_message = {'success': {'id': demo_log.id}}
     return Response(success_message, status=status.HTTP_200_OK)
