@@ -27,7 +27,10 @@ class DemoContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.demo.demo_url !== this.state.demo.demo_url) {
-      this.setState({ demo: nextProps.demo, loading: nextProps.demo.from_origami});
+      this.setState({
+        demo: nextProps.demo,
+        loading: nextProps.demo.from_origami
+      });
       this.setTimer();
     }
   }
