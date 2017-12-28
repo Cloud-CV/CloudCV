@@ -11,20 +11,28 @@ class DemoContainer extends React.Component {
     super(props);
     this.state = {
       demo: this.props.demo,
-      height: "auto"
+      height: "auto",
+      loading: this.props.demo.from_origami
     };
     this.receiveMessage = this.receiveMessage.bind(this);
     this.sendStyleSheet = this.sendStyleSheet.bind(this);
     this.saveInput = this.saveInput.bind(this);
     this.saveOutput = this.saveOutput.bind(this);
     this.sendBrokenDemo = this.sendBrokenDemo.bind(this);
+    this.setTimer = this.setTimer.bind(this);
     this.log = -1;
     window.addEventListener("message", this.receiveMessage, false);
+    this.setTimer();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.demo.demo_url !== this.state.demo.demo_url)
-      this.setState({ demo: nextProps.demo });
+    if (nextProps.demo.demo_url !== this.state.demo.demo_url) {
+      this.setState({
+        demo: nextProps.demo,
+        loading: nextProps.demo.from_origami
+      });
+      this.setTimer();
+    }
   }
 
   saveInput(data) {
@@ -71,6 +79,7 @@ class DemoContainer extends React.Component {
     switch (message.data.action) {
       case "DEMO_ONLOAD":
         this.sendStyleSheet();
+        this.setState({ loading: false });
         break;
       case "INPUT_SUBMITTED":
         this.saveInput(message.data.payload);
@@ -93,6 +102,12 @@ class DemoContainer extends React.Component {
       .catch(error => {});
   }
 
+  setTimer() {
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 10000);
+  }
+
   render() {
     return (
       <main className="cv-project-demo-container">
@@ -102,10 +117,12 @@ class DemoContainer extends React.Component {
             <Tab>About</Tab>
           </TabList>
           <TabPanel>
+            {this.state.loading && <div id="loader" />}
             <iframe
               className="cv-project-demo-iframe"
               src={this.state.demo.demo_url}
               height={this.state.height}
+              visibility={this.state.loading ? "hidden" : "visible"}
             />
           </TabPanel>
           <TabPanel>
