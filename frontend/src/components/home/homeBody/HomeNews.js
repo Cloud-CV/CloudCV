@@ -7,6 +7,15 @@ const MIN_ELEMENTS = 10;
 
 const EVENTS = [
   {
+  	date: "November 2017",
+    desc: (
+      <span>
+        CloudCV selected as Mentoring Organization for
+        {" "}
+        <Link to="https://codein.withgoogle.com/organizations/cloudcv/" target="blank">Google Code-IN 2017</Link>
+      </span>
+    )
+  },
     date: "June 2017",
     desc: (
       <span>
