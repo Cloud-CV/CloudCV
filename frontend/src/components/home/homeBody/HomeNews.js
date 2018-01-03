@@ -7,7 +7,7 @@ const MIN_ELEMENTS = 10;
 
 const EVENTS = [
    {
-    date: "March 2017",
+    date: "November 2017",
     desc: (
       <span>
         CloudCV selected as a mentoring organisation for
