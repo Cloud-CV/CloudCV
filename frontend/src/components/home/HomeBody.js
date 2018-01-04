@@ -16,6 +16,7 @@ const HomeBody = props => {
   const GITHUB_IMAGE = require("../../images/github_logo.png");
   const GITTER_IMAGE = require("../../images/gitter_logo.png");
   const GSOC_LOGO = require("../../images/gsoc_logo.png");
+  const GCI_LOGO = require("../../images/gci_logo.png");
   return (
     <div className="cv-home-body">
       <HomeAboutUs />
@@ -28,10 +29,7 @@ const HomeBody = props => {
         <br />
         <p>{GITHUB_STRING}</p>
         <div className="cv-home-github-icons">
-          <Link
-            to="https://summerofcode.withgoogle.com/organizations/5427409970003968/"
-            target="_blank"
-          >
+          <Link to="https://summerofcode.withgoogle.com/organizations/5427409970003968/" target="_blank">
             <img
               className="cv-home-gihub-image"
               src={GSOC_LOGO}
@@ -54,6 +52,14 @@ const HomeBody = props => {
               alt="Gitter Logo"
             />
             <p>Gitter</p>
+          </Link>
+           <Link to="https://codein.withgoogle.com/organizations/cloudcv/" target="_blank">
+            <img
+              className="cv-home-gihub-image"
+              src={GCI_LOGO}
+              alt="CodeIn Logo"
+            />
+            <p>GCI</p>
           </Link>
         </div>
       </div>
