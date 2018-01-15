@@ -90,3 +90,7 @@ ENV/
 
 media/
 static/
+
+#DS Store Files
+.DS_Store
+

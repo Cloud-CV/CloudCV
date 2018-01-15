@@ -1,0 +1,56 @@
+.react-tabs {
+  height: 100%;
+  &__tab-list {
+    font-family: $heading-font-family;
+    @include font-size(1.4, 1.4);
+    margin: 0 0 0;
+    padding: 0;
+  }
+
+  &__tab {
+    display: inline-block;
+    bottom: -0.2rem;
+    position: relative;
+    list-style: none;
+    padding: 1rem 1rem;
+    cursor: pointer;
+
+    &--selected {
+      color: $secondary-color;
+      border-bottom: 0.3rem solid $secondary-color;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    &--disabled {
+      color: $primary-color;
+      cursor: default;
+    }
+
+  }
+
+  &__tab-panel {
+    display: none;
+    &--selected {
+      color: $secondary-color;
+      height: 100%;
+      display: block;
+      width: 100%;
+    }
+    h3{
+      @include font-size(4,4);
+      white-space: nowrap;
+    }
+  }
+}
+
+.about-text{
+  font-family: $primary-font-family;
+  white-space: pre-line;
+  color: $black;
+  margin-left: 0.7rem;
+  @include font-size(2,2);
+  padding: 1rem;
+  a{
+    color: $heading-color;
+  }
+}

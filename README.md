@@ -51,6 +51,55 @@
     ```
     yarn run dev
     ```
+
+## How to Setup on Windows
+
+1. Install [git](https://git-scm.com/downloads), [postgresql](https://www.postgresql.org/download/windows); tested with [postgresql installer by bigsql](https://www.openscg.com/bigsql/postgresql/installers.jsp/)  version >= 9.4, and [Node.js](https://nodejs.org/en/download/) version >= 6 in your computer & [python 2.7.x](https://www.python.org/downloads/windows/) , if you don't have it already.
+2. Get the source code on your machine via git
+    ```
+    git clone git@github.com:Cloud-CV/CloudCV.git cloudcv
+    ```
+    If you have not added `ssh` keys to your GitHub account then get the source code by running the following command
+    ```
+    git clone https://github.com/Cloud-CV/CloudCV.git cloudcv
+    ```
+3. Open a command prompt and Install python dependencies.
+    ```
+    cd cloudcv
+    pip install -r requirements\dev.txt
+    ```
+4. Rename `settings/dev/settings.sample.py` as `settings/dev/settings.py` and change credentials in `settings/dev/settings.py`
+    ```
+    copy settings\dev\settings.sample.py settings\dev\settings.py
+    ```
+    Use your postgres username and password for fields `USER` and `PASSWORD` in `settings/dev/settings.py` file.
+5. Create an empty postgres database and run database migration.
+    ```
+    Start Postgresql server
+	Open psql prompt
+    createdb cloudcv
+	In the command prompt,
+    python manage.py migrate --settings=settings.dev.settings
+    ```
+6. That's it. Now you can run development server at [http://127.0.0.1:8000](http://127.0.0.1:8000) (for serving backend),
+    ```
+    python manage.py runserver --settings=settings.dev.settings
+    ```
+7. Open a new terminal window with node(>=6) and ruby(gem) install on your machine and type
+    ```
+    cd frontend
+    npm install -g yarn
+    yarn install
+    ```
+    If you running npm install behind a proxy server, use
+    ```
+    npm config set proxy http://proxy:port
+    ```
+8. Now to connect to dev server at [http://127.0.0.1:6003](http://127.0.0.1:6003) (for serving frontend)
+    ```
+    yarn run dev
+    ```
+
 ## Contribution guidelines
 
 If you are interested in contributing to CloudCV, follow our [contribution guidelines](https://github.com/Cloud-CV/CloudCV/blob/master/.github/CONTRIBUTING.md).

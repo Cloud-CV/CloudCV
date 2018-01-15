@@ -15,9 +15,7 @@ const HomeAboutUs = props => {
             &nbsp; &nbsp;
             <span className="cv-question-mark">?</span>
           </h1>
-          <p className="cv-about-us-card-desc">
-            {ABOUT_US_DESC}
-          </p>
+          <p className="cv-about-us-card-desc">{ABOUT_US_DESC}</p>
         </Card>
       </div>
     </div>
