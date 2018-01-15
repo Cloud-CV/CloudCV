@@ -58,7 +58,7 @@ class Team extends React.Component {
     return (
       <div>
         {this.state.isFetching && <Preloader />}
-        {!this.state.isFetching &&
+        {!this.state.isFetching && (
           <div className="cv-container cv-team-page">
             <TeamSection
               members={this.state.coreMembers}
@@ -73,7 +73,8 @@ class Team extends React.Component {
               members={this.state.contributorMembers}
               title={CONTRIBUTOR_TYPE}
             />
-          </div>}
+          </div>
+        )}
         ;
       </div>
     );

@@ -6,9 +6,7 @@ const NavbarItem = props => {
   let activeClass = props.active ? "active" : "";
 
   return (
-    <li className={`cv-navbar-list-item ${activeClass}`}>
-      {props.children}
-    </li>
+    <li className={`cv-navbar-list-item ${activeClass}`}>{props.children}</li>
   );
 };
 

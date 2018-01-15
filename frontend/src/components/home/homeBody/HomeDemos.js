@@ -5,8 +5,7 @@ import Card from "../../common/Card";
 import Button from "../../common/Button";
 import Preloader from "../../common/Preloader";
 import Carousel from "nuka-carousel";
-import CarouselDecorators
-  from "../../common/carouselDecorators/CarouselDecorators";
+import CarouselDecorators from "../../common/carouselDecorators/CarouselDecorators";
 
 class HomeDemos extends React.Component {
   constructor(props) {
@@ -36,9 +35,8 @@ class HomeDemos extends React.Component {
     const SLIDES_TO_SHOW_SMALL = 1;
     const SLIDES_TO_SHOW_LARGE = 2;
     this.setState({
-      slidesToShow: window.innerWidth > 800
-        ? SLIDES_TO_SHOW_LARGE
-        : SLIDES_TO_SHOW_SMALL
+      slidesToShow:
+        window.innerWidth > 800 ? SLIDES_TO_SHOW_LARGE : SLIDES_TO_SHOW_SMALL
     });
   }
 
@@ -94,9 +92,7 @@ class HomeDemos extends React.Component {
             carousel ? "cv-home-demos-carousel-card" : "cv-home-demos-card"
           }
         >
-          <div className="cv-home-demos-card-title">
-            {demo.title}
-          </div>
+          <div className="cv-home-demos-card-title">{demo.title}</div>
           <div className="cv-home-demos-card-description">
             {this.makeDescription(demo.description)}
           </div>
@@ -108,9 +104,7 @@ class HomeDemos extends React.Component {
             }
           >
             <Link to={demo.source_code_url} target="_blank">
-              <Button extraClass="cv-home-demos-source">
-                Source code
-              </Button>
+              <Button extraClass="cv-home-demos-source">Source code</Button>
             </Link>
             <Link to={`/projects/${demo.permalink}`} target="_blank">
               <Button themeClass="cv-button-dark" extraClass="cv-button-small">
@@ -128,23 +122,24 @@ class HomeDemos extends React.Component {
     const CAROUSEL = this.state.demos.length > 2;
     return (
       <div className="cv-home-demos cv-container">
-        {!this.state.isFetching &&
+        {!this.state.isFetching && (
           <div>
-            <h1 className="cv-home-demos-heading">
-              {DEMOS_TITLE}
-            </h1>
-            {CAROUSEL
-              ? <Carousel
-                  decorators={CarouselDecorators}
-                  slidesToShow={this.state.slidesToShow}
-                  className="cv-home-demos-carousel"
-                >
-                  {this.renderCards(this.state.demos, CAROUSEL)}
-                </Carousel>
-              : <div className="cv-home-demos-content">
-                  {this.renderCards(this.state.demos)}
-                </div>}
-          </div>}
+            <h1 className="cv-home-demos-heading">{DEMOS_TITLE}</h1>
+            {CAROUSEL ? (
+              <Carousel
+                decorators={CarouselDecorators}
+                slidesToShow={this.state.slidesToShow}
+                className="cv-home-demos-carousel"
+              >
+                {this.renderCards(this.state.demos, CAROUSEL)}
+              </Carousel>
+            ) : (
+              <div className="cv-home-demos-content">
+                {this.renderCards(this.state.demos)}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     );
   }
