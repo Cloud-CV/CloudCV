@@ -73,7 +73,7 @@ class Navbar extends Component {
       let formattedPath = path.toLowerCase().replace(/ /g, "-");
       return (
         <NavbarItem active={active} key={path}>
-          <Link to={`\/${formattedPath}`}>{path === "" ? "Home" : path}</Link>
+          <Link to={`/${formattedPath}`}>{path === "" ? "Home" : path}</Link>
         </NavbarItem>
       );
     });
