@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import styles from "../../styles/demo.scss";
 import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;

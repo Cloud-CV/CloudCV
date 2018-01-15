@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import axios from "axios";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
