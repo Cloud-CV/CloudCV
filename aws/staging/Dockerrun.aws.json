@@ -1,12 +1,20 @@
 {
   "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "nginx-proxy-conf",
+      "host": {
+        "sourcePath": "/var/app/current/proxy/conf.d"
+      }
+    }  
+  ],
   "containerDefinitions": [
     {
       "name": "node-app",
       "image": "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/cloudcv/staging/nodejs:latest",
       "portMappings": [
         {
-          "hostPort": 80,
+          "hostPort": 6003,
           "containerPort": 6003
         }
       ],
@@ -22,6 +30,33 @@
         {
           "hostPort": 8000,
           "containerPort": 8000
+        }
+      ]
+    },
+    {
+      "name": "nginx-proxy",
+      "image": "nginx",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "django-app",
+        "node-app"
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "awseb-logs-nginx-proxy",
+          "containerPath": "/var/log/nginx"
+        },
+        {
+          "sourceVolume": "nginx-proxy-conf",
+          "containerPath": "/etc/nginx/conf.d",
+          "readOnly": true
         }
       ]
     }
