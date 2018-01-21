@@ -29,7 +29,7 @@ cd aws/staging
 sed -i='' "s/<AWS_ACCOUNT_ID>/$AWS_ACCOUNT_ID/" Dockerrun.aws.json
 
 # Zip up the Dockerrun file and .ebextensions directory with it
-zip -r $ZIP Dockerrun.aws.json .ebextensions/
+zip -r $ZIP Dockerrun.aws.json .ebextensions/ conf.d/
 
 aws s3 cp $ZIP s3://$EB_BUCKET/$ZIP
 
