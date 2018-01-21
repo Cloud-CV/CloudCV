@@ -8,7 +8,7 @@ DEBUG = False
 # Database
 # https://docs.djangoproject.com/en/1.10.2/ref/settings/#databases
 
-ALLOWED_HOSTS += ['cloudcv.us-west-2.elasticbeanstalk.com'] # noqa
+ALLOWED_HOSTS += ['cloudcv.us-west-2.elasticbeanstalk.com', 'cloudcv.org', 'api.cloudcv.org'] # noqa
 
 ADMINS = [('Admin', 'admin@cloudcv.org')]
 
@@ -17,7 +17,8 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'cloudcv.org',
     'cloudcvbucket.s3.amazonaws.com',
-    'cloudcv.us-west-2.elasticbeanstalk.com'
+    'cloudcv.us-west-2.elasticbeanstalk.com',
+    'api.cloudcv.org'
 )
 
 DATADOG_APP_NAME = 'CloudCV'

@@ -5,9 +5,30 @@
 @import 'partials/animations';
 @import 'partials/typography';
 @import 'partials/theme';
+@import 'partials/tabs';
 
 body {
   overflow: auto !important;
+}
+
+.ant-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100% !important;
+  div{
+    width: 100%;
+  }
+  .ant-col-5{
+    max-width: 23%;
+    margin: 1%;
+    img{
+      height: 100%;
+      width: 100% !important;
+      border-radius: 5%;
+    }
+  }
 }
 
 .origami-demo-wrapper {
@@ -116,3 +137,32 @@ body {
         .origami-demo-output-image {
           width: 100%;
         }
+
+@media #{$bp-mobile} {
+  .origami-demo-heading {
+    width: 100%;
+  }
+
+  .origami-demo-description {
+    width: 100%;
+  }
+
+  .origami-demo-input-components {
+    display: inline-block;
+    width: 100% !important;
+    > div {
+      width: 100% !important;
+      margin: 0px;
+    }
+  }
+
+  .origami-demo-output-components {
+    display: inline-block;
+    width: 100% !important;
+    margin: 0px;
+    > div {
+      width: 75% !important;
+      margin: auto;
+    }
+  }
+}

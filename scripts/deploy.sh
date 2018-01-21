@@ -9,9 +9,10 @@ fi
 VERSION=$BRANCH-$SHA
 ZIP=$VERSION.zip
 
+openssl aes-256-cbc -K $encrypted_47cc4c169e78_key -iv $encrypted_47cc4c169e78_iv -in CloudCV.json.enc -out CloudCV.json -d
 aws configure set default.region us-west-2
 # Authenticate against our Docker registry
-eval $(aws ecr get-login)
+eval $(aws ecr get-login --no-include-email | sed 's|https://||')
 
 # Build and push the image
 docker build -t cloudcv/django -f docker/production/django/Dockerfile .
@@ -28,7 +29,7 @@ cd aws/production
 sed -i='' "s/<AWS_ACCOUNT_ID>/$AWS_ACCOUNT_ID/" Dockerrun.aws.json
 
 # Zip up the Dockerrun file and .ebextensions directory with it
-zip -r $ZIP Dockerrun.aws.json .ebextensions/
+zip -r $ZIP Dockerrun.aws.json .ebextensions/ conf.d/
 
 aws s3 cp $ZIP s3://$EB_BUCKET/$ZIP
 

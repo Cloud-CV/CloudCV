@@ -78,7 +78,7 @@
 @mixin text-gradient($color1, $color2) {
   color: $color1;
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(45deg, $color1, $color1 30%, $color2 70%, $color2);
+  background-image: -webkit-linear-gradient(45deg, $color1, $color1 30%, $color2 70%, $color2);
   -webkit-background-clip: text;
 }
 

@@ -53,9 +53,14 @@
 
   .cv-project-demo-container {
     width: 100%;
+    position: relative;
     @media #{$bp-sm} {
       width: 85%;
       flex-grow: 2;
+    }
+    > .react-tabs {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -63,6 +68,14 @@
       min-height: 100%;
       width: 100%;
       border:0;
+    }
+    
+    .cv-project-demo-not-working {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0;
+      margin: 1.5rem;
     }
 
 

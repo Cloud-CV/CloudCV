@@ -16,6 +16,7 @@ class Demo(models.Model):
     paper_url = models.URLField(max_length=100, null=True, blank=True)
     is_disabled = models.BooleanField(default=False)
     sample = models.BooleanField(default=False)
+    from_origami = models.BooleanField(default=True)
     text_inputs = models.IntegerField()
     image_inputs = models.IntegerField()
     text_outputs = models.IntegerField()
