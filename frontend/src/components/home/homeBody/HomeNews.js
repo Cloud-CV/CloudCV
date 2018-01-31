@@ -7,20 +7,31 @@ const MIN_ELEMENTS = 11;
 
 const EVENTS = [
   {
-     date: "November 2017",
-     desc: (
-       <span>
-         CloudCV selected as a mentoring organisation for
-         {" "}
-         <Link
-           to="https://codein.withgoogle.com/organizations/cloudcv/"
-           target="blank"
-         >
-           GCI 2017
-         </Link>
-       </span>
-     )
-   },
+    date: "November 2017",
+    desc: (
+      <span>
+        CloudCV selected as a mentoring organisation for
+        {" "}
+        <Link
+          to="https://codein.withgoogle.com/organizations/cloudcv/"
+          target="blank"
+        >
+          GCI 2017
+        </Link>
+      </span>
+    )
+  },
+  {
+    date: "June 2017",
+    desc: (
+      <span>
+        CloudCV selected for demo presentation at
+        {" "}
+        <Link to="http://cvpr2017.thecvf.com/" target="blank">CVPR 2017</Link>
+        , Hawaii
+      </span>
+    )
+  },
   {
     date: "May 2017",
     desc: (
