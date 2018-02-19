@@ -58,6 +58,9 @@
   box-shadow: $box-shadow;
   color: $primary-color;
 }
+.cv-card-light:hover {
+  box-shadow: $med-box-shadow;
+}
 
 .cv-card-deep-light {
   background: $white;
