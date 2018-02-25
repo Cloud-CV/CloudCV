@@ -54,7 +54,6 @@ class Navbar extends Component {
       "",
       "Projects",
       "GSoC",
-      "GCI",
       "Team",
       "Contribute",
       "Contact Us"
@@ -68,8 +67,8 @@ class Navbar extends Component {
             </Link>
           </NavbarItem>
         );
-      }
-      if (path === "GCI") {
+        
+         if (path === "GCI") {
         return (
           <NavbarItem active={false} key={path}>
             <Link to="https://codein.withgoogle.com/organizations/cloudcv/" target="_blank">
@@ -78,6 +77,7 @@ class Navbar extends Component {
           </NavbarItem>
         );
       }
+
       let active = path.toLowerCase() === firstPath;
       let formattedPath = path.toLowerCase().replace(/ /g, "-");
       return (
