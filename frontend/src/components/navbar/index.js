@@ -54,6 +54,7 @@ class Navbar extends Component {
       "",
       "Projects",
       "GSoC",
+      "GCI",
       "Team",
       "Contribute",
       "Contact Us"
