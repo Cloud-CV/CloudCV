@@ -20,7 +20,7 @@ class ProjectSidebar extends React.Component {
         name: "Origami"
       },
       {
-        link: "http://ide.cloudcv.org/",
+        link: "http://fabrik.cloudcv.org/",
         name: "Fabrik"
       }
     ];
