@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 class ProjectSidebar extends React.Component {
@@ -48,7 +48,9 @@ class ProjectSidebar extends React.Component {
             {PROJECTS.map((project, index) => {
               return (
                 <li key={index} className="cv-project-list-item">
-                  <Link to={project.link} target="_blank">{project.name}</Link>
+                  <Link to={project.link} target="_blank">
+                    {project.name}
+                  </Link>
                 </li>
               );
             })}

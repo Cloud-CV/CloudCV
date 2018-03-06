@@ -25,9 +25,10 @@ const EVENTS = [
     date: "June 2017",
     desc: (
       <span>
-        CloudCV selected for demo presentation at
-        {" "}
-        <Link to="http://cvpr2017.thecvf.com/" target="blank">CVPR 2017</Link>
+        CloudCV selected for demo presentation at{" "}
+        <Link to="http://cvpr2017.thecvf.com/" target="blank">
+          CVPR 2017
+        </Link>
         , Hawaii
       </span>
     )
@@ -36,8 +37,7 @@ const EVENTS = [
     date: "May 2017",
     desc: (
       <span>
-        CloudCV selected as a semifinalist at
-        {" "}
+        CloudCV selected as a semifinalist at{" "}
         <Link to="http://www.ldv.co/visionsummit/" target="blank">
           LDV Vision Summit 2017
         </Link>
@@ -49,8 +49,7 @@ const EVENTS = [
     date: "March 2017",
     desc: (
       <span>
-        CloudCV selected as a mentoring organisation for
-        {" "}
+        CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://summerofcode.withgoogle.com/organizations/5427409970003968/"
           target="blank"
@@ -64,8 +63,7 @@ const EVENTS = [
     date: "May 2016",
     desc: (
       <span>
-        CloudCV selected for demo presentation at
-        {" "}
+        CloudCV selected for demo presentation at{" "}
         <Link to="http://cvpr2016.thecvf.com/program/demos" target="blank">
           CVPR 2016
         </Link>
@@ -77,8 +75,7 @@ const EVENTS = [
     date: "March 2016",
     desc: (
       <span>
-        CloudCV selected as a mentoring organisation for
-        {" "}
+        CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://summerofcode.withgoogle.com/archive/2016/organizations/4785685563179008/"
           target="blank"
@@ -92,8 +89,7 @@ const EVENTS = [
     date: "March 2015",
     desc: (
       <span>
-        CloudCV selected as a mentoring organisation for
-        {" "}
+        CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://www.google-melange.com/archive/gsoc/2015/orgs/cloudcv"
           target="blank"
@@ -105,17 +101,14 @@ const EVENTS = [
   },
   {
     date: "Januray 2014",
-    desc: (
-      <span>
-        NVIDIA supports CloudCV with a GPU hardware donation
-      </span>
-    )
+    desc: <span>NVIDIA supports CloudCV with a GPU hardware donation</span>
   },
   {
     date: "October 2013",
     desc: (
       <span>
-        CloudCV has been awarded Amazon Web Services (AWS) in Education: Machine Learning Research Grant
+        CloudCV has been awarded Amazon Web Services (AWS) in Education: Machine
+        Learning Research Grant
       </span>
     )
   }
@@ -153,14 +146,15 @@ class HomeNews extends React.Component {
               );
             })}
           </ul>
-          {!this.state.showFull &&
+          {!this.state.showFull && (
             <Button
               themeClass="cv-button-dark"
               extraClass="cv-button-small"
               onClick={this.loadMore}
             >
               Show More
-            </Button>}
+            </Button>
+          )}
         </div>
       </div>
     );

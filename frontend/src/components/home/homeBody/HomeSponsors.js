@@ -52,9 +52,7 @@ const HomeSponsors = props => {
   ];
   return (
     <div className="cv-container">
-      <h1 className="cv-home-showcase-heading">
-        {SUPPORT_TITLE}
-      </h1>
+      <h1 className="cv-home-showcase-heading">{SUPPORT_TITLE}</h1>
       <br />
       <br />
       <p>{SUPPORT_DESC}</p>
@@ -76,9 +74,7 @@ const HomeSponsors = props => {
         })}
       </div>
       <div className="right-align cv-home-sponsors-container">
-        <h1 className="cv-home-showcase-heading">
-          {SPONSOR_TITLE}
-        </h1>
+        <h1 className="cv-home-showcase-heading">{SPONSOR_TITLE}</h1>
       </div>
       <div className="cv-home-sponsors">
         {SPONSORS.map((company, index) => {

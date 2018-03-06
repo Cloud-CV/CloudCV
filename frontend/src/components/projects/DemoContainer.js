@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import styles from "../../styles/demo.scss";
 import axios from "axios";
 const AJAX_ROOT = process.env.AJAX_ROOT;
@@ -44,7 +44,9 @@ class DemoContainer extends React.Component {
     formData.set("log_type", "Submission");
     axios({
       method: "post",
-      url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
+      url: `${process.env.AJAX_ROOT}/api/logs/${
+        this.state.demo.permalink
+      }/add/`,
       data: formData
     })
       .then(response => {
@@ -95,7 +97,9 @@ class DemoContainer extends React.Component {
     formData.set("log_type", "Break");
     axios({
       method: "post",
-      url: `${process.env.AJAX_ROOT}/api/logs/${this.state.demo.permalink}/add/`,
+      url: `${process.env.AJAX_ROOT}/api/logs/${
+        this.state.demo.permalink
+      }/add/`,
       data: formData
     })
       .then(response => {})

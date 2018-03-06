@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import Card from "./Card";
 
 const TimelineCard = props => {
@@ -10,9 +10,7 @@ const TimelineCard = props => {
         <span>{date}</span>
       </div>
       <div className="timeline-marker" />
-      <Card extraClass="timeline-content">
-        {props.children}
-      </Card>
+      <Card extraClass="timeline-content">{props.children}</Card>
     </li>
   );
 };
