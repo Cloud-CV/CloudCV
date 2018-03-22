@@ -34,13 +34,11 @@ const HomeContactUs = props => {
 
   return (
     <div className="cv-home-contact-us cv-container" id="contact-us">
-      <h1 className="cv-home-showcase-heading">
-        {CONTACT_US_TITLE}
-      </h1>
+      <h1 className="cv-home-showcase-heading">{CONTACT_US_TITLE}</h1>
       <form
         className="cv-home-contact-form"
         encType="multipart/form-data"
-        action="http://example.com/cgiscript.pl"
+        action="#"
         method="post"
         id="contact-us-form"
         onSubmit={sendResponse}

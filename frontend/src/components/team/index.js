@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import axios from "axios";
 import TeamSection from "./TeamSection";
 import PersonCard from "./PersonCard";
@@ -58,7 +58,7 @@ class Team extends React.Component {
     return (
       <div>
         {this.state.isFetching && <Preloader />}
-        {!this.state.isFetching &&
+        {!this.state.isFetching && (
           <div className="cv-container cv-team-page">
             <TeamSection
               members={this.state.coreMembers}
@@ -73,7 +73,8 @@ class Team extends React.Component {
               members={this.state.contributorMembers}
               title={CONTRIBUTOR_TYPE}
             />
-          </div>}
+          </div>
+        )}
         ;
       </div>
     );

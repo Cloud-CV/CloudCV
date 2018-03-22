@@ -31,11 +31,9 @@ class HomeShowcase extends React.Component {
     const SHOWCASE_TITLE = "PROJECTS";
     return (
       <div className="cv-home-showcase cv-container">
-        {!this.state.isFetching &&
+        {!this.state.isFetching && (
           <div>
-            <h1 className="cv-home-showcase-heading">
-              {SHOWCASE_TITLE}
-            </h1>
+            <h1 className="cv-home-showcase-heading">{SHOWCASE_TITLE}</h1>
             <div className="cv-home-showcase-content">
               {this.state.projects.map((project, index) => {
                 return (
@@ -45,9 +43,7 @@ class HomeShowcase extends React.Component {
                     </div>
                     <div className="cv-home-showcase-links">
                       <Link to={project.github_url} target="_blank">
-                        <Button extraClass="cv-button-small">
-                          Github
-                        </Button>
+                        <Button extraClass="cv-button-small">Github</Button>
                       </Link>
                       <Link to={project.documentation_url} target="_blank">
                         <Button
@@ -61,9 +57,9 @@ class HomeShowcase extends React.Component {
                   </Card>
                 );
               })}
-
             </div>
-          </div>}
+          </div>
+        )}
       </div>
     );
   }

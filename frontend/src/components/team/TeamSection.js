@@ -1,15 +1,19 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import PersonCard from "./PersonCard";
 
 const TeamSection = props => {
-  const TITLE = props.title === "Team"
-    ? <h1 className="cv-home-showcase-heading">{props.title}</h1>
-    : <h3 className="cv-home-showcase-heading">{props.title}</h3>;
+  const TITLE =
+    props.title === "Team" ? (
+      <h1 className="cv-home-showcase-heading">{props.title}</h1>
+    ) : (
+      <h3 className="cv-home-showcase-heading">{props.title}</h3>
+    );
   const MEMBERS = props.members;
   const YEARS = [2017, 2016, 2015];
-  const memberElements = props.title === "GSoC Students, Mentors and Interns"
-    ? YEARS.map((year, index) => {
+  const memberElements =
+    props.title === "GSoC Students, Mentors and Interns" ? (
+      YEARS.map((year, index) => {
         return (
           <div key={index}>
             <h4 className="cv-team-subsection-heading">{year}</h4>
@@ -39,7 +43,8 @@ const TeamSection = props => {
           </div>
         );
       })
-    : <div className="cv-team-section-members">
+    ) : (
+      <div className="cv-team-section-members">
         {MEMBERS.map((member, index) => {
           const NAME = member.name;
           const DESCRIPTION = member.description;
@@ -59,13 +64,12 @@ const TeamSection = props => {
             />
           );
         })}
-      </div>;
+      </div>
+    );
 
   return (
     <div className={`cv-team-section ${props.extraClass}`}>
-      <div className="cv-team-section-heading">
-        {TITLE}
-      </div>
+      <div className="cv-team-section-heading">{TITLE}</div>
       {memberElements}
     </div>
   );
