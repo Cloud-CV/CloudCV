@@ -38,7 +38,7 @@ const HomeContactUs = props => {
       <form
         className="cv-home-contact-form"
         encType="multipart/form-data"
-        action="http://example.com/cgiscript.pl"
+        action="#"
         method="post"
         id="contact-us-form"
         onSubmit={sendResponse}
