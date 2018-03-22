@@ -10,8 +10,7 @@ const EVENTS = [
     date: "November 2017",
     desc: (
       <span>
-        CloudCV selected as a mentoring organisation for
-        {" "}
+        CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://codein.withgoogle.com/organizations/cloudcv/"
           target="blank"
