@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as sidebarActions from "../../actions/sidebarActions";
@@ -11,9 +11,10 @@ class Navbar extends Component {
     super(props);
     this.state = {
       isOpen: false,
-      isOnTop: (window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop) === 0
+      isOnTop:
+        (window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop) === 0
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -54,7 +55,6 @@ class Navbar extends Component {
       "",
       "Projects",
       "GSoC",
-      "GCI",
       "Team",
       "Contribute",
       "Contact Us"
@@ -68,24 +68,12 @@ class Navbar extends Component {
             </Link>
           </NavbarItem>
         );
-        
-         if (path === "GCI") {
-        return (
-          <NavbarItem active={false} key={path}>
-            <Link to="https://codein.withgoogle.com/organizations/cloudcv/" target="_blank">
-              {path}
-            </Link>
-          </NavbarItem>
-        );
       }
-
       let active = path.toLowerCase() === firstPath;
       let formattedPath = path.toLowerCase().replace(/ /g, "-");
       return (
         <NavbarItem active={active} key={path}>
-          <Link to={`\/${formattedPath}`}>
-            {path === "" ? "Home" : path}
-          </Link>
+          <Link to={`/${formattedPath}`}>{path === "" ? "Home" : path}</Link>
         </NavbarItem>
       );
     });
@@ -98,16 +86,15 @@ class Navbar extends Component {
     return (
       <nav className={`cv-navbar-container cv-container ${navbarClass}`}>
         <div className={`cv-navbar-list-container ${listHiddenClass}`}>
-          <ul className="cv-navbar-list">
-            {listItems}
-          </ul>
+          <ul className="cv-navbar-list">{listItems}</ul>
         </div>
         <div className="cv-mobile-topbar">
-          {projectActive &&
+          {projectActive && (
             <div
               className={`cv-icon ${sidebarIconClass}`}
               onClick={this.showSidebarOnProjectsPage}
-            />}
+            />
+          )}
           <div className="cv-navbar-brand">
             <img
               className="cv-navbar-brand-image"
@@ -119,8 +106,9 @@ class Navbar extends Component {
             onClick={this.handleClick}
           />
         </div>
-        {this.state.isOpen &&
-          <div className="cv-navbar-overlay" onClick={this.handleClick} />}
+        {this.state.isOpen && (
+          <div className="cv-navbar-overlay" onClick={this.handleClick} />
+        )}
       </nav>
     );
   }
