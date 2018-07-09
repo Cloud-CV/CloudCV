@@ -33,7 +33,9 @@ class Projects extends React.Component {
 
   fetchDemos() {
     axios
-      .get(`${process.env.AJAX_ROOT}/api/demos/demos/`)
+      .get(`${process.env.AJAX_ROOT}/api/demos/demos/`, {
+        params: { filter: "deployed" }
+      })
       .then(response => {
         this.setState({ isFetching: false, demos: response.data });
       })
