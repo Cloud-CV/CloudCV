@@ -53,7 +53,7 @@ class Navbar extends Component {
     let projectActive = firstPath === "projects";
     let listItems = [
       "",
-      "Projects",
+      // "Projects",
       "GSoC",
       "Team",
       "Contribute",
