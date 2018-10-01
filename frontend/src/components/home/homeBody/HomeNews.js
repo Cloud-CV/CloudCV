@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TimelineCard from "../../common/TimelineCard";
 import Button from "../../common/Button";
 
-const MIN_ELEMENTS = 13;
+const MIN_ELEMENTS = 14;
 
 const EVENTS = [
 {
