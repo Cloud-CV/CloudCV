@@ -4,9 +4,8 @@ import TimelineCard from "../../common/TimelineCard";
 import Button from "../../common/Button";
 
 const MIN_ELEMENTS = 14;
-
 const EVENTS = [
-{
+  {
     date: "September 2018",
     desc: (
       <span>
@@ -20,7 +19,8 @@ const EVENTS = [
       </span>
     )
   },
-    {
+
+  {
     date: "March 2018",
     desc: (
       <span>
