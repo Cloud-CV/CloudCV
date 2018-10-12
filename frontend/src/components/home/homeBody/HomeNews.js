@@ -12,7 +12,7 @@ const EVENTS = [
       <span>
         CloudCV selected as a mentoring organisation for{" "}
         <Link
-          to="https://codein.withgoogle.com/organizations/cloudcv/"
+          to="https://codein.withgoogle.com/archive/2017/organization/5692767623708672/"
           target="blank"
         >
           GCI 2017
