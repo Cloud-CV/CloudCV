@@ -55,6 +55,7 @@ class Navbar extends Component {
       "",
       // "Projects",
       "GSoC",
+      "GCI",
       "Team",
       "Contribute",
       "Contact Us"
@@ -64,6 +65,15 @@ class Navbar extends Component {
         return (
           <NavbarItem active={false} key={path}>
             <Link to="http://gsoc.cloudcv.org" target="_blank">
+              {path}
+            </Link>
+          </NavbarItem>
+        );
+      }
+      if (path === "GCI") {
+        return (
+          <NavbarItem active={false} key={path}>
+            <Link to="http://gci.cloudcv.org" target="_blank">
               {path}
             </Link>
           </NavbarItem>
