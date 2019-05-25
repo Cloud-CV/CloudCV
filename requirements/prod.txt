@@ -7,4 +7,4 @@ django-storages==1.5.2
 datadog==0.16.0
 django-otto-admin==0.1.2
 django-pipeline==1.6.13
-pyOpenSSL==17.2.0
+pyOpenSSL==17.5.0
