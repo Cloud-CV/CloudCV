@@ -79,7 +79,7 @@
             display: none;
             @include text-gradient($heading-color, $secondary-color);
             font-family: $primary-font-family;
-            @include font-size(6, 1);
+            @include font-size(5, 1);
             font-weight: 300;
 
             @media #{$bp-sm} {
