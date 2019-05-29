@@ -30,7 +30,7 @@ const HomeBody = props => {
         <p>{GITHUB_STRING}</p>
         <div className="cv-home-github-icons">
           <Link
-            to="https://summerofcode.withgoogle.com/organizations/5427409970003968/"
+            to="https://summerofcode.withgoogle.com/organizations/5709446018236416/"
             target="_blank"
           >
             <img
@@ -41,7 +41,7 @@ const HomeBody = props => {
             <p>GSoC</p>
           </Link>
           <Link
-            to="https://codein.withgoogle.com/archive/2017/organization/5692767623708672/"
+            to="https://codein.withgoogle.com/archive/2018/organization/5635703144710144/"
             target="_blank"
           >
             <img
