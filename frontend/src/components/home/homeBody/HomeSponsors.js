@@ -40,6 +40,7 @@ const HomeSponsors = props => {
   ];
   const SPONSOR_TITLE = "SPONSORS";
   const SPONSORS = [
+    require("../../../images/supporter_gt.png"),
     require("../../../images/supporter_virginia.png"),
     require("../../../images/supporter_aws.png"),
     require("../../../images/supporter_azure.png"),

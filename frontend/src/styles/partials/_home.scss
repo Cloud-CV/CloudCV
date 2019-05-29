@@ -38,7 +38,7 @@
       align-items: center;
       flex-wrap: wrap;
       width: 100%;
-      padding: 20*$gutter-width 0 10*$gutter-width 0;
+      padding: 14*$gutter-width 0 10*$gutter-width 0;
     }
 
       .cv-home-card-container {
@@ -66,7 +66,8 @@
           right: 0;
 
           @media #{$bp-sm} {
-            top: -13rem;
+            top: 2rem;
+            margin-right:20px;
           }
         }
 
@@ -78,7 +79,7 @@
             display: none;
             @include text-gradient($heading-color, $secondary-color);
             font-family: $primary-font-family;
-            @include font-size(25, 1);
+            @include font-size(5, 1);
             font-weight: 300;
 
             @media #{$bp-sm} {
@@ -336,8 +337,8 @@
         padding: 1*$gutter-width;
 
         @media #{$bp-sm} {
-          max-height: 120px;
-          max-width: 20%;
+          max-height: 100px;
+          max-width: 18%;
           margin-left: 1%;
           margin-right: 1%;
 
