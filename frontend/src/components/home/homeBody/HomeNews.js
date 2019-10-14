@@ -9,10 +9,9 @@ const EVENTS = [
     date: "September 2019",
     desc: (
       <span>
-        EvalAI and Fabrik are accepted to {" "}
+        EvalAI and Fabrik are accepted to{" "}
         <Link
-          to="https://sosp19.rcs.uwaterloo.ca/"
-          target="blank"
+          to="https://sosp19.rcs.uwaterloo.ca/" target="blank"
         >
           SOSP Conference 2019
         </Link>, Canada
