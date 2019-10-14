@@ -18,11 +18,6 @@ const HomeSponsors = props => {
       link: "https://www.python.org/"
     },
     {
-      title: "RabbitMQ",
-      image: require("../../../images/rabbitmq_logo.svg"),
-      link: "https://www.rabbitmq.com/"
-    },
-    {
       title: "React",
       image: require("../../../images/reactjs_logo.svg"),
       link: "https://facebook.github.io/react/"
@@ -45,6 +40,7 @@ const HomeSponsors = props => {
   ];
   const SPONSOR_TITLE = "SPONSORS";
   const SPONSORS = [
+    require("../../../images/supporter_gt.png"),
     require("../../../images/supporter_virginia.png"),
     require("../../../images/supporter_aws.png"),
     require("../../../images/supporter_azure.png"),
