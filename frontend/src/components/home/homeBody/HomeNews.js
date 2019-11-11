@@ -154,7 +154,7 @@ const EVENTS = [
     )
   },
   {
-    date: "Januray 2014",
+    date: "January 2014",
     desc: <span>NVIDIA supports CloudCV with a GPU hardware donation</span>
   },
   {
