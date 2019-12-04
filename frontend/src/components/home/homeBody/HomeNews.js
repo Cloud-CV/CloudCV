@@ -3,8 +3,20 @@ import { Link } from "react-router-dom";
 import TimelineCard from "../../common/TimelineCard";
 import Button from "../../common/Button";
 
-const MIN_ELEMENTS = 15;
+const MIN_ELEMENTS = 16;
 const EVENTS = [
+  {
+    date: "September 2019",
+    desc: (
+      <span>
+        EvalAI and Fabrik are accepted to{" "}
+        <Link to="https://sosp19.rcs.uwaterloo.ca/" target="blank">
+          SOSP Conference 2019
+        </Link>, Canada
+      </span>
+    )
+  },
+
   {
     date: "March 2019",
     desc: (
