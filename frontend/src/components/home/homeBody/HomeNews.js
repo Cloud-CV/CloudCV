@@ -3,8 +3,22 @@ import { Link } from "react-router-dom";
 import TimelineCard from "../../common/TimelineCard";
 import Button from "../../common/Button";
 
-const MIN_ELEMENTS = 16;
+const MIN_ELEMENTS = 17;
 const EVENTS = [
+  {
+    date: "November 2019",
+    desc: (
+      <span>
+        CloudCV selected as a mentoring organisation for{" "}
+        <Link
+          to="https://codein.withgoogle.com/organizations/cloudcv/"
+          target="blank"
+        >
+          GCI 2019
+        </Link>
+      </span>
+    )
+  },
   {
     date: "September 2019",
     desc: (
