@@ -53,7 +53,7 @@ const HomeBody = props => {
             />
             <p>GCI</p>
           </Link>
-          <Link 
+          <Link
             to="https://github.com/Cloud-CV/"
             target="_blank"
             rel="noopener noreferrer"
@@ -65,7 +65,7 @@ const HomeBody = props => {
             />
             <p>GitHub</p>
           </Link>
-          <Link 
+          <Link
             to="https://gitter.im/Cloud-CV/Lobby"
             target="_blank"
             rel="noopener noreferrer"
