@@ -10,7 +10,7 @@ const EVENTS = [
     desc: (
       <span>
         EvalAI and Fabrik are accepted to{" "}
-        <Link to="https://sosp19.rcs.uwaterloo.ca/" target="blank">
+        <Link to="https://sosp19.rcs.uwaterloo.ca/" target="blank" rel="noopener noreferrer">
           SOSP Conference 2019
         </Link>, Canada
       </span>
@@ -24,7 +24,7 @@ const EVENTS = [
         CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://summerofcode.withgoogle.com/organizations/5709446018236416/"
-          target="blank"
+          target="blank" rel="noopener noreferrer"
         >
           GSOC 2019
         </Link>
@@ -39,7 +39,7 @@ const EVENTS = [
         CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://codein.withgoogle.com/organizations/cloudcv/"
-          target="blank"
+          target="blank" rel="noopener noreferrer"
         >
           GCI 2018
         </Link>
@@ -54,7 +54,7 @@ const EVENTS = [
         CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://summerofcode.withgoogle.com/organizations/4737237502132224/"
-          target="blank"
+          target="blank" rel="noopener noreferrer"
         >
           GSOC 2018
         </Link>
@@ -68,7 +68,7 @@ const EVENTS = [
         CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://codein.withgoogle.com/archive/2017/organization/5692767623708672/"
-          target="blank"
+          target="blank" rel="noopener noreferrer"
         >
           GCI 2017
         </Link>
@@ -80,7 +80,7 @@ const EVENTS = [
     desc: (
       <span>
         CloudCV selected for demo presentation at{" "}
-        <Link to="http://cvpr2017.thecvf.com/" target="blank">
+        <Link to="http://cvpr2017.thecvf.com/" target="blank" rel="noopener noreferrer">
           CVPR 2017
         </Link>
         , Hawaii
@@ -92,7 +92,7 @@ const EVENTS = [
     desc: (
       <span>
         CloudCV selected as a semifinalist at{" "}
-        <Link to="http://www.ldv.co/visionsummit/" target="blank">
+        <Link to="http://www.ldv.co/visionsummit/" target="blank" rel="noopener noreferrer">
           LDV Vision Summit 2017
         </Link>
         , New York City
@@ -106,7 +106,7 @@ const EVENTS = [
         CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://summerofcode.withgoogle.com/organizations/5427409970003968/"
-          target="blank"
+          target="blank" rel="noopener noreferrer"
         >
           GSoC 2017
         </Link>
@@ -118,7 +118,7 @@ const EVENTS = [
     desc: (
       <span>
         CloudCV selected for demo presentation at{" "}
-        <Link to="http://cvpr2016.thecvf.com/program/demos" target="blank">
+        <Link to="http://cvpr2016.thecvf.com/program/demos" target="blank" rel="noopener noreferrer">
           CVPR 2016
         </Link>
         , Las Vegas, NV
@@ -132,7 +132,7 @@ const EVENTS = [
         CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://summerofcode.withgoogle.com/archive/2016/organizations/4785685563179008/"
-          target="blank"
+          target="blank" rel="noopener noreferrer"
         >
           GSoC 2016
         </Link>
@@ -146,7 +146,7 @@ const EVENTS = [
         CloudCV selected as a mentoring organisation for{" "}
         <Link
           to="https://www.google-melange.com/archive/gsoc/2015/orgs/cloudcv"
-          target="blank"
+          target="blank" rel="noopener noreferrer"
         >
           GSoC 2015
         </Link>
