@@ -51,7 +51,6 @@ class ProjectSidebar extends React.Component {
                   <Link
                     to={project.link}
                     target="_blank"
-                    rel="noopener noreferrer"
                   >
                     {project.name}
                   </Link>

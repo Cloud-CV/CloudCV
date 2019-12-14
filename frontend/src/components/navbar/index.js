@@ -67,7 +67,6 @@ class Navbar extends Component {
             <Link
               to="http://gsoc.cloudcv.org"
               target="_blank"
-              rel="noopener noreferrer"
             >
               {path}
             </Link>
@@ -80,7 +79,6 @@ class Navbar extends Component {
             <Link
               to="http://gci.cloudcv.org"
               target="_blank"
-              rel="noopener noreferrer"
             >
               {path}
             </Link>
