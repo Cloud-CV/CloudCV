@@ -64,10 +64,7 @@ class Navbar extends Component {
       if (path === "GSoC") {
         return (
           <NavbarItem active={false} key={path}>
-            <Link
-              to="http://gsoc.cloudcv.org"
-              target="_blank"
-            >
+            <Link to="http://gsoc.cloudcv.org" target="_blank">
               {path}
             </Link>
           </NavbarItem>
@@ -76,10 +73,7 @@ class Navbar extends Component {
       if (path === "GCI") {
         return (
           <NavbarItem active={false} key={path}>
-            <Link
-              to="http://gci.cloudcv.org"
-              target="_blank"
-            >
+            <Link to="http://gci.cloudcv.org" target="_blank">
               {path}
             </Link>
           </NavbarItem>

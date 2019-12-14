@@ -48,10 +48,7 @@ class ProjectSidebar extends React.Component {
             {PROJECTS.map((project, index) => {
               return (
                 <li key={index} className="cv-project-list-item">
-                  <Link
-                    to={project.link}
-                    target="_blank"
-                  >
+                  <Link to={project.link} target="_blank">
                     {project.name}
                   </Link>
                 </li>
