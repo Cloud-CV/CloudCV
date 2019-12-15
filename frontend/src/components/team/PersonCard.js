@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const PersonCard = props => {
   return (
     <div className="cv-team-person-card">
-      <Link to={props.link} target="_blank">
+      <Link to={props.link} target="_blank" rel="noopener noreferrer">
         <div className="cv-team-person-image-border">
           <div className="cv-team-person-image-container">
             <div className="maintain-aspect-ratio">
