@@ -56,7 +56,7 @@ const HomeSponsors = props => {
         {SUPPORTERS.map((company, index) => {
           return (
             <Card key={index} extraClass="cv-home-sponsor-card">
-              <Link to={company.link} target="_blank">
+              <Link to={company.link} target="_blank" rel="noopener noreferrer">
                 <img
                   src={company.image}
                   className="cv-home-sponsor-card-image"
