@@ -43,7 +43,7 @@ class HomeShowcase extends React.Component {
                     </div>
                     <div className="cv-home-showcase-links">
                       <Link to={project.github_url} target="_blank">
-                        <Button extraClass="cv-button-small">Github</Button>
+                        <Button extraClass="cv-button-small">GitHub</Button>
                       </Link>
                       <Link to={project.documentation_url} target="_blank">
                         <Button

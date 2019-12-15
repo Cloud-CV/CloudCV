@@ -55,9 +55,9 @@ const HomeBody = props => {
             <img
               className="cv-home-gihub-image"
               src={GITHUB_IMAGE}
-              alt="Github Logo"
+              alt="GitHub Logo"
             />
-            <p>Github</p>
+            <p>GitHub</p>
           </Link>
           <Link to="https://gitter.im/Cloud-CV/Lobby" target="_blank">
             <img
