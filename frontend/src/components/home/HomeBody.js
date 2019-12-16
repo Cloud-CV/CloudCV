@@ -32,6 +32,7 @@ const HomeBody = props => {
           <Link
             to="https://summerofcode.withgoogle.com/organizations/5709446018236416/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               className="cv-home-gihub-image"
@@ -43,6 +44,7 @@ const HomeBody = props => {
           <Link
             to="https://codein.withgoogle.com/archive/2018/organization/5635703144710144/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               className="cv-home-gihub-image"
@@ -51,7 +53,11 @@ const HomeBody = props => {
             />
             <p>GCI</p>
           </Link>
-          <Link to="https://github.com/Cloud-CV/" target="_blank">
+          <Link
+            to="https://github.com/Cloud-CV/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="cv-home-gihub-image"
               src={GITHUB_IMAGE}
@@ -59,7 +65,11 @@ const HomeBody = props => {
             />
             <p>GitHub</p>
           </Link>
-          <Link to="https://gitter.im/Cloud-CV/Lobby" target="_blank">
+          <Link
+            to="https://gitter.im/Cloud-CV/Lobby"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="cv-home-gihub-image"
               src={GITTER_IMAGE}

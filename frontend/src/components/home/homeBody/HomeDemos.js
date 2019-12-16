@@ -103,10 +103,14 @@ class HomeDemos extends React.Component {
                 : "cv-home-demos-card-links"
             }
           >
-            <Link to={demo.source_code_url} target="_blank">
+            <Link
+              to={demo.source_code_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button extraClass="cv-home-demos-source">Source code</Button>
             </Link>
-            <Link to={demo.permalink} target="_blank">
+            <Link to={demo.permalink} target="_blank" rel="noopener noreferrer">
               <Button themeClass="cv-button-dark" extraClass="cv-button-small">
                 Demo
               </Button>

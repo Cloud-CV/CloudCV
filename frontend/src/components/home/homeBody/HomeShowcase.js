@@ -45,7 +45,11 @@ class HomeShowcase extends React.Component {
                       <Link to={project.github_url} target="_blank">
                         <Button extraClass="cv-button-small">GitHub</Button>
                       </Link>
-                      <Link to={project.documentation_url} target="_blank">
+                      <Link
+                        to={project.documentation_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Button
                           themeClass="cv-button-dark"
                           extraClass="cv-button-small"
