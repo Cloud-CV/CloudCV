@@ -42,12 +42,8 @@ class HomeShowcase extends React.Component {
                       <img src={project.image} />
                     </div>
                     <div className="cv-home-showcase-links">
-                      <Link
-                        to={project.github_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button extraClass="cv-button-small">Github</Button>
+                      <Link to={project.github_url} target="_blank">
+                        <Button extraClass="cv-button-small">GitHub</Button>
                       </Link>
                       <Link
                         to={project.documentation_url}
