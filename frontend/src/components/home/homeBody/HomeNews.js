@@ -3,8 +3,24 @@ import { Link } from "react-router-dom";
 import TimelineCard from "../../common/TimelineCard";
 import Button from "../../common/Button";
 
-const MIN_ELEMENTS = 16;
+const MIN_ELEMENTS = 17;
 const EVENTS = [
+  {
+    date: "March 2020",
+    desc: (
+      <span>
+        CloudCV selected as a mentoring organisation for{" "}
+        <Link
+          to="https://summerofcode.withgoogle.com/archive/2020/organizations/6719687229964288/"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          GSOC 2020
+        </Link>
+      </span>
+    )
+  },
+
   {
     date: "September 2019",
     desc: (
