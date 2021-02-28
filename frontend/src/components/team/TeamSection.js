@@ -10,7 +10,7 @@ const TeamSection = props => {
       <h3 className="cv-home-showcase-heading">{props.title}</h3>
     );
   const MEMBERS = props.members;
-  const YEARS = [2019, 2018, 2017, 2016, 2015];
+  const YEARS = [2020, 2019, 2018, 2017, 2016, 2015];
   const memberElements =
     props.title === "GSoC Students, Mentors and Interns" ? (
       YEARS.map((year, index) => {
