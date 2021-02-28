@@ -42,6 +42,7 @@ const EVENTS = [
     desc: (
       <span>
         EvalAI and Fabrik are accepted to{" "}
+
         <Link
           to="https://sosp19.rcs.uwaterloo.ca/"
           target="blank"
