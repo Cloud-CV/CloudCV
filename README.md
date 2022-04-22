@@ -54,7 +54,7 @@
 
 ## How to Setup on Windows
 
-1. Install [git](https://git-scm.com/downloads), [postgresql](https://www.postgresql.org/download/windows); tested with [postgresql installer by bigsql](https://www.openscg.com/bigsql/postgresql/installers.jsp/)  version >= 9.4, and [Node.js](https://nodejs.org/en/download/) version >= 6 in your computer & [python 2.7.x](https://www.python.org/downloads/windows/) , if you don't have it already.
+1. Install [git](https://git-scm.com/downloads), [postgresql](https://www.postgresql.org/download/windows); tested with [postgresql installer by bigsql](https://www.openscg.com/bigsql/postgresql/installers.jsp/)  version >= 9.4, [virtualenv](https://virtualenv.pypa.io/) and [Node.js](https://nodejs.org/en/download/) version >= 6 in your computer & [python 2.7.x](https://www.python.org/downloads/windows/) , if you don't have it already.
 2. Get the source code on your machine via git
     ```
     git clone git@github.com:Cloud-CV/CloudCV.git cloudcv
@@ -63,9 +63,12 @@
     ```
     git clone https://github.com/Cloud-CV/CloudCV.git cloudcv
     ```
-3. Open a command prompt and Install python dependencies.
+3. Create a python virtual environment and install python dependencies.
     ```
     cd cloudcv
+    virtualenv venv
+    # run command below everytime before working on project. 
+    call venv\Scripts\activate  # If you're using git bash, run 'source venv/Scripts/activate' instead.
     pip install -r requirements\dev.txt
     ```
 4. Rename `settings/dev/settings.sample.py` as `settings/dev/settings.py` and change credentials in `settings/dev/settings.py`
