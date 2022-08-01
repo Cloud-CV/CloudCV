@@ -100,13 +100,14 @@
     yarn run dev
     ```
 ...
-#How to setup using docker
+## How to setup using docker
 
 1. Install Docker Desktop [https://www.docker.com/products/docker-desktop/].
-  ```
+    ```
 2. From the project directory, start up the application by running
     ```
     docker compose up
+    ```
 3. compose pulls all the images required ,builds an image for the code, and starts the services. The code is statically copied into the image at build time.
     ```
 
