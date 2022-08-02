@@ -99,7 +99,22 @@
     ```
     yarn run dev
     ```
+...
+## How to setup using docker
 
+1. Install Docker Desktop [https://www.docker.com/products/docker-desktop/].
+    ```
+2. From the project directory, start up the application by running the given command, compose pulls all the images required ,builds an image for the code, and starts the services. The code is statically copied into the image at build time.
+    ```
+    docker compose up
+    ```
+3. Enter [http://localhost:8000/](http://localhost:6003)(for serving backend) in a browser to see the application running.
+    ```
+    http://localhost:8000/
+    ```
+4. Stop the application, either by running docker compose down from within your project directory in the second terminal, or by hitting CTRL+C in the original terminal where you started the app.
+    ```
+...
 ## Contribution guidelines
 
 If you are interested in contributing to CloudCV, follow our [contribution guidelines](https://github.com/Cloud-CV/CloudCV/blob/master/.github/CONTRIBUTING.md).
