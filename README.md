@@ -108,7 +108,7 @@ https://docs.docker.com/desktop/install/windows-install/ for Windows installatio
 ...
 sudo apt install docker.io for Ubuntu Installation.
 ...
-If you have account in Docker, you can login or other end we can create new account in Docker. Before start using Docker we must login in Docker.
+If you already have account in Docker, you can login or other end we can create new account in Docker. Before start using Docker we must login in Docker.
 2. Now,Clone the CloudCv repository.
    git clone https://github.com/Cloud-CV/CloudCV
 3. Then, change into the compose folder, this folder will be the location where you enter all following commands:
