@@ -95,10 +95,31 @@
     ```
     npm config set proxy http://proxy:port
     ```
-8. Now to connect to dev server at [http://127.0.0.1:6003](http://127.0.0.1:6003) (for serving frontend)
+8. to connect to dev server at [http://127.0.0.1:6003](http://127.0.0.1:6003) (for serving frontend)
     ```
     yarn run dev
     ```
+## How to Install projects using Docker
+1.Install Docker from:
+...
+`https://docs.docker.com/docker-for-mac/install/` for MAC installation.
+...
+https://docs.docker.com/desktop/install/windows-install/ for Windows installation
+...
+sudo apt install docker.io for Ubuntu Installation.
+...
+If you have account in Docker, you can login or other end we can create new account in Docker. Before start using Docker we must login in Docker.
+2. Now,Clone the CloudCv repository.
+   git clone https://github.com/Cloud-CV/CloudCV
+3. Then, change into the compose folder, this folder will be the location where you enter all following commands:
+   cd CloudCV/compose
+4. Use the latest version of Docker images:
+   docker-compose pull
+5. Launch the Containers
+6. You can stop the Compose stack by running:
+   docker-compose stop
+7. You can stop and remove all containers by running:
+   docker-compose down
 
 ## Contribution guidelines
 
