@@ -6,6 +6,22 @@ import Button from "../../common/Button";
 const MIN_ELEMENTS = 18;
 const EVENTS = [
   {
+    date: "February 2023",
+    desc: (
+      <span>
+        CloudCV selected as a mentoring organisation for{" "}
+        <Link
+          to="https://summerofcode.withgoogle.com/programs/2023/organizations/cloudcv"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          GSOC 2023
+        </Link>
+      </span>
+    )
+  },
+
+  {
     date: "March 2021",
     desc: (
       <span>
@@ -20,6 +36,7 @@ const EVENTS = [
       </span>
     )
   },
+
   {
     date: "March 2020",
     desc: (
