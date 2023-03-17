@@ -63,8 +63,8 @@ class Navbar extends Component {
     listItems = listItems.map((path, index) => {
       if (path === "GSoC") {
         return (
-          <NavbarItem active={false} key={path} >
-            <Link to="http://gsoc.cloudcv.org" target="_blank" >
+          <NavbarItem active={false} key={path}>
+            <Link to="http://gsoc.cloudcv.org" target="_blank">
               <span className="hover-underline-animation">{path}</span>
             </Link>
           </NavbarItem>
@@ -74,7 +74,7 @@ class Navbar extends Component {
         return (
           <NavbarItem active={false} key={path}>
             <Link to="http://gci.cloudcv.org" target="_blank">
-            <span className="hover-underline-animation">{path}</span>
+              <span className="hover-underline-animation">{path}</span>
             </Link>
           </NavbarItem>
         );
@@ -83,7 +83,13 @@ class Navbar extends Component {
       let formattedPath = path.toLowerCase().replace(/ /g, "-");
       return (
         <NavbarItem active={active} key={path}>
-          <Link to={`/${formattedPath}`}>{path === "" ? <span className="hover-underline-animation">{"Home"}</span> : <span className="hover-underline-animation">{path}</span>}</Link>
+          <Link to={`/${formattedPath}`}>
+            {path === "" ? (
+              <span className="hover-underline-animation">{"Home"}</span>
+            ) : (
+              <span className="hover-underline-animation">{path}</span>
+            )}
+          </Link>
         </NavbarItem>
       );
     });
