@@ -73,6 +73,8 @@
           color: $secondary-color;
         }
 
+        
+
         a {
           display: block;
           padding: 0.5 * $gutter-width 0 0.5 * $gutter-width 0;
@@ -136,3 +138,27 @@
     }
   }
 
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+   
+    margin-top: -80px;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $secondary-color;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
