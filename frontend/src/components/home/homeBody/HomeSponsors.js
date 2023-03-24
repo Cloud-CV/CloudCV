@@ -47,7 +47,7 @@ const HomeSponsors = props => {
     require("../../../images/supporter_nvidia.png")
   ];
   return (
-    <div className="cv-container">
+    <div className="cv-container" id="sponsors">
       <h1 className="cv-home-showcase-heading">{SUPPORT_TITLE}</h1>
       <br />
       <br />
