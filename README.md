@@ -100,6 +100,14 @@
     yarn run dev
     ```
 
+
+##  Installing Docker
+
+We use Docker to install CloudCV. We recommend you follow the official Docker documentation [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository). Use the "repository method" for the installation of Docker CE on this site. CE stands for "Community Edition," as is designed for developers and ordinary users. Make sure to install the latest version of Docker (skip step #3 on "Installing Docker CE"), and if you followed the tutorial above and created an Ubuntu virtual machine, follow the `x86_64` architecture command when setting up the repository.
+
+If you are using MacOS, follow the instructions on Docker's site [here](https://docs.docker.com/docker-for-mac/install/).
+
+
 ## Contribution guidelines
 
 If you are interested in contributing to CloudCV, follow our [contribution guidelines](https://github.com/Cloud-CV/CloudCV/blob/master/.github/CONTRIBUTING.md).
