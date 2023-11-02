@@ -85,7 +85,7 @@
     "less-loader": "^4.0.5",
     "mocha": "^4.1.0",
     "nock": "^9.1.6",
-    "node-sass": "^4.7.2",
+    "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.2",
     "open": "^0.0.5",
     "postcss-loader": "^2.0.10",
